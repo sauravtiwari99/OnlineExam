@@ -1,0 +1,49 @@
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+        <div class="md-form mb-5">
+            <input type="text" id="full_name" class="form-control validate white-text" formControlName="full_name">
+            <label for="full_name">Full Name</label>
+        </div>
+        <div class="md-form mb-5">
+            <input type="number" id="mobile" class="form-control validate white-text" formControlName="mobile">
+            <label for="mobile">Mobile Number</label>
+        </div>
+        
+        <div class="md-form mb-5">
+            <input type="email" id="email_id" class="form-control validate white-text" formControlName="email_id">
+            <label for="email_id">Email</label>
+        </div>
+    
+        <div class="md-form pb-3">
+            <input type="password" id="password" class="form-control validate white-text" formControlName="password">
+            <label data-error="wrong" data-success="right" for="password">Password</label> 
+        </div>
+        
+        <div class="md-form mb-5">
+            <input type="text" id="city" class="form-control validate white-text" formControlName="city">
+            <label for="city">City</label>
+        </div>
+        <div class="md-form mb-5">
+            <input type="text" id="state" class="form-control validate white-text" formControlName="state">
+            <label for="state">State</label>
+        </div>
+        <div class="md-form mb-5">
+            <input type="date" id="dob" class="form-control validate white-text" formControlName="dob">
+            <label for="dob">Date of Birth</label>
+        </div>
+        <div class="md-form mb-5">
+            <input type="text" id="qualification" class="form-control validate white-text" formControlName="qualification">
+            <label for="qualification">Qualification</label>
+        </div>
+        <div class="md-form mb-5">
+            <input type="text" id="yoc" class="form-control validate white-text" formControlName="yoc">
+            <label for="yoc">Year of Completion</label>
+        </div>
+        <div class="text-center mb-3 col-md-12">
+            <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Register</button>
+        </div>
+
+        
+    </form>
+</div>

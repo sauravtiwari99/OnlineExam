@@ -66,7 +66,7 @@ namespace GladiatorBackend.Controllers
         [HttpPost]
         [AllowAnonymous]
         [Route("sendMail")]
-        public string PostSendGmail([FromBody] string email)
+        public string PostSendGmail([FromBody] User userDetails)
         {
             Random rnd = new Random();
             int otp = rnd.Next(1000, 9999);
@@ -84,7 +84,7 @@ namespace GladiatorBackend.Controllers
             //can be obtained from your model
             MailMessage msg = new MailMessage();
             msg.From = new MailAddress("ltieq.noreply@gmail.com");
-            msg.To.Add(new MailAddress(email));
+            msg.To.Add(new MailAddress(userDetails.email_id));
             msg.Subject = "Dear User, your otp is " + otp;
             msg.IsBodyHtml = true;
             msg.Body = string.Format("<html><head></head><body><b>Message Email</b></body>");

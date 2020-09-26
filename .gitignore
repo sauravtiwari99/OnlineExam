@@ -63,3 +63,13 @@ sparkconf.json
 
 # Testing files
 dump.*
+GladiatorBackend/.vs/GladiatorBackend/v16/.suo
+GladiatorBackend/GladiatorBackend/bin/GladiatorBackend.dll
+GladiatorBackend/GladiatorBackend/bin/GladiatorBackend.dll.config
+GladiatorBackend/GladiatorBackend/bin/GladiatorBackend.pdb
+GladiatorBackend/GladiatorBackend/obj/Debug/GladiatorBackend.csproj.CoreCompileInputs.cache
+GladiatorBackend/GladiatorBackend/obj/Debug/GladiatorBackend.csproj.FileListAbsolute.txt
+GladiatorBackend/GladiatorBackend/obj/Debug/GladiatorBackend.csprojAssemblyReference.cache
+GladiatorBackend/GladiatorBackend/obj/Debug/GladiatorBackend.dll
+GladiatorBackend/GladiatorBackend/obj/Debug/GladiatorBackend.pdb
+GladiatorBackend/GladiatorBackend/Web.config

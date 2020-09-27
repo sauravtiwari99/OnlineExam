@@ -9,8 +9,8 @@ import { AuthenticationGuard } from './Guards/authentication.guard';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
-  {path:"register",component:RegisterComponent,canActivate:[AuthenticationGuard]},
-  {path:"forgotPassword",component:ForgotPasswordComponent},
+  {path:"register",component:RegisterComponent},
+  {path:"forgotPassword",component:ForgotPasswordComponent,canActivate:[AuthenticationGuard]},
   {path: '404-invalid', component:NotFoundComponent},
   {path: '**', redirectTo: '/404-invalid'}
 ];

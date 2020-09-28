@@ -78,7 +78,7 @@ namespace GladiatorBackend.Controllers
             client.Port = 587;
             // setup Smtp authentication
             System.Net.NetworkCredential credentials =
-                new System.Net.NetworkCredential("ltieq.noreply@gmail.com", "saurav123");
+                new System.Net.NetworkCredential("ltieq.noreply@gmail.com", "saurav_123");
             client.UseDefaultCredentials = false;
             client.Credentials = credentials;
             //can be obtained from your model

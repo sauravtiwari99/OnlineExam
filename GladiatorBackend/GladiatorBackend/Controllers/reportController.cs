@@ -31,6 +31,23 @@ namespace GladiatorBackend.Controllers
             return all;
         }
 
+
+        [HttpPost]
+        [Route("getCity")]
+        public List<string> city()
+        {
+            var all = data.Database.SqlQuery<string>(@"select Distinct city from Users").ToList();
+            return all;
+        }
+
+        [HttpPost]
+        [Route("getState")]
+        public List<string> state()
+        {
+            var all = data.Database.SqlQuery<string>(@"select Distinct state from Users").ToList();
+            return all;
+        }
+
         [HttpPost]
         [Route("searchReport")]
         public List<reportOne> searchReport([FromBody] searchReport SR)

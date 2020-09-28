@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminReportService } from 'src/app/Services/admin-report.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class AdminReportsComponent implements OnInit {
   allUserData;
   selectedUser;
   selectedUserCheck:boolean=false;
-  constructor(private _adminReportService:AdminReportService) { }
+  userDataReceived:boolean=false;
+  constructor(private _adminReportService:AdminReportService,private _router:Router) { }
   ngOnInit(): void {
     this.getAllUser();
   }
@@ -20,15 +22,17 @@ export class AdminReportsComponent implements OnInit {
       console.log(result);
       this.allUserData=result;
     });
+    this.userDataReceived=true;
   }
   getParticularReport(id){
-    this.selectedUserCheck=true;
-    let uID={
-      "user_id":id
-    }
-    this._adminReportService.userReport(uID).subscribe(result=>{
-      console.log(result);
-      this.selectedUser=result;
-    });
+    this._router.navigate(['detailReport',id]);
+    // this.selectedUserCheck=true;
+    // let uID={
+    //   "user_id":id
+    // }
+    // this._adminReportService.userReport(uID).subscribe(result=>{
+    //   console.log(result);
+    //   this.selectedUser=result;
+    // }); 
   }
 }

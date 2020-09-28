@@ -7,6 +7,7 @@ import { ForgotPasswordComponent } from './Components/forgot-password/forgot-pas
 import { LoginComponent } from './Components/login/login.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { SingleReportAdminComponent } from './Components/single-report-admin/single-report-admin.component';
 import { StudentDashboardComponent } from './Components/student-dashboard/student-dashboard.component';
 import { AuthenticationAdminGuard } from './Guards/authentication-admin.guard';
 import { AuthenticationGuard } from './Guards/authentication.guard';
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:"studentDashboard",component:StudentDashboardComponent,canActivate:[AuthenticationGuard]},
   {path:"adminTest",component:AdminTestComponent,canActivate:[AuthenticationAdminGuard]},
   {path:"adminReport",component:AdminReportsComponent},
+  {path:"detailReport/:id",component:SingleReportAdminComponent},
   {path: '404-invalid', component:NotFoundComponent},
   {path: '**', redirectTo: '/404-invalid'}
 ];

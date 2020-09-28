@@ -18,5 +18,10 @@ export class AdminReportService {
   userFilteredReport(data){
     return this._http.post(this.baseUrl+"searchReport",data);
   }
-
+  allCity(data){
+    return this._http.post(this.baseUrl+"getCity",data);
+  }
+  allState(data){
+    return this._http.post(this.baseUrl+"getState",data);
+  }
 }

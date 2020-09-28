@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
     }
     else if(this.loginForm.value['loginAs']=="student")
     {
-      console.log("Logged in as Student");
       let data={
         "email_id":this.loginForm.value['email'],
         "password":this.loginForm.value['password']
@@ -43,6 +42,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('studentData', JSON.stringify(result));
           if(result[0]!=undefined){
             this._toastr.success('Success', 'Logged In Successfully');
+            this._router.navigate(['studentDashboard']);
           }
           else{
             this._toastr.error('Failed', 'Invalid Credentials');
@@ -54,7 +54,6 @@ export class LoginComponent implements OnInit {
         });
     }
     else if(this.loginForm.value['loginAs']=="admin"){
-      console.log("Logged in as Admin");
       let data={ 
         "email_id":this.loginForm.value['email'],
         "password":this.loginForm.value['password']
@@ -62,9 +61,10 @@ export class LoginComponent implements OnInit {
       this._loginService.validateAdmin(data).subscribe(
         result => {
           console.log(result[0]);
-          localStorage.setItem('adminData', JSON.stringify(result));
+          sessionStorage.setItem('adminData', JSON.stringify(result));
           if(result[0]!=undefined){
             this._toastr.success('Success', 'Logged In Successfully');
+            this._router.navigate(['adminDashboard']);
           }
           else{
             this._toastr.error('Failed', 'Invalid Credentials');

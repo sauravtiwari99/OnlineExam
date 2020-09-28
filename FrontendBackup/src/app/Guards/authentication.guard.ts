@@ -10,7 +10,7 @@ export class AuthenticationGuard implements CanActivate {
   constructor(private Authguardservice: AuthguardService, private router: Router) {}  
   canActivate(): boolean {  
       if (!this.Authguardservice.gettoken()) {  
-          this.router.navigateByUrl("");  
+          this.router.navigateByUrl("404-invalid");  
       }  
       return this.Authguardservice.gettoken();  
   }  

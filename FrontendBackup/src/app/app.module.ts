@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +12,12 @@ import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
-import { ToastrModule } from 'ngx-toastr';
+import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
+import { StudentDashboardComponent } from './Components/student-dashboard/student-dashboard.component';
+import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha';
+import { AdminTestComponent } from './Components/admin-test/admin-test.component';
+import { AdminReportsComponent } from './Components/admin-reports/admin-reports.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +25,11 @@ import { ToastrModule } from 'ngx-toastr';
     RegisterComponent,
     LoginComponent,
     NotFoundComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    AdminDashboardComponent,
+    StudentDashboardComponent,
+    AdminTestComponent,
+    AdminReportsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,8 +39,15 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot(),
+    RecaptchaModule,
+    RecaptchaFormsModule,
   ],
-  providers: [],
+  providers: [{
+    provide: RECAPTCHA_SETTINGS,
+    useValue: {
+      siteKey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+    } as RecaptchaSettings,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,7 +25,9 @@ export class RegisterComponent implements OnInit {
       state: ['', [Validators.required]],
       dob: ['', [Validators.required]],
       qualification: ['', [Validators.required]], 
-      yoc: ['', [Validators.required]]
+      yoc: ['', [Validators.required]],
+      // For Captcha
+      // reCaptcha: [null,[Validators.required]]
     });
   }
 

@@ -1,0 +1,78 @@
+<table>
+    <tr>
+        <td>
+            <button (click)="addQuestions = true">
+                Add Questions
+            </button>
+        </td>
+        <td>
+            <button (click)="removeQuestions = true">
+                Remove Questions
+            </button>
+        </td>
+    </tr>
+</table>
+
+<br>
+<br>
+
+<table *ngIf = "addQuestions == true" >
+    <tr>
+        <td>
+            <label for="subjects">Choose a subject:</label>
+
+<select name="subjects" [(ngModel)]="selectedValue">
+  <option>Java</option>
+  <option >Sql</option>
+  <option >php</option>
+  <option>C/C++</option>
+  <option >Python</option>
+  <option >C#/Dotenet</option>
+</select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Enter File path</label>
+            <input type="file" [(ngModel)]="selectedFile" (change)="showSelected()"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="addExcelFile()">
+                ADD
+            </button>
+        </td>
+    </tr>
+</table>
+
+<table *ngIf = "removeQuestions == true" >
+    <tr>
+        <td>
+            <label for="subjects">Choose a subject:</label>
+
+<select name="subjects" [(ngModel)]="selectedValue" (change)="getAllSets()">
+  <option>Java</option>
+  <option >Sql</option>
+  <option >php</option>
+  <option>C/C++</option>
+  <option >Python</option>
+  <option >C#/Dotenet</option>
+</select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="subjects" [(ngModel)]="selectedSet" >
+                <option *ngFor="let c of allSets" [ngValue]="c">{{c}}</option>
+                </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="deleteExcelFile()">
+                Delete
+            </button>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,44 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email ID</th>
+                <th>Mobile Number</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of allUserData">
+                <td>{{i.full_name}}</td>
+                <td>{{i.email_id}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.city}}</td>
+                <td>{{i.state}}</td>
+                <td><a (click)="getParticularReport(i.user_id)"><i class="fa fa-file-text-o" aria-hidden="true" style="font-size:25px;"></i></a></td>
+            </tr>
+        </tbody>
+    </table>    
+</div>
+<div class="container" *ngIf="selectedUserCheck==true">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Exam Name</th>
+                <th>Level 1</th>
+                <th>Level 2</th>
+                <th>level 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let j of selectedUser">
+                <td>{{j.exam_name}}</td>
+                <td>{{j.level1_score}}</td>
+                <td>{{j.level2_score}}</td>
+                <td>{{j.level3_score}}</td>
+            </tr>   
+        </tbody>
+    </table>    
+</div>

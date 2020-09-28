@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { MatToolbarModule } from '@angular/material/toolbar'
-
+import { GoogleChartsModule } from 'angular-google-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha';
 import { AdminTestComponent } from './Components/admin-test/admin-test.component';
 import { AdminReportsComponent } from './Components/admin-reports/admin-reports.component';
 import { SingleReportAdminComponent } from './Components/single-report-admin/single-report-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SingleReportAdminComponent } from './Components/single-report-admin/sin
     ToastrModule.forRoot(),
     RecaptchaModule,
     RecaptchaFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    GoogleChartsModule
   ],
   providers: [{
     provide: RECAPTCHA_SETTINGS,

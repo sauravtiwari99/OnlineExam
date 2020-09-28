@@ -25,5 +25,47 @@
             </tbody>
         </table>    
     </div>
+    <div class="container">
+        <table class="table">
+            <tr>
+                <td>
+                    <google-chart #chart
+                        [title]="'Column Score Analysis'"
+                        [type]="'ColumnChart'"
+                        [data]="data"
+                        [columns]="['Subject','L1', 'L2','L3']"
+                        [width]="550"
+                        [height]="400">
+                    </google-chart>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <google-chart #chart
+                        [title]="'Subject Marks Distribution'"
+                        [type]="'PieChart'"
+                        [data]="dataPieChart"
+                        [columns]="['Subject','Total Score']"
+                        
+                        [width]="550"
+                        [height]="400">
+                    </google-chart>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <google-chart #chart
+                        [title]="'Average Distribution'"
+                        [type]="'PieChart'"
+                        [data]="dataDonutChart"
+                        [columns]="['Average','Percent']"
+                        [options] = "{pieHole:0.6}"
+                        [width]="550"
+                        [height]="400">
+                    </google-chart>
+                </td>
+            </tr>
+        </table>
+    </div>
     <footer class="footer" style="font-family:'Ubuntu';letter-spacing:1px;">Made with  <i class="fa fa-heart" aria-hidden="true" style="color:red"></i>  by team LTIeQ</footer>
 </div>

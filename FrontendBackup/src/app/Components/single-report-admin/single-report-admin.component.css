@@ -71,3 +71,11 @@ tbody{
     padding-left:40%;
     padding-bottom:20%;
 }
+.logout{
+    font-family:'Ubuntu';
+    font-weight:bolder;
+    padding-right:20px;
+}
+.logout:hover{
+    transform:scale(1.5);
+}

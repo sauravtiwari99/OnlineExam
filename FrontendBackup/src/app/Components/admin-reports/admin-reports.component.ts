@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AdminReportService } from 'src/app/Services/admin-report.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class AdminReportsComponent implements OnInit {
   selectedUser;
   selectedUserCheck:boolean=false;
   userDataReceived:boolean=false;
-  constructor(private _adminReportService:AdminReportService,private _router:Router) { }
+  constructor(private _adminReportService:AdminReportService,private _router:Router,private _toastr:ToastrService) { }
   ngOnInit(): void {
     this.getAllUser();
   }
@@ -35,5 +36,10 @@ export class AdminReportsComponent implements OnInit {
     //   console.log(result);
     //   this.selectedUser=result;
     // }); 
+  }
+  logout(){
+    this._router.navigate([""]);
+    sessionStorage.clear();
+    this._toastr.success('Success', 'Logged Out Successfully');
   }
 }

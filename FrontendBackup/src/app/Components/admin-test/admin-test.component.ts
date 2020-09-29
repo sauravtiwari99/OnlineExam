@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AdminService } from 'src/app/Services/admin.service';
 
@@ -9,7 +10,7 @@ import { AdminService } from 'src/app/Services/admin.service';
 })
 export class AdminTestComponent implements OnInit {
 
-  constructor(private _adminService:AdminService, private _toastr:ToastrService) { }
+  constructor(private _adminService:AdminService, private _toastr:ToastrService,private _router:Router) { }
   removeQuestions:boolean = false;
   addQuestions:boolean = false;
   selectedValue;
@@ -37,7 +38,13 @@ export class AdminTestComponent implements OnInit {
     if(this.selectedValue == 'Java'){
       this._adminService.addJava(filepath).subscribe(
         data=>{
-          alert(data);
+          if(data=="Added Successfully"){
+            this._toastr.success('Success', 'Set Added Successfully');
+            location.reload();
+          }
+          else if(data=="No More Set Can be Added"){
+            this._toastr.warning('Set Maxed Out', 'No new set could be added.');
+          }
         }
       )
     }
@@ -45,7 +52,13 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'Sql'){
       this._adminService.addSql(filepath).subscribe(
         data=>{
-          alert(data);
+          if(data=="Added Successfully"){
+            this._toastr.success('Success', 'Set Added Successfully');
+            location.reload();
+          }
+          else if(data=="No More Set Can be Added"){
+            this._toastr.warning('Set Maxed Out', 'No new set could be added.');
+          }
         }
       )
     }
@@ -53,7 +66,13 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'php'){
       this._adminService.addPhp(filepath).subscribe(
         data=>{
-          alert(data);
+          if(data=="Added Successfully"){
+            this._toastr.success('Success', 'Set Added Successfully');
+            location.reload();
+          }
+          else if(data=="No More Set Can be Added"){
+            this._toastr.warning('Set Maxed Out', 'No new set could be added.');
+          }
         }
       )
     }
@@ -61,7 +80,13 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'C/C++'){
       this._adminService.addCplus(filepath).subscribe(
         data=>{
-          alert(data);
+          if(data=="Added Successfully"){
+            this._toastr.success('Success', 'Set Added Successfully');
+            location.reload();
+          }
+          else if(data=="No More Set Can be Added"){
+            this._toastr.warning('Set Maxed Out', 'No new set could be added.');
+          }
         }
       )
     }
@@ -69,19 +94,30 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'Python'){
       this._adminService.addPython(filepath).subscribe(
         data=>{
-          alert(data);
+          if(data=="Added Successfully"){
+            this._toastr.success('Success', 'Set Added Successfully');
+            location.reload();
+          }
+          else if(data=="No More Set Can be Added"){
+            this._toastr.warning('Set Maxed Out', 'No new set could be added.');
+          }
         }
       )
     }
 
-    else if(this.selectedValue == 'C#/Dotenet'){
+    else if(this.selectedValue == 'C#/.Net'){
       this._adminService.addCSharp(filepath).subscribe(
         data=>{
-          alert(data);
+          if(data=="Added Successfully"){
+            this._toastr.success('Success', 'Set Added Successfully');
+            location.reload();
+          }
+          else if(data=="No More Set Can be Added"){
+            this._toastr.warning('Set Maxed Out', 'No new set could be added.');
+          }
         }
       )
     }
-
   }
 
   getAllSets(){
@@ -111,7 +147,7 @@ export class AdminTestComponent implements OnInit {
       "subject" : "Cplus"
     }
   }
-  else if(this.selectedValue == "C#/Dotenet"){
+  else if(this.selectedValue == "C#/.Net"){
      jsonobj = {
       "subject" : "Csharp"
     }
@@ -121,6 +157,9 @@ export class AdminTestComponent implements OnInit {
       data=>{
         console.log("all sets are here")
         this.allSets = data;
+        if(this.allSets.length==0){
+          this._toastr.warning('No sets Available', 'Please add Question Set first.');
+        }
       }
     )
   }
@@ -133,7 +172,10 @@ export class AdminTestComponent implements OnInit {
     if(this.selectedValue == 'Java'){
       this._adminService.removeJava(jsonObj).subscribe(
         data=>{
-          alert("Deleted Java Successfully");
+          if(data=="Deleted"){
+            this._toastr.success('Success', 'Set Deleted Successfully');
+            location.reload();
+          }
         }
       )
     }
@@ -141,7 +183,10 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'Sql'){
       this._adminService.removeSql(jsonObj).subscribe(
         data=>{
-          alert("Deleted Sql Successfully");
+          if(data=="Deleted"){
+            this._toastr.success('Success', 'Set Deleted Successfully');
+            location.reload();
+          }
         }
       )
     }
@@ -149,7 +194,10 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'php'){
       this._adminService.removePhp(jsonObj).subscribe(
         data=>{
-          alert("Deleted Php Successfully");
+          if(data=="Deleted"){
+            this._toastr.success('Success', 'Set Deleted Successfully');
+            location.reload();
+          }
         }
       )
     }
@@ -157,7 +205,10 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'C/C++'){
       this._adminService.removeCplus(jsonObj).subscribe(
         data=>{
-          alert("Deletd C/C++ Successfully");
+          if(data=="Deleted"){
+            this._toastr.success('Success', 'Set Deleted Successfully');
+            location.reload();
+          }
         }
       )
     }
@@ -165,7 +216,10 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'Python'){
       this._adminService.removePython(jsonObj).subscribe(
         data=>{
-          alert("Deleted Python Successfully");
+          if(data=="Deleted"){
+            this._toastr.success('Success', 'Set Deleted Successfully');
+            location.reload();
+          }
         }
       )
     }
@@ -173,10 +227,17 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'C#/Dotenet'){
       this._adminService.removeCSharp(jsonObj).subscribe(
         data=>{
-          alert("Deleted Dotnet Successfully");
+          if(data=="Deleted"){
+            this._toastr.success('Success', 'Set Deleted Successfully');
+            location.reload();
+          }
         }
       )
     }
-    
+  }
+  logout(){
+    this._router.navigate([""]);
+    sessionStorage.clear();
+    this._toastr.success('Success', 'Logged Out Successfully');
   }
 }

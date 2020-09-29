@@ -17,14 +17,15 @@ import { AuthenticationGuard } from './Guards/authentication.guard';
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"register",component:RegisterComponent},
-  {path:"forgotPassword",component:ForgotPasswordComponent},
-  // {path:"adminDashboard",component:AdminDashboardComponent,canActivate:[AuthenticationAdminGuard]},
-  {path:"adminDashboard",component:AdminDashboardComponent},
-  // {path:"studentDashboard",component:StudentDashboardComponent,canActivate:[AuthenticationGuard]},
-  {path:"studentDashboard",component:StudentDashboardComponent},
+  // {path:"forgotPassword",component:ForgotPasswordComponent},
+  {path:"adminDashboard",component:AdminDashboardComponent,canActivate:[AuthenticationAdminGuard]},
+  // {path:"adminDashboard",component:AdminDashboardComponent},
+  {path:"studentDashboard",component:StudentDashboardComponent,canActivate:[AuthenticationGuard]},
+  // {path:"studentDashboard",component:StudentDashboardComponent},
   {path:"adminTest",component:AdminTestComponent,canActivate:[AuthenticationAdminGuard]},
-  {path:"adminReport",component:AdminReportsComponent},
-  {path:"detailReport/:id",component:SingleReportAdminComponent},
+  // {path:"adminTest",component:AdminTestComponent},
+  {path:"adminReport",component:AdminReportsComponent,canActivate:[AuthenticationAdminGuard]},
+  {path:"detailReport/:id",component:SingleReportAdminComponent,canActivate:[AuthenticationAdminGuard]},
   {path: '404-invalid', component:NotFoundComponent},
   {path: '**', redirectTo: '/404-invalid'}
 ];

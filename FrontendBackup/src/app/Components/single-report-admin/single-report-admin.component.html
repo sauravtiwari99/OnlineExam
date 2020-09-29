@@ -2,7 +2,7 @@
     <mat-toolbar color="primary" class="navbar">
         <div style="font-family:'Ubuntu';font-weight:bolder;letter-spacing:1px;font-size:25px;padding-left:25px;"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;LTIeQ</div>
         <div>
-            <span style="font-family:'Ubuntu';font-weight:bolder;"><a>Logout&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a></span>
+            <span class="logout"><a (click)="logout()" >Logout&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true" ></i></a></span>
         </div>
     </mat-toolbar>
 
@@ -75,7 +75,7 @@
             </tr>
         </table>
     </div>
-    <div class="btn-div-download">
+    <div *ngIf="detailsRendered==true" class="btn-div-download">
         <button class="btn btn-style" (click)="print()">Download Reports</button>
     </div>
     <footer class="footer" style="font-family:'Ubuntu';letter-spacing:1px;">Made with  <i class="fa fa-heart" aria-hidden="true" style="color:red"></i>  by team LTIeQ</footer>

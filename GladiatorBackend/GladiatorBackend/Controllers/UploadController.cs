@@ -52,7 +52,6 @@ namespace GladiatorBackend.Controllers
             if (count <= 2)
             {
                 var free = data.Database.SqlQuery<string>(@"select top 1 table_name from Java_Sets where availability = 'yes'").FirstOrDefault<string>();
-                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =1");
                 string tableName = free;
                 CSVtoSQL c = new CSVtoSQL();
                 DataTable csvData = FileReader.CSVtoSQL.GetDataTabletFromCSVFile(csv_file_path.csv_file_path);
@@ -64,6 +63,7 @@ namespace GladiatorBackend.Controllers
                     Console.WriteLine(column);
                 }
                 data.Database.ExecuteSqlCommand(@"update Java_Sets set availability = 'no' where table_name=@tablename", new SqlParameter("@tablename", free));
+                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =1");
                 return "Added Successfully";
 
             }
@@ -91,7 +91,6 @@ namespace GladiatorBackend.Controllers
             if (count <= 2)
             {
                 var free = data.Database.SqlQuery<string>(@"select top 1 table_name from Cplus_Sets where availability = 'yes'").FirstOrDefault<string>();
-                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =2");
                 string tableName = free;
                 CSVtoSQL c = new CSVtoSQL();
                 DataTable csvData = FileReader.CSVtoSQL.GetDataTabletFromCSVFile(csv_file_path.csv_file_path);
@@ -103,6 +102,7 @@ namespace GladiatorBackend.Controllers
                     Console.WriteLine(column);
                 }
                 data.Database.ExecuteSqlCommand(@"update Cplus_Sets set availability = 'no' where table_name=@tablename", new SqlParameter("@tablename", free));
+                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =2");
                 return "Added Successfully";
 
             }
@@ -130,7 +130,6 @@ namespace GladiatorBackend.Controllers
             if (count <= 2)
             {
                 var free = data.Database.SqlQuery<string>(@"select top 1 table_name from Csharp_Sets where availability = 'yes'").FirstOrDefault<string>();
-                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =3");
                 string tableName = free;
                 CSVtoSQL c = new CSVtoSQL();
                 DataTable csvData = FileReader.CSVtoSQL.GetDataTabletFromCSVFile(csv_file_path.csv_file_path);
@@ -142,6 +141,7 @@ namespace GladiatorBackend.Controllers
                     Console.WriteLine(column);
                 }
                 data.Database.ExecuteSqlCommand(@"update Csharp_Sets set availability = 'no' where table_name=@tablename", new SqlParameter("@tablename", free));
+                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =3");
                 return "Added Successfully";
 
             }
@@ -169,7 +169,6 @@ namespace GladiatorBackend.Controllers
             if (count <= 2)
             {
                 var free = data.Database.SqlQuery<string>(@"select top 1 table_name from Php_Sets where availability = 'yes'").FirstOrDefault<string>();
-                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =4");
                 string tableName = free;
                 CSVtoSQL c = new CSVtoSQL();
                 DataTable csvData = FileReader.CSVtoSQL.GetDataTabletFromCSVFile(csv_file_path.csv_file_path);
@@ -181,6 +180,7 @@ namespace GladiatorBackend.Controllers
                     Console.WriteLine(column);
                 }
                 data.Database.ExecuteSqlCommand(@"update Php_Sets set availability = 'no' where table_name=@tablename", new SqlParameter("@tablename", free));
+                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =4");
                 return "Added Successfully";
 
             }
@@ -210,7 +210,6 @@ namespace GladiatorBackend.Controllers
             if (count <= 2)
             {
                 var free = data.Database.SqlQuery<string>(@"select top 1 table_name from Sql_Sets where availability = 'yes'").FirstOrDefault<string>();
-                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =5");
                 string tableName = free;
                 CSVtoSQL c = new CSVtoSQL();
                 DataTable csvData = FileReader.CSVtoSQL.GetDataTabletFromCSVFile(csv_file_path.csv_file_path);
@@ -222,6 +221,7 @@ namespace GladiatorBackend.Controllers
                     Console.WriteLine(column);
                 }
                 data.Database.ExecuteSqlCommand(@"update Sql_Sets set availability = 'no' where table_name=@tablename", new SqlParameter("@tablename", free));
+                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =5");
                 return "Added Successfully";
 
             }
@@ -250,7 +250,6 @@ namespace GladiatorBackend.Controllers
             if (count <= 2)
             {
                 var free = data.Database.SqlQuery<string>(@"select top 1 table_name from Python_Sets where availability = 'yes'").FirstOrDefault<string>();
-                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =6");
                 string tableName = free;
                 CSVtoSQL c = new CSVtoSQL();
                 DataTable csvData = FileReader.CSVtoSQL.GetDataTabletFromCSVFile(csv_file_path.csv_file_path);
@@ -262,6 +261,7 @@ namespace GladiatorBackend.Controllers
                     Console.WriteLine(column);
                 }
                 data.Database.ExecuteSqlCommand(@"update Python_Sets set availability = 'no' where table_name=@tablename", new SqlParameter("@tablename", free));
+                data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts + 1 where exam_id =6");
                 return "Added Successfully";
 
             }

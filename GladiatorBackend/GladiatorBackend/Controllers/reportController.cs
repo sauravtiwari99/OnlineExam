@@ -18,7 +18,7 @@ namespace GladiatorBackend.Controllers
         [Route("getAllReport")]
         public List<User> allReport()
         {
-            var all = data.Database.SqlQuery<User>(@"select * from Users").ToList();
+            var all = data.Database.SqlQuery<User>(@"select Distinct Users.* from Users inner join Reports on Reports.user_id = Users.user_id").ToList();
             return all;
         }
 

@@ -14,23 +14,23 @@ namespace GladiatorBackend.Controllers
         OnlineExamEntities data = new OnlineExamEntities();
         [HttpPost]
         [Route("easy")]
-        public List<javaQuestion1> level1([FromBody] filepath filepath)
+        public List<questionR> level1([FromBody] filepath filepath)
         {
-            var all = data.Database.SqlQuery<javaQuestion1>(@"select sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'easy' order by NEWID()").ToList();
+            var all = data.Database.SqlQuery<questionR>(@"select sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'easy' order by NEWID()").ToList();
             return all;
         }
         [HttpPost]
         [Route("medium")]
-        public List<javaQuestion1> level2([FromBody] filepath filepath)
+        public List<questionR> level2([FromBody] filepath filepath)
         {
-            var all = data.Database.SqlQuery<javaQuestion1>(@"select sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'medium' order by NEWID()").ToList();
+            var all = data.Database.SqlQuery<questionR>(@"select sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'medium' order by NEWID()").ToList();
             return all;
         }
         [HttpPost]
         [Route("hard")]
-        public List<javaQuestion1> level3([FromBody] filepath filepath)
+        public List<questionR> level3([FromBody] filepath filepath)
         {
-            var all = data.Database.SqlQuery<javaQuestion1>(@"select sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'hard' order by NEWID()").ToList();
+            var all = data.Database.SqlQuery<questionR>(@"select sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'hard' order by NEWID()").ToList();
             return all;
         }
     }

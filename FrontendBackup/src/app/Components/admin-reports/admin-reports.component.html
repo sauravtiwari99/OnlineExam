@@ -5,7 +5,6 @@
         <span style="font-family:'Ubuntu';font-weight:bolder;"><a>Logout&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a></span>
     </div>
 </mat-toolbar>
-
 <div class="btn-div">
     <button class="btn btn-style">Search Filters</button>
 </div>
@@ -29,7 +28,7 @@
                 <td>{{i.mobile}}</td>
                 <td>{{i.city}}</td>
                 <td>{{i.state}}</td>
-                <td class="viewReportIcon"><a (click)="getParticularReport(i.user_id)"><i class="fa fa-file-text-o" aria-hidden="true" style="font-size:25px;"></i></a></td>
+                <td class="viewReportIcon"><a (click)="getParticularReport(i.user_id,i.full_name)"><i class="fa fa-file-text-o" aria-hidden="true" style="font-size:25px;"></i></a></td>
             </tr>
         </tbody>
     </table>    

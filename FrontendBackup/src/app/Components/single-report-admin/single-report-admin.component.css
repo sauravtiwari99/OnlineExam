@@ -27,6 +27,7 @@ span{
     padding:10px;
     padding-right:35px;
     float: right;
+    width:100%;
 }
 .btn-style{
     background-color:#3F51B5;
@@ -64,4 +65,9 @@ tbody{
 .viewReportIcon:hover{
     color:#3F51B5;
     transform:scale(1.5);
+}
+.btn-div-download{
+    width: 100%;
+    padding-left:40%;
+    padding-bottom:20%;
 }

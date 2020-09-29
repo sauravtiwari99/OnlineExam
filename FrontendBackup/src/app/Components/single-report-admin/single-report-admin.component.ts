@@ -16,12 +16,14 @@ export class SingleReportAdminComponent implements OnInit {
   data=[];
   dataPieChart=[];
   dataDonutChart=[];
+  userName;
 
   ngOnInit(): void {
     this.getReports();
   }
   getReports(){
     this.id = this._route.snapshot.paramMap.get('id');
+    this.userName=sessionStorage.getItem('userData');
     let uID={
       "user_id":this.id
     }
@@ -42,5 +44,12 @@ export class SingleReportAdminComponent implements OnInit {
       console.log(this.dataPieChart)
     });
     this.detailsRendered=true;
+  }
+  allUser(){
+    sessionStorage.removeItem('userData');
+    this._router.navigate(['adminReport'])
+  }
+  print(){
+    window.print()
   }
 }

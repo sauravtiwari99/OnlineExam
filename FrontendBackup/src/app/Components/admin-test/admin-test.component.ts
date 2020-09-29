@@ -37,7 +37,7 @@ export class AdminTestComponent implements OnInit {
     if(this.selectedValue == 'Java'){
       this._adminService.addJava(filepath).subscribe(
         data=>{
-          alert("Added Java Successfully");
+          alert(data);
         }
       )
     }
@@ -45,7 +45,7 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'Sql'){
       this._adminService.addSql(filepath).subscribe(
         data=>{
-          alert("Added Sql Successfully");
+          alert(data);
         }
       )
     }
@@ -53,7 +53,7 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'php'){
       this._adminService.addPhp(filepath).subscribe(
         data=>{
-          alert("Added Php Successfully");
+          alert(data);
         }
       )
     }
@@ -61,7 +61,7 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'C/C++'){
       this._adminService.addCplus(filepath).subscribe(
         data=>{
-          alert("Added C/C++ Successfully");
+          alert(data);
         }
       )
     }
@@ -69,7 +69,7 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'Python'){
       this._adminService.addPython(filepath).subscribe(
         data=>{
-          alert("Added Python Successfully");
+          alert(data);
         }
       )
     }
@@ -77,7 +77,7 @@ export class AdminTestComponent implements OnInit {
     else if(this.selectedValue == 'C#/Dotenet'){
       this._adminService.addCSharp(filepath).subscribe(
         data=>{
-          alert("Added Dotnet Successfully");
+          alert(data);
         }
       )
     }
@@ -107,7 +107,7 @@ export class AdminTestComponent implements OnInit {
     }
   }
   else if(this.selectedValue == "C/C++"){
-    let jsonobj = {
+    jsonobj = {
       "subject" : "Cplus"
     }
   }

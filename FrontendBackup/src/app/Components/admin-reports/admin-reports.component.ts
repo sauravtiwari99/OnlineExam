@@ -24,7 +24,8 @@ export class AdminReportsComponent implements OnInit {
     });
     this.userDataReceived=true;
   }
-  getParticularReport(id){
+  getParticularReport(id,uname){
+    sessionStorage.setItem('userData',uname);
     this._router.navigate(['detailReport',id]);
     // this.selectedUserCheck=true;
     // let uID={

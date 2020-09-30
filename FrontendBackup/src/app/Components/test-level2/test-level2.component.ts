@@ -1359,7 +1359,7 @@ goToLevel3(){
 // Add Router link here for level 2 component.
 //In Level 2 component while sending data to insert in db using storeLevel2 or storeLevel3 Service, send jSon in following format
 //{"report_id":sessionStorage.getItem("report_id"),"level2_score":this.totalMarks}
-this.router.navigate(['/level3',{test:this.testName,si:true}])
+this.router.navigate(['/testL3',{test:this.testName,si:true}])
 
 }
 endTest(){

@@ -18,7 +18,7 @@ export class TestLevel1Component implements OnInit {
   totalMarks =0;
 
   countDown:Subscription;
-  counter = 10;
+  counter = 1200;
   tick = 1000;
   keypressCounter =0;
 
@@ -1359,7 +1359,7 @@ export class TestLevel1Component implements OnInit {
   //In Level 2 component while sending data to insert in db using storeLevel2 or storeLevel3 Service, send jSon in following format
   
   
-  this.router.navigate(['/level2',{test:this.testName,si:true}])
+  this.router.navigate(['testL2',{test:this.testName,si:true}])
   
   
   }

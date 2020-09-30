@@ -1,14 +1,16 @@
 <section *ngIf="showTest == true">
-    Time Generate : {{counter | formatTime}}    
+    <div class="container" style="width:100%;text-align:center;font-family:'Ubuntu';font-weight:bolder;padding:5px;">
+        Time Generate : {{counter | formatTime}}    
+    </div>
 <br>
 
 <section>
-    <button (click)="pressedQ1()">
-        <span style="background-color: red;" *ngIf="addReview1 == false && selectedOptions[0] == null">
+    <button class="btn" (click)="pressedQ1()">
+        <span style="background-color: red; height:2px;width:2px;" *ngIf="addReview1 == false && selectedOptions[0] == null">
             Q1
-            </span>
+        </span>
         <span style="background-color: blue;" *ngIf="addReview1 == true">
-        Q1
+            Q1
         </span>
         <span style="background-color: green;" *ngIf="addReview1 == false && selectedOptions[0] != null">
             Q1
@@ -531,11 +533,65 @@
 </section>
 
 <section *ngIf = "showTest==false">
-    Your score is : {{totalMarks}}/40<br>
+    <div class="container">
+        <table class="table table-bordered" >
+            <thead>
+                <th colspan="2">
+                    Level 1 Performance Report
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">Your score is :</td>
+                    <td align="center">{{totalMarks}}/40</td>
+                </tr>
+                <tr>
+                    <td align="center">Correct answers :</td>
+                    <td align="center">{{totalMarks/2}}</td>
+                </tr>
+                <tr>
+                    <td align="center">Wrong Answers :</td>
+                    <td align="center">{{20 - totalMarks/2}}</td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2" style="color: red;" *ngIf="totalMarks <26">
+                        You have not cleared Level 1. Better luck next time.
+                    </td>
+                    <td align="center" colspan="2" style="color: green;" *ngIf="totalMarks >=26">
+                        You have cleared Level 1. All the best for Level 2!
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-left:35%;"colspan="2">
+                        <google-chart #chart
+                            [title]="''"
+                            [type]="'PieChart'"
+                            [data]="[['Correct Anwers',totalMarks/2],['Wrong Anwers',20 - totalMarks/2]]"
+                            [columns]="['Average','Percent']"
+                            [options] = "{pieHole:0.3}"
+                            [width]="400"
+                            [height]="400">
+                        </google-chart>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2" *ngIf="totalMarks >=26">
+                        <button class="btn btn-style" *ngIf="totalMarks >=26" (click)="goToLevel2()">Take Level 2</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <button class="btn btn-style" (click)="endTest()">End Test</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Your score is : {{totalMarks}}/40<br>
     Correct answers : {{totalMarks/2}}<br>
     Wrong answers : {{20 - totalMarks/2}}<br>
     <b style="color: red;" *ngIf="totalMarks <26">
-You have not cleared Level 1. Better luck next time.
+    You have not cleared Level 1. Better luck next time.
     </b>
     <b style="color: green;" *ngIf="totalMarks >=26">
         You have cleared Level 1. All the best for Level 2!
@@ -551,11 +607,11 @@ You have not cleared Level 1. Better luck next time.
            [height]="400">
         </google-chart>
  
-<button *ngIf="totalMarks >=26" (click)="goToLevel2()">
-Take Level 2
-</button>
-<button (click)="endTest()">
-    End Test
-</button>
+    <button *ngIf="totalMarks >=26" (click)="goToLevel2()">
+    Take Level 2
+    </button>
+    <button (click)="endTest()">
+        End Test
+    </button> -->
 
 </section>

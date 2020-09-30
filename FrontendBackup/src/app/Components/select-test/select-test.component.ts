@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-select-test',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectTestComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router:Router,private _toastr:ToastrService) { }
   ngOnInit(): void {
   }
   routeJava(){
@@ -33,5 +35,10 @@ export class SelectTestComponent implements OnInit {
   routePhp(){
     // this.router.navigate(['/testL1',{test:'Php',si:true}])
     window.open("http://localhost:4200/testL1;test=Php;si=true","window", 'toolbar=0,location=0,scrollbars=1,statusbar=1,menubar=0,resizable=1,width=800,height=800,left=100,top=50');
+  }
+   logout(){
+    this._router.navigate([""]);
+    sessionStorage.clear();
+    this._toastr.success('Success', 'Logged Out Successfully');
   }
 }

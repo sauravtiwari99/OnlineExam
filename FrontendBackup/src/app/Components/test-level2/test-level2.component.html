@@ -531,7 +531,61 @@
 </section>
 
 <section *ngIf = "showTest==false">
-    Your score is : {{totalMarks}}/40<br>
+    <div class="container">
+        <table class="table table-bordered" >
+            <thead>
+                <th colspan="2">
+                    Level 2 Performance Report
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">Your score is :</td>
+                    <td align="center">{{totalMarks}}/40</td>
+                </tr>
+                <tr>
+                    <td align="center">Correct answers :</td>
+                    <td align="center">{{totalMarks/2}}</td>
+                </tr>
+                <tr>
+                    <td align="center">Wrong Answers :</td>
+                    <td align="center">{{20 - totalMarks/2}}</td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2" style="color: red;" *ngIf="totalMarks <26">
+                        You have not cleared Level 2. Better luck next time.
+                    </td>
+                    <td align="center" colspan="2" style="color: green;" *ngIf="totalMarks >=26">
+                        You have cleared Level 2. All the best for Level 2!
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-left:35%;"colspan="2">
+                        <google-chart #chart
+                            [title]="''"
+                            [type]="'PieChart'"
+                            [data]="[['Correct Anwers',totalMarks/2],['Wrong Anwers',20 - totalMarks/2]]"
+                            [columns]="['Average','Percent']"
+                            [options] = "{pieHole:0.3}"
+                            [width]="400"
+                            [height]="400">
+                        </google-chart>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2" *ngIf="totalMarks >=26">
+                        <button class="btn btn-style" *ngIf="totalMarks >=26" (click)="goToLevel3()">Take Level 2</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <button class="btn btn-style" (click)="endTest()">End Test</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Your score is : {{totalMarks}}/40<br>
     Correct answers : {{totalMarks/2}}<br>
     Wrong answers : {{20 - totalMarks/2}}<br>
     <b style="color: red;" *ngIf="totalMarks <26">
@@ -556,7 +610,7 @@ Take Level 3
 </button>
 <button (click)="endTest()">
     End Test
-</button>
+</button> -->
     <!-- Add the link for student dashboard in this button using [routerlink] -->
 
 </section>

@@ -47,21 +47,26 @@ namespace GladiatorBackend.Controllers
 
         [HttpPost]
         [Route("update")]
-        public string reportUpdate([FromBody] reportStudent RS)
+        public List<int> reportUpdate([FromBody] reportStudent RS)
         {
             if (RS.level2_score > 0)
             {
 
                 var all = data.Database.ExecuteSqlCommand(@"update Reports set level2_score =" + RS.level2_score + " where report_id =" + RS.report_id);
-                return "Marks updated succesfully";
+                var report_id = data.Database.SqlQuery<int>(@"select top 1 report_id from Reports order by report_id desc").ToList();
+                return report_id;
             }
             else if (RS.level3_score > 0)
             {
                 var all = data.Database.ExecuteSqlCommand(@"update Reports set level3_score =" + RS.level3_score + " where report_id =" + RS.report_id);
-                return "Marks updated successfully";
+                List<int> list = new List<int>() { 1 };
+                return list;
             }
             else
-                return "0";
+            {
+                List<int> list = new List<int>() { 0 };
+                return list;
+            }
         }
     }
 }

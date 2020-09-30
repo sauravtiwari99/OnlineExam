@@ -7,9 +7,13 @@ import { ForgotPasswordComponent } from './Components/forgot-password/forgot-pas
 import { LoginComponent } from './Components/login/login.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { SelectTestComponent } from './Components/select-test/select-test.component';
 import { SingleReportAdminComponent } from './Components/single-report-admin/single-report-admin.component';
 import { StudentDashboardComponent } from './Components/student-dashboard/student-dashboard.component';
 import { StudentReportComponent } from './Components/student-report/student-report.component';
+import { TestLevel1Component } from './Components/test-level1/test-level1.component';
+import { TestLevel2Component } from './Components/test-level2/test-level2.component';
+import { TestLevel3Component } from './Components/test-level3/test-level3.component';
 import { AuthenticationAdminGuard } from './Guards/authentication-admin.guard';
 import { AuthenticationGuard } from './Guards/authentication.guard';
 
@@ -30,6 +34,10 @@ const routes: Routes = [
   {path:"adminReport",component:AdminReportsComponent,canActivate:[AuthenticationAdminGuard]},
   // {path:"adminReport",component:AdminReportsComponent},
   {path:"detailReport/:id",component:SingleReportAdminComponent,canActivate:[AuthenticationAdminGuard]},
+  {path:"testL1",component:TestLevel1Component},
+  {path:"testL2",component:TestLevel2Component},
+  {path:"testL3",component:TestLevel3Component},
+  {path:"selectTest",component:SelectTestComponent},
   {path: '404-invalid', component:NotFoundComponent},
   {path: '**', redirectTo: '/404-invalid'}
 ];

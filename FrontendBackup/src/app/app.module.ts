@@ -21,6 +21,11 @@ import { AdminTestComponent } from './Components/admin-test/admin-test.component
 import { AdminReportsComponent } from './Components/admin-reports/admin-reports.component';
 import { SingleReportAdminComponent } from './Components/single-report-admin/single-report-admin.component';
 import { StudentReportComponent } from './Components/student-report/student-report.component';
+import { TestLevel1Component } from './Components/test-level1/test-level1.component';
+import { TestLevel2Component } from './Components/test-level2/test-level2.component';
+import { TestLevel3Component } from './Components/test-level3/test-level3.component';
+import { SelectTestComponent } from './Components/select-test/select-test.component';
+import { TimeGeneratorPipe } from './Pipes/time-generator.pipe';
 
 
 @NgModule({
@@ -35,7 +40,12 @@ import { StudentReportComponent } from './Components/student-report/student-repo
     AdminTestComponent,
     AdminReportsComponent,
     SingleReportAdminComponent,
-    StudentReportComponent
+    StudentReportComponent,
+    TestLevel1Component,
+    TestLevel2Component,
+    TestLevel3Component,
+    SelectTestComponent,
+    TimeGeneratorPipe
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,6 @@ export class StudentDashboardComponent implements OnInit {
   }
   giveTest(){
     console.log("All the Best");
-    this._router.navigate([""]);
+    this._router.navigate(["selectTest"]);
   }
 }

@@ -1,248 +1,248 @@
 <section *ngIf="showTest == true">
-    <div class="container" style="width:100%;text-align:center;font-family:'Ubuntu';font-weight:bolder;padding:5px;">
-        Time Generate : {{counter | formatTime}}    
+    <div class="container" style="width:100%;text-align:center;font-family:'Ubuntu';font-weight:bolder;padding:5px;font-size:25px;">
+        Time Remaining : {{counter | formatTime}}    
     </div>
 <br>
 
 <section>
-    <button class="btn" (click)="pressedQ1()">
-        <span style="background-color: red; height:2px;width:2px;" *ngIf="addReview1 == false && selectedOptions[0] == null">
+    <button class="btn btn-light" (click)="pressedQ1()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview1 == false && selectedOptions[0] == null">
             Q1
-        </span>
-        <span style="background-color: blue;" *ngIf="addReview1 == true">
+        </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview1 == true">
             Q1
-        </span>
-        <span style="background-color: green;" *ngIf="addReview1 == false && selectedOptions[0] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview1 == false && selectedOptions[0] != null">
             Q1
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ2()">
-        <span style="background-color: red;" *ngIf="addReview2 == false && selectedOptions[1] == null">
+    <button class="btn btn-light" (click)="pressedQ2()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview2 == false && selectedOptions[1] == null">
             Q2
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview2 == true">
+        </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview2 == true">
             Q2
-        </span>
-        <span style="background-color: green;" *ngIf="addReview2 == false && selectedOptions[1] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview2 == false && selectedOptions[1] != null">
             Q2
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ3()">
-        <span style="background-color: red;" *ngIf="addReview3 == false && selectedOptions[2] == null">
+    <button class="btn btn-light" (click)="pressedQ3()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview3 == false && selectedOptions[2] == null">
             Q3
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview3 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview3 == true">
             Q3
-        </span>
-        <span style="background-color: green;" *ngIf="addReview3 == false && selectedOptions[2] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview3 == false && selectedOptions[2] != null">
             Q3
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ4()">
-        <span style="background-color: red;" *ngIf="addReview4 == false && selectedOptions[3] == null">
+    <button class="btn btn-light" (click)="pressedQ4()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview4 == false && selectedOptions[3] == null">
             Q4
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview4 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview4 == true">
             Q4
-        </span>
-        <span style="background-color: green;" *ngIf="addReview4 == false && selectedOptions[3] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview4 == false && selectedOptions[3] != null">
             Q4
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ5()">
-        <span style="background-color: red;" *ngIf="addReview5 == false && selectedOptions[4] == null">
+    <button class="btn btn-light" (click)="pressedQ5()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview5 == false && selectedOptions[4] == null">
             Q5
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview5 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview5 == true">
             Q5
-        </span>
-        <span style="background-color: green;" *ngIf="addReview5 == false && selectedOptions[4] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview5 == false && selectedOptions[4] != null">
             Q5
-        </span>
+        </div>
     </button>
     
-    <button (click)="pressedQ6()">
-        <span style="background-color: red;" *ngIf="addReview6 == false && selectedOptions[5] == null">
+    <button class="btn btn-light" (click)="pressedQ6()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview6 == false && selectedOptions[5] == null">
             Q6
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview6 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview6 == true">
             Q6
-        </span>
-        <span style="background-color: green;" *ngIf="addReview6 == false && selectedOptions[5] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview6 == false && selectedOptions[5] != null">
             Q6
-        </span>
+        </div>
     </button>
     
-    <button (click)="pressedQ7()">
-        <span style="background-color: red;" *ngIf="addReview7 == false && selectedOptions[6] == null">
+    <button class="btn btn-light" (click)="pressedQ7()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview7 == false && selectedOptions[6] == null">
             Q7
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview7 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview7 == true">
             Q7
-        </span>
-        <span style="background-color: green;" *ngIf="addReview7 == false && selectedOptions[6] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview7 == false && selectedOptions[6] != null">
             Q7
-        </span>
+        </div>
     </button>
     
-    <button (click)="pressedQ8()">
-        <span style="background-color: red;" *ngIf="addReview8 == false && selectedOptions[7] == null">
+    <button class="btn btn-light" (click)="pressedQ8()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview8 == false && selectedOptions[7] == null">
             Q8
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview8 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview8 == true">
             Q8
-        </span>
-        <span style="background-color: green;" *ngIf="addReview8 == false && selectedOptions[7] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview8 == false && selectedOptions[7] != null">
             Q8
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ9()">
-        <span style="background-color: red;" *ngIf="addReview9 == false && selectedOptions[8] == null">
+    <button class="btn btn-light" (click)="pressedQ9()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview9 == false && selectedOptions[8] == null">
             Q9
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview9 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview9 == true">
             Q9
-        </span>
-        <span style="background-color: green;" *ngIf="addReview9 == false && selectedOptions[8] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview9 == false && selectedOptions[8] != null">
             Q9
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ10()">
-        <span style="background-color: red;" *ngIf="addReview10 == false && selectedOptions[9] == null">
+    <button class="btn btn-light" (click)="pressedQ10()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview10 == false && selectedOptions[9] == null">
             Q10
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview10 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview10 == true">
             Q10
-        </span>
-        <span style="background-color: green;" *ngIf="addReview10 == false && selectedOptions[9] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview10 == false && selectedOptions[9] != null">
             Q10
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ11()">
-        <span style="background-color: red;" *ngIf="addReview11 == false && selectedOptions[10] == null">
+    <button class="btn btn-light" (click)="pressedQ11()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview11 == false && selectedOptions[10] == null">
             Q11
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview11 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview11 == true">
         Q11
-        </span>
-        <span style="background-color: green;" *ngIf="addReview11 == false && selectedOptions[10] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview11 == false && selectedOptions[10] != null">
             Q11
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ12()">
-        <span style="background-color: red;" *ngIf="addReview12 == false && selectedOptions[11] == null">
+    <button class="btn btn-light" (click)="pressedQ12()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview12 == false && selectedOptions[11] == null">
             Q12
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview12 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview12 == true">
             Q12
-        </span>
-        <span style="background-color: green;" *ngIf="addReview12 == false && selectedOptions[11] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview12 == false && selectedOptions[11] != null">
             Q12
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ13()">
-        <span style="background-color: red;" *ngIf="addReview13 == false && selectedOptions[12] == null">
+    <button class="btn btn-light" (click)="pressedQ13()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview13 == false && selectedOptions[12] == null">
             Q13
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview13 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview13 == true">
             Q13
-        </span>
-        <span style="background-color: green;" *ngIf="addReview13 == false && selectedOptions[12] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview13 == false && selectedOptions[12] != null">
             Q13
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ14()">
-        <span style="background-color: red;" *ngIf="addReview14 == false && selectedOptions[13] == null">
+    <button class="btn btn-light" (click)="pressedQ14()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview14 == false && selectedOptions[13] == null">
             Q14
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview14 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview14 == true">
             Q14
-        </span>
-        <span style="background-color: green;" *ngIf="addReview14 == false && selectedOptions[13] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview14 == false && selectedOptions[13] != null">
             Q14
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ15()">
-        <span style="background-color: red;" *ngIf="addReview15 == false && selectedOptions[14] == null">
+    <button class="btn btn-light" (click)="pressedQ15()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview15 == false && selectedOptions[14] == null">
             Q15
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview15 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview15 == true">
             Q15
-        </span>
-        <span style="background-color: green;" *ngIf="addReview15 == false && selectedOptions[14] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview15 == false && selectedOptions[14] != null">
             Q15
-        </span>
+        </div>
     </button>
     
-    <button (click)="pressedQ16()">
-        <span style="background-color: red;" *ngIf="addReview16 == false && selectedOptions[15] == null">
+    <button class="btn btn-light" (click)="pressedQ16()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview16 == false && selectedOptions[15] == null">
             Q16
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview16 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview16 == true">
             Q16
-        </span>
-        <span style="background-color: green;" *ngIf="addReview16 == false && selectedOptions[15] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview16 == false && selectedOptions[15] != null">
             Q16
-        </span>
+        </div>
     </button>
     
-    <button (click)="pressedQ17()">
-        <span style="background-color: red;" *ngIf="addReview17 == false && selectedOptions[16] == null">
+    <button class="btn btn-light" (click)="pressedQ17()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview17 == false && selectedOptions[16] == null">
             Q17
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview17 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview17 == true">
             Q17
-        </span>
-        <span style="background-color: green;" *ngIf="addReview17 == false && selectedOptions[16] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview17 == false && selectedOptions[16] != null">
             Q17
-        </span>
+        </div>
     </button>
     
-    <button (click)="pressedQ18()">
-        <span style="background-color: red;" *ngIf="addReview18 == false && selectedOptions[17] == null">
+    <button class="btn btn-light" (click)="pressedQ18()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview18 == false && selectedOptions[17] == null">
             Q18
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview18 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview18 == true">
             Q18
-        </span>
-        <span style="background-color: green;" *ngIf="addReview18 == false && selectedOptions[17] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview18 == false && selectedOptions[17] != null">
             Q18
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ19()">
-        <span style="background-color: red;" *ngIf="addReview19 == false && selectedOptions[18] == null">
+    <button class="btn btn-light" (click)="pressedQ19()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview19 == false && selectedOptions[18] == null">
             Q19
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview19 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview19 == true">
             Q19
-        </span>
-        <span style="background-color: green;" *ngIf="addReview19 == false && selectedOptions[18] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview19 == false && selectedOptions[18] != null">
             Q19
-        </span>
+        </div>
     </button>
 
-    <button (click)="pressedQ20()">
-        <span style="background-color: red;" *ngIf="addReview20 == false && selectedOptions[19] == null">
+    <button class="btn btn-light" (click)="pressedQ20()">
+        <div style="color: red;" class="test-Btn" *ngIf="addReview20 == false && selectedOptions[19] == null">
             Q20
-            </span>
-        <span style="background-color: blue;" *ngIf="addReview20 == true">
+            </div>
+        <div style="color: blue;" class="test-Btn" *ngIf="addReview20 == true">
             Q20
-        </span>
-        <span style="background-color: green;" *ngIf="addReview20 == false && selectedOptions[19] != null">
+        </div>
+        <div style="color: green;" class="test-Btn" *ngIf="addReview20 == false && selectedOptions[19] != null">
             Q20
-        </span>
+        </div>
     </button>
 
 </section>
@@ -255,63 +255,304 @@
 
 <section *ngIf="showQ1 == true">
     <div>
+        <table class="table">
+            <thead>
+                <tr >
+                    <th colspan="2">Q. 1 {{level1[0].question}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="radio" name="option0" [checked]="checkq1o1" (click)="keepChecked1('1')" (click)="selectedOptions[0] = level1[0].option1">
+                    </td>
+                    <td>
+                        {{level1[0].option1}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option0" [checked]="checkq1o2" (click)="keepChecked1('2')" (click)="selectedOptions[0] = level1[0].option2">
+                    </td>
+                    <td>
+                        {{level1[0].option2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option0" [checked]="checkq1o3" (click)="keepChecked1('3')" (click)="selectedOptions[0] = level1[0].option3">
+                    </td>
+                    <td>
+                        {{level1[0].option3}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option0" [checked]="checkq1o4" (click)="keepChecked1('4')" (click)="selectedOptions[0] = level1[0].option4">
+                    </td>
+                    <td>
+                        {{level1[0].option4}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="review1" (change)="addReview1 = !addReview1">
+                    </td>
+                    <td>
+                        Add to Review
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-        Q. 1 {{level1[0].question}}
+        <!-- Q. 1 {{level1[0].question}}
         <input type="radio" name="option0" [checked]="checkq1o1" (click)="keepChecked1('1')" (click)="selectedOptions[0] = level1[0].option1">{{level1[0].option1}}
         <input type="radio" name="option0" [checked]="checkq1o2" (click)="keepChecked1('2')" (click)="selectedOptions[0] = level1[0].option2">{{level1[0].option2}}
         <input type="radio" name="option0" [checked]="checkq1o3" (click)="keepChecked1('3')" (click)="selectedOptions[0] = level1[0].option3">{{level1[0].option3}}
         <input type="radio" name="option0" [checked]="checkq1o4" (click)="keepChecked1('4')" (click)="selectedOptions[0] = level1[0].option4">{{level1[0].option4}}
         
         <br>
-        <input type="checkbox" name="review1" (change)="addReview1 = !addReview1">Add to Review
+        <input type="checkbox" name="review1" (change)="addReview1 = !addReview1">Add to Review -->
 
     </div>
 </section>
 
 <section *ngIf="showQ2 == true">
     <div>
-
-        Q. 2 {{level1[1].question}}
+        <table class="table">
+            <thead>
+                <tr >
+                    <th colspan="2">Q. 2 {{level1[1].question}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="radio" name="option1" [checked]="checkq2o1" (click)="keepChecked2('1')" (click)="selectedOptions[1] = level1[1].option1">
+                    </td>
+                    <td>
+                        {{level1[1].option1}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option1" [checked]="checkq2o2" (click)="keepChecked2('2')" (click)="selectedOptions[1] = level1[1].option2">
+                    </td>
+                    <td>
+                        {{level1[1].option2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option1" [checked]="checkq2o3" (click)="keepChecked2('3')" (click)="selectedOptions[1] = level1[1].option3">
+                    </td>
+                    <td>
+                        {{level1[1].option3}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option1" [checked]="checkq2o4" (click)="keepChecked2('4')" (click)="selectedOptions[1] = level1[1].option4">
+                    </td>
+                    <td>
+                        {{level1[1].option4}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="review2" (change)="addReview2 = !addReview2">
+                    </td>
+                    <td>
+                        Add to Review
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Q. 2 {{level1[1].question}}
         <input type="radio" name="option1" [checked]="checkq2o1" (click)="keepChecked2('1')" (click)="selectedOptions[1] = level1[1].option1">{{level1[1].option1}}
         <input type="radio" name="option1" [checked]="checkq2o2" (click)="keepChecked2('2')" (click)="selectedOptions[1] = level1[1].option2">{{level1[1].option2}}
         <input type="radio" name="option1" [checked]="checkq2o3" (click)="keepChecked2('3')" (click)="selectedOptions[1] = level1[1].option3">{{level1[1].option3}}
         <input type="radio" name="option1" [checked]="checkq2o4" (click)="keepChecked2('4')" (click)="selectedOptions[1] = level1[1].option4">{{level1[1].option4}}
 
         <br>
-        <input type="checkbox" name="review2" (change)="addReview2 = !addReview2">Add to Review
+        <input type="checkbox" name="review2" (change)="addReview2 = !addReview2">Add to Review -->
     </div>
 </section>
 
 <section *ngIf="showQ3 == true">
     <div>
-
-        Q. 3 {{level1[2].question}}
+        <table class="table">
+            <thead>
+                <tr >
+                    <th colspan="2">Q. 3 {{level1[2].question}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="radio" name="option2" [checked]="checkq3o1" (click)="keepChecked3('1')"  (click)="selectedOptions[2] = level1[2].option1">
+                    </td>
+                    <td>
+                        {{level1[2].option1}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option2" [checked]="checkq3o2" (click)="keepChecked3('2')"  (click)="selectedOptions[2] = level1[2].option2">
+                    </td>
+                    <td>
+                        {{level1[2].option2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option2" [checked]="checkq3o3" (click)="keepChecked3('3')"  (click)="selectedOptions[2] = level1[2].option3">
+                    </td>
+                    <td>
+                        {{level1[2].option3}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option2" [checked]="checkq3o4" (click)="keepChecked3('4')"  (click)="selectedOptions[2] = level1[2].option4">
+                    </td>
+                    <td>
+                        {{level1[2].option4}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="review3" (change)="addReview3 = !addReview3">
+                    </td>
+                    <td>
+                        Add to Review
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Q. 3 {{level1[2].question}}
         <input type="radio" name="option2" [checked]="checkq3o1" (click)="keepChecked3('1')"  (click)="selectedOptions[2] = level1[2].option1">{{level1[2].option1}}
         <input type="radio" name="option2" [checked]="checkq3o2" (click)="keepChecked3('2')"  (click)="selectedOptions[2] = level1[2].option2">{{level1[2].option2}}
         <input type="radio" name="option2" [checked]="checkq3o3" (click)="keepChecked3('3')"  (click)="selectedOptions[2] = level1[2].option3">{{level1[2].option3}}
         <input type="radio" name="option2" [checked]="checkq3o4" (click)="keepChecked3('4')"  (click)="selectedOptions[2] = level1[2].option4">{{level1[2].option4}}
         
         <br>
-        <input type="checkbox" name="review3" (change)="addReview3 = !addReview3">Add to Review
+        <input type="checkbox" name="review3" (change)="addReview3 = !addReview3">Add to Review -->
     </div>
 </section>
 
 <section *ngIf="showQ4 == true">
     <div>
-
-        Q. 4 {{level1[3].question}}
+        <table class="table">
+            <thead>
+                <tr >
+                    <th colspan="2">Q. 4 {{level1[3].question}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="radio" name="option3" [checked]="checkq4o1" (click)="keepChecked4('1')" (click)="selectedOptions[3] = level1[3].option1">
+                    </td>
+                    <td>
+                        {{level1[3].option1}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option3" [checked]="checkq4o2" (click)="keepChecked4('2')" (click)="selectedOptions[3] = level1[3].option2">
+                    </td>
+                    <td>
+                        {{level1[3].option2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option3" [checked]="checkq4o3" (click)="keepChecked4('3')" (click)="selectedOptions[3] = level1[3].option3">
+                    </td>
+                    <td>
+                        {{level1[3].option3}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option3" [checked]="checkq4o4" (click)="keepChecked4('4')" (click)="selectedOptions[3] = level1[3].option4">
+                    </td>
+                    <td>
+                        {{level1[3].option4}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="review4" (change)="addReview4 = !addReview4">
+                    </td>
+                    <td>
+                        Add to Review
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Q. 4 {{level1[3].question}}
         <input type="radio" name="option3" [checked]="checkq4o1" (click)="keepChecked4('1')" (click)="selectedOptions[3] = level1[3].option1">{{level1[3].option1}}
         <input type="radio" name="option3" [checked]="checkq4o2" (click)="keepChecked4('2')" (click)="selectedOptions[3] = level1[3].option2">{{level1[3].option2}}
         <input type="radio" name="option3" [checked]="checkq4o3" (click)="keepChecked4('3')" (click)="selectedOptions[3] = level1[3].option3">{{level1[3].option3}}
         <input type="radio" name="option3" [checked]="checkq4o4" (click)="keepChecked4('4')" (click)="selectedOptions[3] = level1[3].option4">{{level1[3].option4}}
         <br>
-        <input type="checkbox" name="review4" (change)="addReview4 = !addReview4">Add to Review
+        <input type="checkbox" name="review4" (change)="addReview4 = !addReview4">Add to Review -->
     </div>
 </section>
 
 <section *ngIf="showQ5 == true">
     <div>
-
+        <table class="table">
+            <thead>
+                <tr >
+                    <th colspan="2">Q. 5 {{level1[4].question}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="radio" name="option4" [checked]="checkq5o1" (click)="keepChecked5('1')" (click)="selectedOptions[4] = level1[4].option1">
+                    </td>
+                    <td>
+                        {{level1[4].option1}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option4" [checked]="checkq5o2" (click)="keepChecked5('2')" (click)="selectedOptions[4] = level1[4].option2">
+                    </td>
+                    <td>
+                        {{level1[4].option2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option4" [checked]="checkq5o3" (click)="keepChecked5('3')" (click)="selectedOptions[4] = level1[4].option3">
+                    </td>
+                    <td>
+                        {{level1[4].option3}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="option4" [checked]="checkq5o4" (click)="keepChecked5('4')" (click)="selectedOptions[4] = level1[4].option4">
+                    </td>
+                    <td>
+                        {{level1[4].option4}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="review5" (change)="addReview5 = !addReview5">
+                    </td>
+                    <td>
+                        Add to Review
+                    </td>
+                </tr>
+            </tbody>
+        </table> 
         Q. 5 {{level1[4].question}}
         <input type="radio" name="option4" [checked]="checkq5o1" (click)="keepChecked5('1')" (click)="selectedOptions[4] = level1[4].option1">{{level1[4].option1}}
         <input type="radio" name="option4" [checked]="checkq5o2" (click)="keepChecked5('2')" (click)="selectedOptions[4] = level1[4].option2">{{level1[4].option2}}
@@ -527,9 +768,11 @@
     </div>
 </section>
 
+<div style="width:100%;padding-top:10px;text-align:center">
+    <button (click)="showSelectedOptions()" class="btn btn-style">Show</button>&nbsp;
+    <button (click)="submitTest()" class="btn btn-style">Submit</button>
+</div>
 
-<button (click)="showSelectedOptions()">Show</button>
-<button (click)="submitTest()">Submit</button>
 </section>
 
 <section *ngIf = "showTest==false">

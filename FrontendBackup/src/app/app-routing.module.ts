@@ -24,8 +24,8 @@ const routes: Routes = [
   // {path:"studentDashboard",component:StudentDashboardComponent},
   {path:"adminTest",component:AdminTestComponent,canActivate:[AuthenticationAdminGuard]},
   // {path:"adminTest",component:AdminTestComponent},
-  // {path:"adminReport",component:AdminReportsComponent,canActivate:[AuthenticationAdminGuard]},
-  {path:"adminReport",component:AdminReportsComponent},
+  {path:"adminReport",component:AdminReportsComponent,canActivate:[AuthenticationAdminGuard]},
+  // {path:"adminReport",component:AdminReportsComponent},
   {path:"detailReport/:id",component:SingleReportAdminComponent,canActivate:[AuthenticationAdminGuard]},
   {path: '404-invalid', component:NotFoundComponent},
   {path: '**', redirectTo: '/404-invalid'}

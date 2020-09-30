@@ -2,7 +2,7 @@
 <mat-toolbar color="primary" class="navbar">
     <div style="font-family:'Ubuntu';font-weight:bolder;letter-spacing:1px;font-size:25px;padding-left:25px;"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;LTIeQ</div>
     <div>
-        <span class="logout"><a (click)="logout()" >Logout&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true" ></i></a></span>
+        <span class="logout" style="cursor:pointer"><a (click)="logout()" >Logout&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true" ></i></a></span>
     </div>
 </mat-toolbar>
 <div class="btn-div">
@@ -42,9 +42,9 @@
                 <th>Contact Number</th>
                 <th>City</th>
                 <th>State</th>
-                <th>Score Level 1</th>
-                <th>Score Level 2</th>
-                <th>Score Level 3</th>
+                <th *ngIf="L1Selected==true">Score Level 1</th>
+                <th *ngIf="L2Selected==true">Score Level 2</th>
+                <th *ngIf="L3Selected==true">Score Level 3</th>
             </tr>
         </thead>
         <tbody>
@@ -54,12 +54,15 @@
                 <td>{{i.mobile}}</td>
                 <td>{{i.city}}</td>
                 <td>{{i.state}}</td>
-                <td>{{i.Score1}}</td>
-                <td>{{i.Score2}}</td>
-                <td>{{i.Score3}}</td>
+                <td *ngIf="L1Selected==true">{{i.Score1}}</td>
+                <td *ngIf="L2Selected==true">{{i.Score2}}</td>
+                <td *ngIf="L3Selected==true">{{i.Score3}}</td>
             </tr>
         </tbody>
-    </table>    
+    </table>
+    <div align="center" stylae="width:100%;">
+        <button class="btn btn-style" (click)="displayAllReports()">Back to All Details</button>
+    </div>    
 </div>
 
 <div class="modal fade" id="filterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -134,7 +137,7 @@
             </table>
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button type="submit" (click)="filterSearch()" (click)="displaySearchTable()" class="btn btn-style" data-dismiss="modal">Search</button>
+            <button type="submit" (click)="filterSearch()" class="btn btn-style" data-dismiss="modal">Search</button>
           </div>
         </div>
       </div>

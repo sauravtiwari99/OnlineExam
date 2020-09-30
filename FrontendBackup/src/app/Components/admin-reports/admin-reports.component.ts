@@ -32,8 +32,12 @@ export class AdminReportsComponent implements OnInit {
   L2L3Level:boolean=false;
   L1L3Level:boolean=false;
   L123Level:boolean=false;
+  L1Selected:boolean=false;
+  L2Selected:boolean=false;
+  L3Selected: boolean=false;
   max;
   filterBasedTable: boolean;
+  
 
   constructor(private _adminReportService:AdminReportService,private _router:Router,private _toastr:ToastrService,private _formBuilder:FormBuilder) { 
   }
@@ -90,6 +94,17 @@ export class AdminReportsComponent implements OnInit {
         console.log(result)
         this.searchBasedList=result
       });
+      if(this.selectedLevel=="L1"){
+        this.L1Selected=true;
+        this.L2Selected=false;
+        this.L3Selected=false
+      }
+      else if(this.selectedLevel=="L2"){
+        this.L2Selected=true;
+        this.L1Selected=false;
+        this.L3Selected=false;
+      }
+      this.displaySearchTable();
     }
     else if((this.selectedLevel=="L3")&&(this.marksEntered>=0 && this.marksEntered<=20)){
       let data={
@@ -103,6 +118,10 @@ export class AdminReportsComponent implements OnInit {
         console.log(result);
         this.searchBasedList=result
       });
+      this.displaySearchTable();
+        this.L2Selected=false ;
+        this.L1Selected=false;
+        this.L3Selected=true;
     }
     else if((this.selectedLevel=="L2,L3"||this.selectedLevel=="L1,L3")&&(this.marksEntered>=0 && this.marksEntered<=60)){
       let data={
@@ -116,6 +135,17 @@ export class AdminReportsComponent implements OnInit {
         console.log(result);
         this.searchBasedList=result
       });
+      if(this.selectedLevel=="L2,L3"){
+        this.L2Selected=true;
+        this.L1Selected=false;
+        this.L3Selected=true;
+      }
+      else if(this.selectedLevel=="L1,L3"){
+        this.L2Selected=false;
+        this.L1Selected=true;
+        this.L3Selected=true;
+      }
+      this.displaySearchTable();
     }
     else if((this.selectedLevel=="L1,L2")&&(this.marksEntered>=0 && this.marksEntered<=80)){
       let data={
@@ -129,6 +159,10 @@ export class AdminReportsComponent implements OnInit {
         console.log(result);
         this.searchBasedList=result
       });
+        this.L2Selected=true;
+        this.L1Selected=true;
+        this.L3Selected=false;
+      this.displaySearchTable();
     }
     else if((this.selectedLevel=="L1,L2,L3")&&(this.marksEntered>=0 && this.marksEntered<=100)){
       let data={
@@ -142,6 +176,10 @@ export class AdminReportsComponent implements OnInit {
         console.log(result);
         this.searchBasedList=result
       });
+        this.L2Selected=true;
+        this.L1Selected=true;
+        this.L3Selected=true;
+      this.displaySearchTable();
     }
     else{
       this._toastr.error("Failed","Invalid Input");
@@ -226,6 +264,10 @@ export class AdminReportsComponent implements OnInit {
   displaySearchTable(){
     this.userDataReceived=false;
     this.filterBasedTable=true;
+  }
+  displayAllReports(){
+    this.userDataReceived=true;
+    this.filterBasedTable=false;
   }
   logout(){
     this._router.navigate([""]);

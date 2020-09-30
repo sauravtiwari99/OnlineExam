@@ -63,7 +63,7 @@ namespace GladiatorBackend.Controllers
 
             else if (SR.level.Length == 2)
             {
-                var all = data.Database.SqlQuery<reportOne>(@"select Users.full_name, Users.email_id, Users.mobile, Users.city, Users.state, Reports.level" + SR.level[0] + "_score as Score" + SR.level[0] + ", Reports.level" + SR.level[1] + "_score as Score" + SR.level[1] + " from Users inner join Reports on Reports.user_id = Users.user_id inner join Exam_List on Reports.exam_name = Exam_List.exam_name where Users.city =@city and Users.state=@state and Exam_List.exam_name=@tech and Reports.level" + SR.level[0] + "_score>@marks and Reports.level" + SR.level[1] + "_score > @marks", new SqlParameter("@city", SR.city), new SqlParameter("@state", SR.state), new SqlParameter("@tech", SR.tech), new SqlParameter("@marks", SR.marks)).ToList();
+                var all = data.Database.SqlQuery<reportOne>(@"select Users.full_name, Users.email_id, Users.mobile, Users.city, Users.state, Reports.level" + SR.level[0] + "_score as Score" + SR.level[0] + ", Reports.level" + SR.level[1] + "_score as Score" + SR.level[1] + " from Users inner join Reports on Reports.user_id = Users.user_id inner join Exam_List on Reports.exam_name = Exam_List.exam_name where Users.city =@city and Users.state=@state and Exam_List.exam_name=@tech and (Reports.level" + SR.level[0] + "_score + Reports.level" + SR.level[1] + "_score) > @marks", new SqlParameter("@city", SR.city), new SqlParameter("@state", SR.state), new SqlParameter("@tech", SR.tech), new SqlParameter("@marks", SR.marks)).ToList();
                 return all;
 
             }
@@ -71,7 +71,7 @@ namespace GladiatorBackend.Controllers
 
             else if (SR.level.Length == 3)
             {
-                var all = data.Database.SqlQuery<reportOne>(@"select Users.full_name, Users.email_id, Users.mobile, Users.city, Users.state, Reports.level" + SR.level[0] + "_score as Score" + SR.level[0] + " , Reports.level" + SR.level[1] + "_score as Score" + SR.level[1] + ", Reports.level" + SR.level[2] + "_score as Score" + SR.level[2] + " from Users inner join Reports on Reports.user_id = Users.user_id inner join Exam_List on Reports.exam_name = Exam_List.exam_name where Users.city =@city and Users.state =@state and Exam_List.exam_name =@tech and Reports.level" + SR.level[0] + "_score>@marks and Reports.level" + SR.level[1] + "_score > @marks and Reports.level" + SR.level[2] + "_score > @marks", new SqlParameter("@city", SR.city), new SqlParameter("@state", SR.state), new SqlParameter("@tech", SR.tech), new SqlParameter("@marks", SR.marks)).ToList();
+                var all = data.Database.SqlQuery<reportOne>(@"select Users.full_name, Users.email_id, Users.mobile, Users.city, Users.state, Reports.level" + SR.level[0] + "_score as Score1 , Reports.level" + SR.level[1] + "_score as Score2, Reports.level" + SR.level[2] + "_score as Score3 from Users inner join Reports on Reports.user_id = Users.user_id inner join Exam_List on Reports.exam_name = Exam_List.exam_name where Users.city =@city and Users.state =@state and Exam_List.exam_name =@tech and (Reports.level" + SR.level[0] + "_score + Reports.level" + SR.level[1] + "_score + Reports.level" + SR.level[2] + "_score) > @marks", new SqlParameter("@city", SR.city), new SqlParameter("@state", SR.state), new SqlParameter("@tech", SR.tech), new SqlParameter("@marks", SR.marks)).ToList();
                 return all;
 
             }

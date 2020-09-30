@@ -12,6 +12,7 @@ import { LoginService } from 'src/app/Services/login.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitCheck:boolean=false;
+  userData;
 
   constructor(private _formBuilder:FormBuilder,private _router:Router,private _loginService:LoginService,private _toastr:ToastrService) {
     this.loginForm=this._formBuilder.group({
@@ -38,8 +39,14 @@ export class LoginComponent implements OnInit {
       console.log(data);
       this._loginService.validateStudent(data).subscribe(
         result => {
-          console.log(result[0]);
-          sessionStorage.setItem('studentData', JSON.stringify(result));
+          // console.log(result);
+          this.userData=result;
+          console.log(this.userData[0].user_id);
+
+          sessionStorage.setItem('studentData', this.userData);
+          sessionStorage.setItem('studentId',this.userData[0].user_id)
+          sessionStorage.setItem('studentName',this.userData[0].full_name)
+
           if(result[0]!=undefined){
             this._toastr.success('Success', 'Logged In Successfully');
             this._router.navigate(['studentDashboard']);

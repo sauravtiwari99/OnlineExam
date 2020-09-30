@@ -20,6 +20,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha';
 import { AdminTestComponent } from './Components/admin-test/admin-test.component';
 import { AdminReportsComponent } from './Components/admin-reports/admin-reports.component';
 import { SingleReportAdminComponent } from './Components/single-report-admin/single-report-admin.component';
+import { StudentReportComponent } from './Components/student-report/student-report.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SingleReportAdminComponent } from './Components/single-report-admin/sin
     StudentDashboardComponent,
     AdminTestComponent,
     AdminReportsComponent,
-    SingleReportAdminComponent
+    SingleReportAdminComponent,
+    StudentReportComponent
   ],
   imports: [
     BrowserModule,

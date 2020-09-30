@@ -9,6 +9,7 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { SingleReportAdminComponent } from './Components/single-report-admin/single-report-admin.component';
 import { StudentDashboardComponent } from './Components/student-dashboard/student-dashboard.component';
+import { StudentReportComponent } from './Components/student-report/student-report.component';
 import { AuthenticationAdminGuard } from './Guards/authentication-admin.guard';
 import { AuthenticationGuard } from './Guards/authentication.guard';
 
@@ -20,8 +21,10 @@ const routes: Routes = [
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"adminDashboard",component:AdminDashboardComponent,canActivate:[AuthenticationAdminGuard]},
   // {path:"adminDashboard",component:AdminDashboardComponent},
-  {path:"studentDashboard",component:StudentDashboardComponent,canActivate:[AuthenticationGuard]},
-  // {path:"studentDashboard",component:StudentDashboardComponent},
+  // {path:"studentDashboard",component:StudentDashboardComponent,canActivate:[AuthenticationGuard]},
+  {path:"studentDashboard",component:StudentDashboardComponent},
+  // {path:"studentReport",component:StudentReportComponent,canActivate:[AuthenticationGuard]},
+  {path:"studentReport",component:StudentReportComponent},
   {path:"adminTest",component:AdminTestComponent,canActivate:[AuthenticationAdminGuard]},
   // {path:"adminTest",component:AdminTestComponent},
   {path:"adminReport",component:AdminReportsComponent,canActivate:[AuthenticationAdminGuard]},

@@ -18,9 +18,9 @@ namespace GladiatorBackend.Controllers
         OnlineExamEntities data = new OnlineExamEntities();
         [HttpPost]
         [Route("getUser")]
-        public List<string> validateUser([FromBody] User userDetails)
+        public List<User> validateUser([FromBody] User userDetails)
         {
-            var name = data.Database.SqlQuery<string>(@"Select full_name from Users where email_id =@email and password = @password", new SqlParameter("@email", userDetails.email_id), new SqlParameter("@password", userDetails.password)).ToList();
+            var name = data.Database.SqlQuery<User>(@"Select * from Users where email_id =@email and password = @password", new SqlParameter("@email", userDetails.email_id), new SqlParameter("@password", userDetails.password)).ToList();
             return name;
         }
 

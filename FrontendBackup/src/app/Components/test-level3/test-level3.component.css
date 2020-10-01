@@ -25,12 +25,8 @@ tbody{
     color:#3F51B5;
     font-weight: bolder;
 }
-.btn-Red{
-    background-color: red;
-}
-.btn-Blue{
-    background-color: blue;
-}
-.btn-Green{
-    background-color: chartreuse;
+.test-Btn{
+    font-family:'Ubuntu';
+    font-size:20px;
+    font-weight:bolder
 }

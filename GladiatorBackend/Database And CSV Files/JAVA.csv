@@ -1,0 +1,51 @@
+sno,question,option1,option2,option3,option4,correct option,difficulty
+1,Java is a ___________ language.,Structured,Procedural,Object Oriented,None,Object Oriented,easy
+2,Static keyword can be used on __________.,Class only,Methods and Classes,Variables only,Methods and Variables,Methods and Variables,easy
+3,Which of the inheritance is not directly supported in Java?,Single,Multiple,Hierarchical,Multilevel,Multiple,easy
+4,Re-initialization of values is not possible for variables of type ___________ .,Static,int,float,String,Static,easy
+5,Final keyword can be used on __________.,Classes,Methods,Variables,All the above,All the above,easy
+6,Constructor in java is a ____________.,Special member function,Keyword,Garbage collector,Variable,Special member function,easy
+7,Which constructor creates an empty string buffer with the specified capacity as length?,StringBuffer(),StringBuffer(String str),StringBuffer(int capacity),None of the above,StringBuffer(int capacity),easy
+8,Which package contains the input/output libraries?,util,net,io,ipop,io,easy
+9,Which of these operators can be used to concatenate two or more String objects?,=,+=,+,.,+,easy
+10,Which of these method of class String is used to extract a single character from a String object?,charat(),charAt(),CharAt(),CHARAT(),charAt(),easy
+11,Which of these operators is used to allocate memory to array variable in Java?,malloc,realloc,alloc,new,new,easy
+12,Which of the following loops will execute the body of loop even when condition controlling the loop is initially false?,while,do while,for,if,do while,easy
+13,Which of these statement is incorrect?,switch statement is more efficient than a set of nested ifs.,two case constants in the same switch can have identical values.,"switch statement can only test for equality,whereas if statement can evaluate any type of boolean expression.",it is possible to create a nested switch statements.,two case constants in the same switch can have identical values.,easy
+14,Which of these keyword can be used in subclass to call the constructor of superclass?,super,this,extent,extends,super,easy
+15,Which of these keywords can be used to prevent Method overriding?,static,constant,protected,final,final,easy
+16,Which of these is supported by method overriding in Java?,Abstraction,Encapsulation,Polymorphism,None of the mentioned,Polymorphism,easy
+17,Which of these can be overloaded?,Methods,Constructors,Variables,Methods and constructors,Methods and constructors,easy
+18,What is the return type of a method that does not returns any value?,int,void,float,String,void,easy
+19,Which of the following is not a class?,String,System,Integer,char,char,easy
+20,Which method can be defined only once in a program?,main method,finalize method,static method,private method,main method,easy
+21,Which of these statement is incorrect?,Every class must contain a main() method.,Applets do not require a main() method at all.,There can be only one main() method in a program.,main() method must be made public.,Every class must contain a main() method.,medium
+22,What method is used to specify a container's layout?,setLayout(),setSize(),area(),resize(),setLayout(),medium
+23,Which of the following is a method having same name as that of it's class?,finalize,constructor,delete,class,constructor,medium
+24,What will be the output of the program?   public class Foo { public static void main(String[] args)  { try{return; } finally { System.out.println( “Finally” ); } } },An exception is thrown at run-time.,The code runs with no output.,Finally,Compilation fails.,Finally,medium
+25,"What will be the value of an after execution of the following statements? int a = 23,b = 34; a = ((a < b) ? (b + a) : (b – a);",11,23,57,34,57,medium
+26,Thread priority in Java is?,integer,float,double,long,integer,medium
+27,Container is a ____________ for component class.,derived,base,interface,package,base,medium
+28,Which of the following represent legal flow control statements?,continue(inner);,break();,break;,exit();,break;,medium
+29,A class can be converted to a thread by implementing the interface _________.,Thread,Runnable,Start,Yield,Runnable,medium
+30,A class contains __________.,data and variables,data members and constructors,data members and member function,member functions,data members and member function,medium
+31,Which of the below statement about JUnit is false?,It is an open source framework,It provides an annotation to identify test methods,It provides test runners for running test,They cannot be run automatically,They cannot be run automatically,medium
+32,JUnits are used for which type of testing?,Unit Testing,Integration Testing,System Testing,Blackbox Testing,Unit Testing,medium
+33,Which of the below is an incorrect annotation with respect to JUnits?,@Test,@BeforeClass,@Junit,@AfterEach,@Junit,medium
+34,Which of these is not a mocking framework?,EasyMock,Mockito,PowerMock,MockJava,MockJava,medium
+35,Which method is used to verify the actual and expected results in Junits?,assert(),equals(),==,isEqual(),assert(),medium
+36,What does assertSame() method use for assertion?,equals() method,isEqual() method,==,compare() method,==,medium
+37,How to let junits know that they need to be run using PowerMock?,@PowerMock,@RunWith(PowerMock),@RunWith(Junits),@RunWith(PowerMockRunner.class),@RunWith(PowerMockRunner.class),medium
+38,How can we simulate if then behavior in Junits?,if{} else{},if(){} else{},Mockito.when().thenReturn();,Mockito.if().then();,Mockito.when().thenReturn();,medium
+39,What is used to inject mock fields into the tested object automatically?,@InjectMocks,@Inject,@InjectMockObject,@Mock,@InjectMocks,medium
+40,Which of these is a process of extracting/removing the state of an object from a stream?,Serialization,Externalization,File Filtering,Deserialization,Deserialization,medium
+41,Which of these process occur automatically by java run time system?,Serialization,Memory allocation,Deserialization,All of the mentioned,All of the mentioned,hard
+42,Which of these interface extends DataInput interface?,Serializable,Externalization,ObjectOutput,ObjectInput,ObjectInput,hard
+43,Which of these is a method of ObjectInput interface used to deserialize an object from a stream?,int read(),void close(),Object readObject(),Object WriteObject(),Object readObject(),hard
+44,Which of these class extend InputStream class?,ObjectStream,ObjectInputStream,ObjectOutput,ObjectInput,ObjectInputStream,hard
+45,Which of these events is generated when the size of an event is changed?,ComponentEvent,ContainerEvent,FocusEvent,InputEvent,ComponentEvent,hard
+46,Which of these are integer constants of ComponentEvent class?,COMPONENT_HIDDEN,COMPONENT_MOVED,COMPONENT_RESIZE,All of the mentioned,All of the mentioned,hard
+47,Which of these methods can be used to get reference to a component that was removed from a container?,getComponent(),getchild(),getContainerComponent(),getComponentChild(),getchild(),hard
+48,Which of these methods can be used to know the type of focus change?,typeFocus(),typeEventFocus(),isTemporary(),isPermanent(),isTemporary(),hard
+49,FocusEvent is subclass of which of these classes?,ComponentEvent,ContainerEvent,ItemEvent,InputEvent,ComponentEvent,hard
+50,Which of these events is generated when computer gains or loses input focus?,ComponentEvent,ContainerEvent,FocusEvent,InputEvent,FocusEvent,hard

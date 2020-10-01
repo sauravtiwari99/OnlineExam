@@ -1,0 +1,9 @@
+Please make required changes in web.config file,
+
+change data source = your sql server path , catalog = Online_Exam
+
+and 
+~\OnlineExam\GladiatorBackend\.vs\GladiatorBackend\config
+open applicationhost.config file and at line 165 change the path to your path,
+
+Other guidelines, keep all SQL file in C:\ or else, html doesn't read them.

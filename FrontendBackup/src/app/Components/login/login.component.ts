@@ -40,14 +40,14 @@ export class LoginComponent implements OnInit {
       this._loginService.validateStudent(data).subscribe(
         result => {
           // console.log(result);
-          this.userData=result;
-          console.log(this.userData[0].user_id);
-
-          sessionStorage.setItem('studentData', this.userData);
-          sessionStorage.setItem('studentId',this.userData[0].user_id)
-          sessionStorage.setItem('studentName',this.userData[0].full_name)
+          
 
           if(result[0]!=undefined){
+            this.userData=result;
+            console.log(this.userData[0].user_id);
+            sessionStorage.setItem('studentData', this.userData);
+            sessionStorage.setItem('studentId',this.userData[0].user_id)
+            sessionStorage.setItem('studentName',this.userData[0].full_name)
             this._toastr.success('Success', 'Logged In Successfully');
             this._router.navigate(['studentDashboard']);
           }

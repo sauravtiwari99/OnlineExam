@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let i of allUserData | paginate: { id :'a', itemsPerPage: 10, currentPage: page}">
+            <tr *ngFor="let i of allUserData | paginate: { id :'a', itemsPerPage: 5, currentPage: page}">
                 <td>{{i.full_name}}</td>
                 <td>{{i.email_id}}</td>
                 <td>{{i.mobile}}</td>
@@ -51,7 +51,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let i of searchBasedList">
+            <tr *ngFor="let i of searchBasedList | paginate: { id :'b', itemsPerPage: 5, currentPage: page}">
                 <td>{{i.full_name}}</td>
                 <td>{{i.email_id}}</td>
                 <td>{{i.mobile}}</td>
@@ -63,6 +63,9 @@
             </tr>
         </tbody>
     </table>
+    <div style="float:right;">
+        <pagination-controls id="b" (pageChange)="page = $event"></pagination-controls>
+    </div>
     <div align="center" stylae="width:100%;">
         <button class="btn btn-style" (click)="displayAllReports()">Back to All Details</button>
     </div>    

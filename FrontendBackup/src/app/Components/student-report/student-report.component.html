@@ -9,7 +9,7 @@
     <div class="btn-div">
         <span style="font-family:'Ubuntu';font-weight:bolder;font-size:15px;padding-left:20px;">Candidate Name: {{candidateName}}</span>
         <div style="float:right;">
-            <button class="btn btn-style" (click)="print()">Download Reports</button>
+            <button class="btn btn-style" (click)="print()">Download Report</button>
         </div>
     </div>
     <div class="container userTable card-deck" *ngIf="detailsRendered==true">
@@ -26,7 +26,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let j of details">
+                        <tr *ngFor="let j of details | paginate: { id :'d', itemsPerPage: 5, currentPage: page} ">
                             <td>{{j.exam_name}}</td>
                             <td>{{j.level1_score}}</td>
                             <td>{{j.level2_score}}</td>
@@ -35,6 +35,9 @@
                         </tr>   
                     </tbody>
                 </table>
+                <div style="float:right;">
+                    <pagination-controls id="d" (pageChange)="page = $event"></pagination-controls>
+                </div>
             </div>
         </div>
         <div class="card text-center">

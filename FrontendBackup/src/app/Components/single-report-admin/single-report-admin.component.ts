@@ -18,6 +18,7 @@ export class SingleReportAdminComponent implements OnInit {
   dataPieChart=[];
   dataDonutChart=[];
   userName;
+  page : number = 1;
 
   ngOnInit(): void {
     this.detailsRendered=false;

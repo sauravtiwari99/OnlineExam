@@ -16,6 +16,7 @@ export class StudentReportComponent implements OnInit {
   dataDonutChart=[];
   data=[];
   dataPieChart=[];
+  page:number=1;
   constructor(private _adminReportService:AdminReportService,private _router:Router,private _toastr:ToastrService) { }
 
   ngOnInit(): void {

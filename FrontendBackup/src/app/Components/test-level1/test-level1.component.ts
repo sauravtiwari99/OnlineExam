@@ -167,6 +167,8 @@ export class TestLevel1Component implements OnInit {
   addReview19 = false;
   addReview20 = false;
 
+  userId;
+
   constructor(private service:GetQuestionsService,private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
@@ -182,6 +184,7 @@ export class TestLevel1Component implements OnInit {
     data=>{
       this.level1 = data;
     });
+    this.userId=sessionStorage.getItem('candidateId');
   }
   showSelectedOptions(){
     console.log(this.selectedOptions);
@@ -1348,7 +1351,7 @@ export class TestLevel1Component implements OnInit {
     this.showTest = false;
   
     //Store the user ID in session storage as soon as user logs in and send it in the parameter below so its dynamic
-    this.service.storeLevelOne({"user_id":"1","subject":this.testName,"level1_score":this.totalMarks}).subscribe(
+    this.service.storeLevelOne({"user_id":this.userId,"subject":this.testName,"level1_score":this.totalMarks}).subscribe(
       data=>{
         sessionStorage.setItem("report_id",data.toString());
       }

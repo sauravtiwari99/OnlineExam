@@ -37,6 +37,7 @@ export class AdminReportsComponent implements OnInit {
   L3Selected: boolean=false;
   max;
   filterBasedTable: boolean;
+  page:number=1;
   
 
   constructor(private _adminReportService:AdminReportService,private _router:Router,private _toastr:ToastrService,private _formBuilder:FormBuilder) { 

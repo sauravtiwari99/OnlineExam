@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let i of allUserData">
+            <tr *ngFor="let i of allUserData | paginate: { id :'a', itemsPerPage: 10, currentPage: page}">
                 <td>{{i.full_name}}</td>
                 <td>{{i.email_id}}</td>
                 <td>{{i.mobile}}</td>
@@ -31,7 +31,10 @@
                 <td class="viewReportIcon"><a (click)="getParticularReport(i.user_id,i.full_name)"><i class="fa fa-file-text-o" aria-hidden="true" style="font-size:25px;"></i></a></td>
             </tr>
         </tbody>
-    </table>    
+    </table>   
+    <div style="float:right;">
+        <pagination-controls id="a" (pageChange)="page = $event"></pagination-controls>
+    </div>  
 </div>
 <div class="container userTable" *ngIf="filterBasedTable==true">
     <table class="table">

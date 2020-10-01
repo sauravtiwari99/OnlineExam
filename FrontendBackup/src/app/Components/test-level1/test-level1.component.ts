@@ -184,7 +184,7 @@ export class TestLevel1Component implements OnInit {
     data=>{
       this.level1 = data;
     });
-    this.userId=sessionStorage.getItem('candidateId');
+    this.userId=sessionStorage.getItem('studentId');
   }
   showSelectedOptions(){
     console.log(this.selectedOptions);

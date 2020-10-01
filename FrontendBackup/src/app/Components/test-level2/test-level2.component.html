@@ -799,7 +799,7 @@
                 </tr>
             </tbody>
         </table>
-        Q. 9 {{level2[8].question}}
+        <!-- Q. 9 {{level2[8].question}} -->
         <!-- <input type="radio" name="option8" [checked]="checkq9o1" (click)="keepChecked9('1')" (click)="selectedOptions[8] = level2[8].option1">{{level2[8].option1}}
         <input type="radio" name="option8" [checked]="checkq9o2" (click)="keepChecked9('2')" (click)="selectedOptions[8] = level2[8].option2">{{level2[8].option2}}
         <input type="radio" name="option8" [checked]="checkq9o3" (click)="keepChecked9('3')" (click)="selectedOptions[8] = level2[8].option3">{{level2[8].option3}}
@@ -1490,8 +1490,11 @@
     </div>
 </section>
 
-<button (click)="showSelectedOptions()">Show</button>
-<button (click)="submitTest()">Submit</button>
+<div style="width:100%;padding-top:10px;text-align:center">
+    <!-- <button (click)="showSelectedOptions()" class="btn btn-style">Show</button>&nbsp; -->
+    <button (click)="submitTest()" class="btn btn-style">Submit</button>
+</div>
+
 </section>
 
 <section *ngIf = "showTest==false">

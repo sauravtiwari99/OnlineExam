@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { GoogleChartsModule } from 'angular-google-charts';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,7 +59,8 @@ import { TimeGeneratorPipe } from './Pipes/time-generator.pipe';
     RecaptchaModule,
     RecaptchaFormsModule,
     MatToolbarModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    NgxPaginationModule
   ],
   providers: [{
     provide: RECAPTCHA_SETTINGS,

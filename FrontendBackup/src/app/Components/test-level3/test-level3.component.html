@@ -179,7 +179,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review1" (change)="addReview1 = !addReview1">
+                        <input type="checkbox" [checked]="addReview1" name="review1" (change)="addReview1 = !addReview1">
                     </td>
                     <td>
                         Add to Review
@@ -195,7 +195,7 @@
         <input type="radio" name="option0" [checked]="checkq1o4" (click)="keepChecked1('4')" (click)="selectedOptions[0] = level3[0].option4">{{level3[0].option4}}
         
         <br>
-        <input type="checkbox" name="review1" (change)="addReview1 = !addReview1">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review1" (change)="addReview1 = !addReview1">Add to Review -->
 
     </div>
 </section>
@@ -243,7 +243,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review2" (change)="addReview2 = !addReview2">
+                        <input type="checkbox" [checked]="addReview2" name="review2" (change)="addReview2 = !addReview2">
                     </td>
                     <td>
                         Add to Review
@@ -258,7 +258,7 @@
         <input type="radio" name="option1" [checked]="checkq2o4" (click)="keepChecked2('4')" (click)="selectedOptions[1] = level3[1].option4">{{level3[1].option4}}
 
         <br>
-        <input type="checkbox" name="review2" (change)="addReview2 = !addReview2">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review2" (change)="addReview2 = !addReview2">Add to Review -->
     </div>
 </section>
 
@@ -305,7 +305,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review3" (change)="addReview3 = !addReview3">
+                        <input type="checkbox" [checked]="addReview3" name="review3" (change)="addReview3 = !addReview3">
                     </td>
                     <td>
                         Add to Review
@@ -320,7 +320,7 @@
         <input type="radio" name="option2" [checked]="checkq3o4" (click)="keepChecked3('4')"  (click)="selectedOptions[2] = level3[2].option4">{{level3[2].option4}}
         
         <br>
-        <input type="checkbox" name="review3" (change)="addReview3 = !addReview3">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review3" (change)="addReview3 = !addReview3">Add to Review -->
     </div>
 </section>
 
@@ -367,7 +367,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review4" (change)="addReview4 = !addReview4">
+                        <input type="checkbox" [checked]="addReview4" name="review4" (change)="addReview4 = !addReview4">
                     </td>
                     <td>
                         Add to Review
@@ -381,7 +381,7 @@
         <input type="radio" name="option3" [checked]="checkq4o3" (click)="keepChecked4('3')" (click)="selectedOptions[3] = level3[3].option3">{{level3[3].option3}}
         <input type="radio" name="option3" [checked]="checkq4o4" (click)="keepChecked4('4')" (click)="selectedOptions[3] = level3[3].option4">{{level3[3].option4}}
         <br>
-        <input type="checkbox" name="review4" (change)="addReview4 = !addReview4">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review4" (change)="addReview4 = !addReview4">Add to Review -->
     </div>
 </section>
 
@@ -428,7 +428,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review5" (change)="addReview5 = !addReview5">
+                        <input type="checkbox" [checked]="addReview5" name="review5" (change)="addReview5 = !addReview5">
                     </td>
                     <td>
                         Add to Review
@@ -442,7 +442,7 @@
         <input type="radio" name="option4" [checked]="checkq5o3" (click)="keepChecked5('3')" (click)="selectedOptions[4] = level3[4].option3">{{level3[4].option3}}
         <input type="radio" name="option4" [checked]="checkq5o4" (click)="keepChecked5('4')" (click)="selectedOptions[4] = level3[4].option4">{{level3[4].option4}}
         <br>
-        <input type="checkbox" name="review5" (change)="addReview5 = !addReview5">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review5" (change)="addReview5 = !addReview5">Add to Review -->
     </div>
 </section>
 
@@ -489,7 +489,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review6" (change)="addReview6 = !addReview6">
+                        <input type="checkbox" [checked]="addReview6" name="review6" (change)="addReview6 = !addReview6">
                     </td>
                     <td>
                         Add to Review
@@ -503,7 +503,7 @@
         <input type="radio" name="option5" [checked]="checkq6o3" (click)="keepChecked6('3')" (click)="selectedOptions[5] = level3[5].option3">{{level3[5].option3}}
         <input type="radio" name="option5" [checked]="checkq6o4" (click)="keepChecked6('4')" (click)="selectedOptions[5] = level3[5].option4">{{level3[5].option4}}
         <br>
-        <input type="checkbox" name="review6" (change)="addReview6 = !addReview6">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review6" (change)="addReview6 = !addReview6">Add to Review -->
     </div>
 </section>
 
@@ -550,7 +550,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review7" (change)="addReview7 = !addReview7">
+                        <input type="checkbox" [checked]="addReview7" name="review7" (change)="addReview7 = !addReview7">
                     </td>
                     <td>
                         Add to Review
@@ -564,7 +564,7 @@
         <input type="radio" name="option6" [checked]="checkq7o3" (click)="keepChecked7('3')" (click)="selectedOptions[6] = level3[6].option3">{{level3[6].option3}}
         <input type="radio" name="option6" [checked]="checkq7o4" (click)="keepChecked7('4')" (click)="selectedOptions[6] = level3[6].option4">{{level3[6].option4}}
         <br>
-        <input type="checkbox" name="review7" (change)="addReview7 = !addReview7">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review7" (change)="addReview7 = !addReview7">Add to Review -->
     </div>
 </section>
 
@@ -611,7 +611,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review8" (change)="addReview8 = !addReview8">
+                        <input type="checkbox" [checked]="addReview8" name="review8" (change)="addReview8 = !addReview8">
                     </td>
                     <td>
                         Add to Review
@@ -625,7 +625,7 @@
         <input type="radio" name="option7" [checked]="checkq8o3" (click)="keepChecked8('3')" (click)="selectedOptions[7] = level3[7].option3">{{level3[7].option3}}
         <input type="radio" name="option7" [checked]="checkq8o4" (click)="keepChecked8('4')" (click)="selectedOptions[7] = level3[7].option4">{{level3[7].option4}}
         <br>
-        <input type="checkbox" name="review8" (change)="addReview8 = !addReview8">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review8" (change)="addReview8 = !addReview8">Add to Review -->
     </div>
 </section>
 
@@ -672,7 +672,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review9" (change)="addReview9= !addReview9">
+                        <input type="checkbox" [checked]="addReview9" name="review9" (change)="addReview9= !addReview9">
                     </td>
                     <td>
                         Add to Review
@@ -686,7 +686,7 @@
         <input type="radio" name="option8" [checked]="checkq9o3" (click)="keepChecked9('3')" (click)="selectedOptions[8] = level3[8].option3">{{level3[8].option3}}
         <input type="radio" name="option8" [checked]="checkq9o4" (click)="keepChecked9('4')" (click)="selectedOptions[8] = level3[8].option4">{{level3[8].option4}}
         <br>
-        <input type="checkbox" name="review9" (change)="addReview9= !addReview9">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review9" (change)="addReview9= !addReview9">Add to Review -->
     </div>
 </section>
 
@@ -733,7 +733,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="review10" (change)="addReview10 = !addReview10">
+                        <input type="checkbox" [checked]="addReview10" name="review10" (change)="addReview10 = !addReview10">
                     </td>
                     <td>
                         Add to Review
@@ -747,7 +747,7 @@
         <input type="radio" name="option9" [checked]="checkq10o3" (click)="keepChecked10('3')" (click)="selectedOptions[9] = level3[9].option3">{{level3[9].option3}}
         <input type="radio" name="option9" [checked]="checkq10o4" (click)="keepChecked10('4')" (click)="selectedOptions[9] = level3[9].option4">{{level3[9].option4}}
         <br>
-        <input type="checkbox" name="review10" (change)="addReview10 = !addReview10">Add to Review -->
+        <input type="checkbox" [checked]="addReview1" name="review10" (change)="addReview10 = !addReview10">Add to Review -->
     </div>
 </section>
 

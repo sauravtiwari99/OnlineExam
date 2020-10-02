@@ -26,6 +26,7 @@ export class ForgotPasswordComponent implements OnInit {
     });
     this.passwordUpdateForm=this._formBuilder.group({
       password: ['', [Validators.required,Validators.minLength(6)]],
+      confirmPassword : ['']
     });
   }
 
@@ -68,24 +69,31 @@ export class ForgotPasswordComponent implements OnInit {
     }
   }
   updatePassword(){
-    this.passwordSubmit=true;
-    if(this.passwordUpdateForm.invalid){
-      return;
+    if(this.passwordUpdateForm.value['confirmPassword'] != this.passwordUpdateForm.value['password']){
+      console.log(this.passwordUpdateForm.value['confirmPassword'] )
+      this._toastr.error('Failed', 'Passwords did not match');
     }
     else{
-      let data={
-        "email_id":this.userEmail['email_id'],
-        "password":this.passwordUpdateForm.value['password']
-      }
-      console.log(data);
-      this._fpService.confirmPasswordUpdation(data).subscribe(
-        result=>{
-          let res=result;
-          if(res=="Password Changed Successfully"){
-            this._toastr.success('Success', 'Password Reset Sucessfull');
-            this._router.navigate(['']);
+        this.passwordSubmit=true;
+        if(this.passwordUpdateForm.invalid){
+          return;
+        }
+        else{
+          let data={
+            "email_id":this.userEmail['email_id'],
+            "password":this.passwordUpdateForm.value['password']
           }
-        });  
-    }   
-  }
+          console.log(data);
+          this._fpService.confirmPasswordUpdation(data).subscribe(
+            result=>{
+              let res=result;
+              if(res=="Password Changed Successfully"){
+                this._toastr.success('Success', 'Password Reset Sucessfull');
+                this._router.navigate(['']);
+              }
+            });  
+        }   
+      }
+    }
+    
 }

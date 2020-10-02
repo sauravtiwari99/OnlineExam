@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitCheck:boolean=false;
   userData;
+  ls: any;
 
   constructor(private _formBuilder:FormBuilder,private _router:Router,private _loginService:LoginService,private _toastr:ToastrService) {
     this.loginForm=this._formBuilder.group({
@@ -26,8 +27,11 @@ export class LoginComponent implements OnInit {
   }
   get formAccess(){return this.loginForm.controls};
   login(){
+    console.log(this.loginForm.value['loginAs']);
+    this.ls=this.loginForm.value['loginAs'];
     this.submitCheck=true;
     if(this.loginForm.invalid){
+      this._toastr.error('Failed', 'Invalid Credentials or Missing Inputs');
       return;
     }
     else if(this.loginForm.value['loginAs']=="student")
@@ -80,6 +84,10 @@ export class LoginComponent implements OnInit {
           console.log(error);
           this._toastr.error('Failed', 'Invalid Credentials');
         });
+    }
+    else{
+      console.log(this.ls);
+      this._toastr.error('Failed', 'Role Not Selected')
     }
   } 
 }

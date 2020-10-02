@@ -6,7 +6,15 @@
         </div>
     </mat-toolbar>
 
-    <div class="btn-div">
+    <div class="btn-div" *ngIf="detailsRendered!=true" style="padding-left: 35%;padding-top: 10%;">
+        <br>
+        <span style="font-family:'Ubuntu';font-weight:bolder;font-size:20px;padding-left:20px;color: red;">You have not appeared for any tests yet!</span>
+        
+        <div style="padding-left:140px;padding-top: 2%;">
+            <button class="btn btn-style" (click)="giveTest()">Give test</button>
+        </div>
+    </div>
+    <div class="btn-div" *ngIf="detailsRendered==true">
         <span style="font-family:'Ubuntu';font-weight:bolder;font-size:15px;padding-left:20px;">Candidate Name: {{candidateName}}</span>
         <div style="float:right;">
             <button class="btn btn-style" (click)="print()">Download Report</button>

@@ -105,7 +105,7 @@ export class AdminTestComponent implements OnInit {
       )
     }
 
-    else if(this.selectedValue == 'C#/.Net'){
+    else if(this.selectedValue == 'C#/Dotenet'){
       this._adminService.addCSharp(filepath).subscribe(
         data=>{
           if(data=="Added Successfully"){

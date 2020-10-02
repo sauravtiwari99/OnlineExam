@@ -38,7 +38,8 @@ export class AdminReportsComponent implements OnInit {
   max;
   filterBasedTable: boolean;
   page:number=1;
-  
+  showNull = false
+  showNullAll = false
 
   constructor(private _adminReportService:AdminReportService,private _router:Router,private _toastr:ToastrService,private _formBuilder:FormBuilder) { 
   }
@@ -51,6 +52,12 @@ export class AdminReportsComponent implements OnInit {
     this._adminReportService.allUserDetails(this.data).subscribe(result=>{
       console.log(result);
       this.allUserData=result;
+      if(this.allUserData.length == 0){
+        this.showNullAll = true
+      }
+      else{
+        this.showNullAll = false
+      }
     });
     this.userDataReceived=true;
   }
@@ -94,6 +101,12 @@ export class AdminReportsComponent implements OnInit {
       this._adminReportService.userFilteredReport(data).subscribe(result=>{
         console.log(result)
         this.searchBasedList=result
+        if(this.searchBasedList.length == 0){
+          this.showNull = true
+          }
+          else{
+            this.showNull = false
+          }
       });
       if(this.selectedLevel=="L1"){
         this.L1Selected=true;
@@ -118,6 +131,12 @@ export class AdminReportsComponent implements OnInit {
       this._adminReportService.userFilteredReport(data).subscribe(result=>{
         console.log(result);
         this.searchBasedList=result
+        if(this.searchBasedList.length == 0){
+          this.showNull = true
+          }
+          else{
+            this.showNull = false
+          }
       });
       this.displaySearchTable();
         this.L2Selected=false ;
@@ -135,6 +154,12 @@ export class AdminReportsComponent implements OnInit {
       this._adminReportService.userFilteredReport(data).subscribe(result=>{
         console.log(result);
         this.searchBasedList=result
+        if(this.searchBasedList.length == 0){
+          this.showNull = true
+          }
+          else{
+            this.showNull = false
+          }
       });
       if(this.selectedLevel=="L2,L3"){
         this.L2Selected=true;
@@ -159,6 +184,12 @@ export class AdminReportsComponent implements OnInit {
       this._adminReportService.userFilteredReport(data).subscribe(result=>{
         console.log(result);
         this.searchBasedList=result
+        if(this.searchBasedList.length == 0){
+          this.showNull = true
+          }
+          else{
+            this.showNull = false
+          }
       });
         this.L2Selected=true;
         this.L1Selected=true;
@@ -176,6 +207,12 @@ export class AdminReportsComponent implements OnInit {
       this._adminReportService.userFilteredReport(data).subscribe(result=>{
         console.log(result);
         this.searchBasedList=result
+        if(this.searchBasedList.length == 0){
+          this.showNull = true
+          }
+          else{
+            this.showNull = false
+          }
       });
         this.L2Selected=true;
         this.L1Selected=true;

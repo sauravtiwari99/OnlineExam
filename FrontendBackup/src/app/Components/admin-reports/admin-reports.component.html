@@ -10,7 +10,7 @@
 </div>
 
 <div class="container userTable" *ngIf="userDataReceived==true">
-    <table class="table">
+    <table class="table" *ngIf="showNullAll == false">
         <thead>
             <tr>
                 <th>Student Name</th>
@@ -32,12 +32,15 @@
             </tr>
         </tbody>
     </table>   
-    <div style="float:right;">
+    <div style="float:right;" *ngIf="showNullAll == false">
         <pagination-controls id="a" (pageChange)="page = $event"></pagination-controls>
     </div>  
+    <div *ngIf="showNullAll == true" align="center">
+        <span style="font-family:'Ubuntu';font-weight:bolder;font-size:20px;color: red;">No Users Found</span>
+    </div> 
 </div>
 <div class="container userTable" *ngIf="filterBasedTable==true">
-    <table class="table">
+    <table class="table" *ngIf="showNull == false">
         <thead>
             <tr>
                 <th>Student Name</th>
@@ -63,10 +66,14 @@
             </tr>
         </tbody>
     </table>
-    <div style="float:right;">
+    <div style="float:right;" *ngIf="showNull == false">
         <pagination-controls id="b" (pageChange)="page = $event"></pagination-controls>
     </div>
-    <div align="center" stylae="width:100%;">
+    
+    <div align="center" style="width:100%;">
+            <!-- Changes here -->
+        <span *ngIf="showNull == true" style="font-family:'Ubuntu';font-weight:bolder;padding-left: 25px;font-size:20px;color: red;">No results found</span>
+        <br>
         <button class="btn btn-style" (click)="displayAllReports()">Back to All Details</button>
     </div>    
 </div>

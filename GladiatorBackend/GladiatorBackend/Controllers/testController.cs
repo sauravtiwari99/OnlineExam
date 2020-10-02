@@ -17,21 +17,40 @@ namespace GladiatorBackend.Controllers
         [Route("easy")]
         public List<questionR> level1([FromBody] filepath filepath)
         {
-            var all = data.Database.SqlQuery<questionR>(@"select sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'easy' order by NEWID()").ToList();
+            var free = filepath.subject + "_Sets";
+            var avail = data.Database.SqlQuery<string>(@"select table_name from " + free + " where availability = 'no'").ToList();
+            var random = new Random();
+            int index = random.Next(avail.Count);
+            char[] questionSet = avail[index].ToArray();
+            filepath.set = questionSet[questionSet.Length - 1].ToString();
+            var all = data.Database.SqlQuery<questionR>(@"select top 20 sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'easy' order by NEWID()").ToList();
             return all;
         }
         [HttpPost]
         [Route("medium")]
         public List<questionR> level2([FromBody] filepath filepath)
         {
-            var all = data.Database.SqlQuery<questionR>(@"select sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'medium' order by NEWID()").ToList();
+            var free = filepath.subject + "_Sets";
+            var avail = data.Database.SqlQuery<string>(@"select table_name from " + free + " where availability = 'no'").ToList();
+            var random = new Random();
+            int index = random.Next(avail.Count);
+            char[] questionSet = avail[index].ToArray();
+            filepath.set = questionSet[questionSet.Length - 1].ToString();
+            var all = data.Database.SqlQuery<questionR>(@"select top 20  sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'medium' order by NEWID()").ToList();
             return all;
         }
         [HttpPost]
         [Route("hard")]
         public List<questionR> level3([FromBody] filepath filepath)
         {
-            var all = data.Database.SqlQuery<questionR>(@"select sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'hard' order by NEWID()").ToList();
+            var free = filepath.subject + "_Sets";
+            var avail = data.Database.SqlQuery<string>(@"select table_name from " + free + " where availability = 'no'").ToList();
+            var random = new Random();
+            int index = random.Next(avail.Count);
+            char[] questionSet = avail[index].ToArray();
+            filepath.set = questionSet[questionSet.Length - 1].ToString();
+
+            var all = data.Database.SqlQuery<questionR>(@"select top 10 sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'hard' order by NEWID()").ToList();
             return all;
         }
 

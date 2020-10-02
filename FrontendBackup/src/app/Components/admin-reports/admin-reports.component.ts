@@ -311,7 +311,7 @@ export class AdminReportsComponent implements OnInit {
     this._router.navigate(["adminDashboard"])
   }
   gotoAboutUs(){
-    this._router.navigate(["aboutUs"])
+    this._router.navigate(["aboutUsAdmin"])
   }
   logout(){
     this._router.navigate([""]);

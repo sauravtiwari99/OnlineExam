@@ -1,272 +1,279 @@
-<section *ngIf="showTest == true">
-    <div class="container" style="width:100%;text-align:center;font-family:'Ubuntu';font-weight:bolder;padding:5px;font-size:25px;">
-        Time Remaining : {{counter | formatTime}}    
-    </div>
+<div class="main" *ngIf="showTest == true">
+    <mat-toolbar color="primary" class="navbar">
+        <div style="font-family:'Ubuntu';font-weight:bolder;letter-spacing:1px;font-size:25px;padding-left:25px; cursor:pointer"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;LTIeQ</div>
+        <div>
+            <span>
+                Time Remaining : {{counter | formatTime}}    
+            </span>
+        </div>
+    </mat-toolbar>
+
+    
 <br>
 
-<section class="btn-group">
-    <button class="btn btn-light" (click)="pressedQ1()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview1 == false && selectedOptions[0] == null">
+<div class="btn-group container" style="margin-left:30px;">
+    <div (click)="pressedQ1()">
+        <button  class="btn btn-danger test-Btn" *ngIf="addReview1 == false && selectedOptions[0] == null">
             Q1
-        </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview1 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview1 == true">
             Q1
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview1 == false && selectedOptions[0] != null">
+        </button>
+        <button  class="btn btn-success test-Btn" *ngIf="addReview1 == false && selectedOptions[0] != null">
             Q1
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ2()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview2 == false && selectedOptions[1] == null">
+    <div (click)="pressedQ2()">
+        <button  class="btn btn-danger test-Btn" *ngIf="addReview2 == false && selectedOptions[1] == null">
             Q2
-        </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview2 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview2 == true">
             Q2
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview2 == false && selectedOptions[1] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview2 == false && selectedOptions[1] != null">
             Q2
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ3()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview3 == false && selectedOptions[2] == null">
+    <div (click)="pressedQ3()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview3 == false && selectedOptions[2] == null">
             Q3
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview3 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview3 == true">
             Q3
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview3 == false && selectedOptions[2] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview3 == false && selectedOptions[2] != null">
             Q3
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ4()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview4 == false && selectedOptions[3] == null">
+    <div (click)="pressedQ4()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview4 == false && selectedOptions[3] == null">
             Q4
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview4 == true">
+        </button>
+        <button class="btn btn-info test-Btn" class="test-Btn" *ngIf="addReview4 == true">
             Q4
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview4 == false && selectedOptions[3] != null">
+        </button>
+        <button  class="btn btn-success test-Btn" *ngIf="addReview4 == false && selectedOptions[3] != null">
             Q4
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ5()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview5 == false && selectedOptions[4] == null">
+    <div (click)="pressedQ5()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview5 == false && selectedOptions[4] == null">
             Q5
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview5 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview5 == true">
             Q5
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview5 == false && selectedOptions[4] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview5 == false && selectedOptions[4] != null">
             Q5
-        </div>
-    </button>
+        </button>
+    </div>
     
-    <button class="btn btn-light" (click)="pressedQ6()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview6 == false && selectedOptions[5] == null">
+    <div (click)="pressedQ6()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview6 == false && selectedOptions[5] == null">
             Q6
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview6 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview6 == true">
             Q6
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview6 == false && selectedOptions[5] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview6 == false && selectedOptions[5] != null">
             Q6
-        </div>
-    </button>
+        </button>
+    </div>
     
-    <button class="btn btn-light" (click)="pressedQ7()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview7 == false && selectedOptions[6] == null">
+    <div (click)="pressedQ7()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview7 == false && selectedOptions[6] == null">
             Q7
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview7 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview7 == true">
             Q7
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview7 == false && selectedOptions[6] != null">
+        </button>
+        <button class="btn btn-success test-Btn"  *ngIf="addReview7 == false && selectedOptions[6] != null">
             Q7
-        </div>
-    </button>
+        </button>
+    </div>
     
-    <button class="btn btn-light" (click)="pressedQ8()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview8 == false && selectedOptions[7] == null">
+    <div (click)="pressedQ8()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview8 == false && selectedOptions[7] == null">
             Q8
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview8 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview8 == true">
             Q8
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview8 == false && selectedOptions[7] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview8 == false && selectedOptions[7] != null">
             Q8
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ9()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview9 == false && selectedOptions[8] == null">
+    <div (click)="pressedQ9()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview9 == false && selectedOptions[8] == null">
             Q9
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview9 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview9 == true">
             Q9
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview9 == false && selectedOptions[8] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview9 == false && selectedOptions[8] != null">
             Q9
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ10()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview10 == false && selectedOptions[9] == null">
+    <div (click)="pressedQ10()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview10 == false && selectedOptions[9] == null">
             Q10
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview10 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview10 == true">
             Q10
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview10 == false && selectedOptions[9] != null">
+        </button>
+        <button  class="btn btn-success test-Btn" *ngIf="addReview10 == false && selectedOptions[9] != null">
             Q10
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ11()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview11 == false && selectedOptions[10] == null">
+    <div (click)="pressedQ11()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview11 == false && selectedOptions[10] == null">
             Q11
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview11 == true">
+        </button>
+        <button class="btn btn-info test-Btn"  *ngIf="addReview11 == true">
         Q11
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview11 == false && selectedOptions[10] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview11 == false && selectedOptions[10] != null">
             Q11
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ12()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview12 == false && selectedOptions[11] == null">
+    <div (click)="pressedQ12()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview12 == false && selectedOptions[11] == null">
             Q12
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview12 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview12 == true">
             Q12
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview12 == false && selectedOptions[11] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview12 == false && selectedOptions[11] != null">
             Q12
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ13()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview13 == false && selectedOptions[12] == null">
+    <div (click)="pressedQ13()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview13 == false && selectedOptions[12] == null">
             Q13
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview13 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview13 == true">
             Q13
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview13 == false && selectedOptions[12] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview13 == false && selectedOptions[12] != null">
             Q13
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ14()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview14 == false && selectedOptions[13] == null">
+    <div (click)="pressedQ14()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview14 == false && selectedOptions[13] == null">
             Q14
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview14 == true">
+        </button>
+        <button class="btn btn-info test-Btn" class="test-Btn" *ngIf="addReview14 == true">
             Q14
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview14 == false && selectedOptions[13] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview14 == false && selectedOptions[13] != null">
             Q14
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ15()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview15 == false && selectedOptions[14] == null">
+    <div (click)="pressedQ15()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview15 == false && selectedOptions[14] == null">
             Q15
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview15 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview15 == true">
             Q15
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview15 == false && selectedOptions[14] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview15 == false && selectedOptions[14] != null">
             Q15
-        </div>
-    </button>
+        </button>
+    </div>
     
-    <button class="btn btn-light" (click)="pressedQ16()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview16 == false && selectedOptions[15] == null">
+    <div (click)="pressedQ16()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview16 == false && selectedOptions[15] == null">
             Q16
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview16 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview16 == true">
             Q16
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview16 == false && selectedOptions[15] != null">
+        </button>
+        <button class="btn btn-success test-Btn"  *ngIf="addReview16 == false && selectedOptions[15] != null">
             Q16
-        </div>
-    </button>
+        </button>
+    </div>
     
-    <button class="btn btn-light" (click)="pressedQ17()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview17 == false && selectedOptions[16] == null">
+    <div (click)="pressedQ17()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview17 == false && selectedOptions[16] == null">
             Q17
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview17 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview17 == true">
             Q17
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview17 == false && selectedOptions[16] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview17 == false && selectedOptions[16] != null">
             Q17
-        </div>
-    </button>
+        </button>
+    </div>
     
-    <button class="btn btn-light" (click)="pressedQ18()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview18 == false && selectedOptions[17] == null">
+    <div (click)="pressedQ18()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview18 == false && selectedOptions[17] == null">
             Q18
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview18 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview18 == true">
             Q18
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview18 == false && selectedOptions[17] != null">
+        </button>
+        <button  class="btn btn-success test-Btn" *ngIf="addReview18 == false && selectedOptions[17] != null">
             Q18
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ19()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview19 == false && selectedOptions[18] == null">
+    <div (click)="pressedQ19()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview19 == false && selectedOptions[18] == null">
             Q19
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview19 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview19 == true">
             Q19
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview19 == false && selectedOptions[18] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview19 == false && selectedOptions[18] != null">
             Q19
-        </div>
-    </button>
+        </button>
+    </div>
 
-    <button class="btn btn-light" (click)="pressedQ20()">
-        <div style="color: red;" class="test-Btn" *ngIf="addReview20 == false && selectedOptions[19] == null">
+    <div  (click)="pressedQ20()">
+        <button class="btn btn-danger test-Btn"*ngIf="addReview20 == false && selectedOptions[19] == null">
             Q20
-            </div>
-        <div style="color: blue;" class="test-Btn" *ngIf="addReview20 == true">
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview20 == true">
             Q20
-        </div>
-        <div style="color: green;" class="test-Btn" *ngIf="addReview20 == false && selectedOptions[19] != null">
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview20 == false && selectedOptions[19] != null">
             Q20
-        </div>
-    </button>
+        </button>
+    </div>
 
-</section>
-
-
+</div>
 
 
 
 
 
-<section *ngIf="showQ1 == true">
+
+
+<div *ngIf="showQ1 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th colspan="2">Q. 1 {{level1[0].question}}</th>
+                    <th colspan="2" style="text-align: left;">Q. 1 {{level1[0].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option0" [checked]="checkq1o1" (click)="keepChecked1('1')" (click)="selectedOptions[0] = level1[0].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level1[0].option1}}
                     </td>
                 </tr>
@@ -274,7 +281,7 @@
                     <td>
                         <input type="radio" name="option0" [checked]="checkq1o2" (click)="keepChecked1('2')" (click)="selectedOptions[0] = level1[0].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level1[0].option2}}
                     </td>
                 </tr>
@@ -282,7 +289,7 @@
                     <td>
                         <input type="radio" name="option0" [checked]="checkq1o3" (click)="keepChecked1('3')" (click)="selectedOptions[0] = level1[0].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level1[0].option3}}
                     </td>
                 </tr>
@@ -290,15 +297,13 @@
                     <td>
                         <input type="radio" name="option0" [checked]="checkq1o4" (click)="keepChecked1('4')" (click)="selectedOptions[0] = level1[0].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level1[0].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview1" name="review1" (change)="addReview1 = !addReview1">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview1" name="review1" (change)="addReview1 = !addReview1">&nbsp;
                         Add to Review
                     </td>
                 </tr>
@@ -315,22 +320,22 @@
         <input type="checkbox" [checked]="addReview1" name="review1" (change)="addReview1 = !addReview1">Add to Review -->
 
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ2 == true">
+<div *ngIf="showQ2 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th colspan="2">Q. 2 {{level1[1].question}}</th>
+                    <th colspan="2" style="text-align:left;">Q. 2 {{level1[1].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option1" [checked]="checkq2o1" (click)="keepChecked2('1')" (click)="selectedOptions[1] = level1[1].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level1[1].option1}}
                     </td>
                 </tr>
@@ -338,15 +343,15 @@
                     <td>
                         <input type="radio" name="option1" [checked]="checkq2o2" (click)="keepChecked2('2')" (click)="selectedOptions[1] = level1[1].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level1[1].option2}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td >
                         <input type="radio" name="option1" [checked]="checkq2o3" (click)="keepChecked2('3')" (click)="selectedOptions[1] = level1[1].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level1[1].option3}}
                     </td>
                 </tr>
@@ -354,15 +359,13 @@
                     <td>
                         <input type="radio" name="option1" [checked]="checkq2o4" (click)="keepChecked2('4')" (click)="selectedOptions[1] = level1[1].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level1[1].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview2" name="review2" (change)="addReview2 = !addReview2">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview2" name="review2" (change)="addReview2 = !addReview2">&nbsp;
                         Add to Review
                     </td>
                 </tr>
@@ -377,7 +380,7 @@
         <br>
         <input type="checkbox" [checked]="addReview1" name="review2" (change)="addReview2 = !addReview2">Add to Review -->
     </div>
-</section>
+</div>
 
 <section *ngIf="showQ3 == true">
     <div>
@@ -1490,13 +1493,13 @@
 
 <div style="width:100%;padding-top:10px;text-align:center">
     <!-- <button (click)="showSelectedOptions()" class="btn btn-style">Show</button>&nbsp; -->
-    <button (click)="submitTest()" class="btn btn-style">Submit</button>
+    <button (click)="submitTest()" class="btn btn-style">Submit Level 1</button>
+</div>
+<footer class="footer" style="font-family:'Ubuntu';letter-spacing:1px;">Made with  <i class="fa fa-heart" aria-hidden="true" style="color:red"></i>  by team LTIeQ</footer>
 </div>
 
-</section>
-
 <section *ngIf = "showTest==false">
-    <div class="container">
+    <div class="container" style="margin-top:25px;">
         <table class="table table-bordered" >
             <thead>
                 <th colspan="2">
@@ -1525,15 +1528,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="center" style="padding-left:35%;"colspan="2">
+                    <td align="center" style="padding-left:30%;"colspan="2">
                         <google-chart #chart
                             [title]="''"
                             [type]="'PieChart'"
                             [data]="[['Correct Anwers',totalMarks/2],['Wrong Anwers',20 - totalMarks/2]]"
                             [columns]="['Average','Percent']"
                             [options] = "{pieHole:0.3}"
-                            [width]="400"
-                            [height]="400">
+                            [width]="600"
+                            [height]="300">
                         </google-chart>
                     </td>
                 </tr>

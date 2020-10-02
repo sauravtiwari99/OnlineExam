@@ -13,8 +13,8 @@ export class AboutUsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  gotoDashboard(){
-    this._router.navigate(["adminDashboard"])
+  goto(){
+    window.history.back();
   }
   logout(){
     this._router.navigate([""]);

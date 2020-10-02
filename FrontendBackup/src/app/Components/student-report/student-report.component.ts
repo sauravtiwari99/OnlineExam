@@ -56,6 +56,9 @@ export class StudentReportComponent implements OnInit {
   print(){
     window.print()
   }
+  gotoDashboard(){
+    this._router.navigate(["studentDashboard"])
+  }
   logout(){
     this._router.navigate([""]);
     sessionStorage.clear();

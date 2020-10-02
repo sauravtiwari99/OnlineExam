@@ -270,6 +270,9 @@ export class AdminReportsComponent implements OnInit {
     this.userDataReceived=true;
     this.filterBasedTable=false;
   }
+  gotoDashboard(){
+    this._router.navigate(["adminDashboard"])
+  }
   logout(){
     this._router.navigate([""]);
     sessionStorage.clear();

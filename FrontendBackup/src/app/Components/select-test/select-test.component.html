@@ -1,54 +1,149 @@
 <div class="main">
     <mat-toolbar color="primary" class="navbar">
-        <div style="font-family:'Ubuntu';font-weight:bolder;letter-spacing:1px;font-size:25px;padding-left:25px;"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;LTIeQ</div>
+        <div style="font-family:'Ubuntu';font-weight:bolder;letter-spacing:1px;font-size:25px;padding-left:25px;cursor:pointer" (click)="gotoDashboard()"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;LTIeQ</div>
         <div>
             <span class="logout" style="cursor:pointer"><a (click)="logout()" >Logout&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true" ></i></a></span>
         </div>
     </mat-toolbar>
+
     <div class="container">
-        <table class="table" style="margin-top:10px;">
-            <thead>
-                <tr>
-                    <th style="font-size:20px;" colspan="3" >Select Test</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td align="center">
-                        <button class="btn btn-style" (click)="routeJava()">
-                            Java
-                        </button>
-                    </td>
-                    <td align="center">
-                        <button class="btn btn-style" (click)="routeCsharp()">
-                            C#/.Net
-                        </button>
-                    </td>
-                    <td align="center">
-                        <button class="btn btn-style" (click)="routeCplus()">
-                            C/C++
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <button class="btn btn-style" (click)="routePython()">
-                            Python
-                        </button>
-                    </td>
-                    <td align="center">
-                        <button class="btn btn-style" (click)="routeSql()">
-                            SQL
-                        </button>
-                    </td>
-                    <td align="center">
-                        <button class="btn btn-style" (click)="routePhp()">
-                            PHP
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="card-deck" style="margin-bottom:20px;padding-top:30px;">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/assets/images/javaImage.png" alt="JavaImage" style="height:184.08px;">
+                <div class="card-body">
+                    <h5 class="card-title">Java</h5>
+                    <p class="card-text">Java is one of the most popular programming language. It provides many services in various fields.</p>
+                    <button (click)="selectedTestJava()" class="btn btn-style" data-toggle="modal" data-target="#myModal" >Take Test</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/assets/images/csharpImage.png" alt="C#/.NetImage" style="height:184.08px;">
+                <div class="card-body">
+                <h5 class="card-title">C#/.Net</h5>
+                <p class="card-text">C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.</p>
+                <button (click)="selectedTestcSharp()" class="btn btn-style" data-toggle="modal" data-target="#myModal">Take Test</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/assets/images/cImage.jpg" alt="CCPPImage" style="height:184.08px;">
+                <div class="card-body">
+                <h5 class="card-title">C/C++</h5>
+                <p class="card-text">C and C++ are middle - level programming languages and used for application development. </p>
+                <button (click)="selectedTestcPlus()" class="btn btn-style" data-toggle="modal" data-target="#myModal">Take Test</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck" style="margin-bottom:10%;">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/assets/images/pythonImage.jpg" alt="PythonImage" style="height:184.08px;">
+                    <div class="card-body">
+                    <h5 class="card-title">Python</h5>
+                    <p class="card-text">The python language is one of the most accessible programming languages available because it has simplified syntax and not complicated.</p>
+                    <button (click)="selectedTestPython()" class="btn btn-style" data-toggle="modal" data-target="#myModal">Take Test</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/assets/images/sqlImage.png" alt="sqlImage" style="height:184.08px;">
+                    <div class="card-body">
+                    <h5 class="card-title">SQL</h5>
+                    <p class="card-text">SQL is Structured Query Language, which is a computer language for storing, manipulating and retrieving data stored in a relational database.</p>
+                    <button (click)="selectedTestsSql()" class="btn btn-style" data-toggle="modal" data-target="#myModal">Take Test</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/assets/images/phpImage.png" alt="JavaImage" style="height:184.08px;">
+                <div class="card-body">
+                    <h5 class="card-title">PHP</h5>
+                    <p class="card-text">PHP is a general-purpose scripting language that is especially suited to server-side web development.</p>
+                    <button (click)="selectedTestsPhp()" class="btn btn-style" data-toggle="modal" data-target="#myModal">Take Test</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header" style="background:#3F51B5">
+              <h4 class="modal-title" style="font-family:'Ubuntu';font-weight:bolder; font-size:25px;color:white;">Important Instructions</h4>
+              <button type="button" class="close" data-dismiss="modal" style="color:white">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                            <td>
+                              Please Read the Instructions Carefully.
+                            </td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                            <td>
+                                Time alloted for Each Level is 20 minutes
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Test will auto submit after 20 minutes.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                You can also submit the test by clicking the submit button.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Un-attempted questions are marked red, blue for under review, green for attempted questions.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Minimum Cutoff needs to be cleared for appearing for next level.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pressing any key will pop up an alert, pressing once more will lead to auto-submission of test.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Keep the Test window to full screen.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Check your internet connection before proceeding.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Result for individual level will be displayed at end of each Level.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="blinking" style="color:green;font-weight:bolder;font-size:25px;">All The Best!</span>
+                            </td>
+                        </tr>
+                  </tbody>
+              </table>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" (click)="routeTest()" class="btn btn-style" data-dismiss="modal">Start Test</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
     <footer class="footer" style="font-family:'Ubuntu';letter-spacing:1px;">Made with  <i class="fa fa-heart" aria-hidden="true" style="color:red"></i>  by team LTIeQ</footer>
 </div>

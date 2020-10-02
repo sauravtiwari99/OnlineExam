@@ -147,7 +147,7 @@ export class AdminTestComponent implements OnInit {
       "subject" : "Cplus"
     }
   }
-  else if(this.selectedValue == "C#/.Net"){
+  else if(this.selectedValue == "C#/Dotenet"){
      jsonobj = {
       "subject" : "Csharp"
     }
@@ -234,6 +234,9 @@ export class AdminTestComponent implements OnInit {
         }
       )
     }
+  }
+  gotoDashboard(){
+    this._router.navigate(["adminDashboard"])
   }
   logout(){
     this._router.navigate([""]);

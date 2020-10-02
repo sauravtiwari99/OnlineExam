@@ -37,7 +37,8 @@ const routes: Routes = [
   {path:"testL1",component:TestLevel1Component,canActivate:[AuthenticationGuard]},
   {path:"testL2",component:TestLevel2Component,canActivate:[AuthenticationGuard]},
   {path:"testL3",component:TestLevel3Component,canActivate:[AuthenticationGuard]},
-  {path:"selectTest",component:SelectTestComponent,canActivate:[AuthenticationGuard]},
+  // {path:"selectTest",component:SelectTestComponent,canActivate:[AuthenticationGuard]},
+  {path:"selectTest",component:SelectTestComponent},
   {path: '404-invalid', component:NotFoundComponent},
   {path: '**', redirectTo: '/404-invalid'}
 ];

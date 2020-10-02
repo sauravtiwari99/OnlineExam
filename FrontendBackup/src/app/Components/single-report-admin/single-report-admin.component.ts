@@ -60,6 +60,9 @@ export class SingleReportAdminComponent implements OnInit {
   print(){
     window.print()
   }
+  gotoDashboard(){
+    this._router.navigate(["adminDashboard"])
+  }
   logout(){
     this._router.navigate([""]);
     sessionStorage.clear();

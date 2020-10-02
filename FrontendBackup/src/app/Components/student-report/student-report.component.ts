@@ -65,7 +65,7 @@ export class StudentReportComponent implements OnInit {
     this._toastr.success('Success', 'Logged Out Successfully');
   }
   gotoAboutUs(){
-    this._router.navigate(["aboutUS"])
+    this._router.navigate(["aboutUs"])
   }
   giveTest(){
     console.log("All the Best");

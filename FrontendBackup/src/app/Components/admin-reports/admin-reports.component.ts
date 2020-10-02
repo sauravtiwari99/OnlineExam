@@ -310,6 +310,9 @@ export class AdminReportsComponent implements OnInit {
   gotoDashboard(){
     this._router.navigate(["adminDashboard"])
   }
+  gotoAboutUs(){
+    this._router.navigate(["aboutUS"])
+  }
   logout(){
     this._router.navigate([""]);
     sessionStorage.clear();

@@ -111,7 +111,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" id="dob" class="form-control" placeholder="Enter Date of Birth" required="required" onfocus="(this.type='date')" formControlName="dob" [ngClass]="{ 'is-invalid': registerCheck && registerFormAccess.dob.errors }">
+                <input type="text" id="dob" class="form-control" placeholder="Enter Date of Birth" required="required" onfocus="(this.type='date')" min="1990-01-01" max="2002-12-31" formControlName="dob" [ngClass]="{ 'is-invalid': registerCheck && registerFormAccess.dob.errors }">
                 <div *ngIf="registerCheck && registerFormAccess.dob.errors" class="invalid-feedback">
                     <div *ngIf="registerFormAccess.dob.errors.required">Date of Birth is Mandatory *</div>
                 </div>
@@ -129,12 +129,12 @@
                 </div>
             </div>
             <!-- For Implementing Captcha Uncomment the Below Lines -->
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <re-captcha formControlName="reCaptcha"></re-captcha>
                 <div *ngIf="registerCheck && registerFormAccess.reCaptcha.errors" class="invalid-feedback">
                     <div *ngIf="registerFormAccess.reCaptcha.errors.required">Year of Completion is required *</div>
                 </div>
-            </div> -->
+            </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Register Now</button>
             </div>

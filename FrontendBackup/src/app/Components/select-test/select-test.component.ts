@@ -113,7 +113,9 @@ export class SelectTestComponent implements OnInit {
   gotoDashboard(){
     this._router.navigate(["studentDashboard"]);
   }
-
+  gotoAboutUs(){
+    this._router.navigate(["aboutUS"])
+  }
    logout(){
     this._router.navigate([""]);
     sessionStorage.clear();

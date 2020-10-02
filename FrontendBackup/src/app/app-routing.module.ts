@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { AdminReportsComponent } from './Components/admin-reports/admin-reports.component';
 import { AdminTestComponent } from './Components/admin-test/admin-test.component';
@@ -38,6 +39,8 @@ const routes: Routes = [
   {path:"testL2",component:TestLevel2Component,canActivate:[AuthenticationGuard]},
   {path:"testL3",component:TestLevel3Component,canActivate:[AuthenticationGuard]},
   {path:"selectTest",component:SelectTestComponent,canActivate:[AuthenticationGuard]},
+  {path:"aboutUs",component:AboutUsComponent,canActivate:[AuthenticationGuard]},
+  {path:"aboutUs",component:AboutUsComponent,canActivate:[AuthenticationAdminGuard]},
   // {path:"selectTest",component:SelectTestComponent},
   {path: '404-invalid', component:NotFoundComponent},
   {path: '**', redirectTo: '/404-invalid'}

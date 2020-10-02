@@ -27,6 +27,7 @@ import { TestLevel2Component } from './Components/test-level2/test-level2.compon
 import { TestLevel3Component } from './Components/test-level3/test-level3.component';
 import { SelectTestComponent } from './Components/select-test/select-test.component';
 import { TimeGeneratorPipe } from './Pipes/time-generator.pipe';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { TimeGeneratorPipe } from './Pipes/time-generator.pipe';
     TestLevel2Component,
     TestLevel3Component,
     SelectTestComponent,
-    TimeGeneratorPipe
+    TimeGeneratorPipe,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,7 @@ import { TimeGeneratorPipe } from './Pipes/time-generator.pipe';
   providers: [{
     provide: RECAPTCHA_SETTINGS,
     useValue: {
-      siteKey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+      siteKey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',//Temporary Site Key 
     } as RecaptchaSettings,
   }],
   bootstrap: [AppComponent]

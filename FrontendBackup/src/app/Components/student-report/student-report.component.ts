@@ -64,6 +64,9 @@ export class StudentReportComponent implements OnInit {
     sessionStorage.clear();
     this._toastr.success('Success', 'Logged Out Successfully');
   }
+  gotoAboutUs(){
+    this._router.navigate(["aboutUS"])
+  }
   giveTest(){
     console.log("All the Best");
     this._router.navigate(["selectTest"]);

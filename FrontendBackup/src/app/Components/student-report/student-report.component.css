@@ -11,6 +11,8 @@
 }
 span{
     padding-right: 2rem;
+    font-family:'Ubuntu',sans-serif;
+    font-weight: bolder;
     /* Navbar */
 }
 .footer{

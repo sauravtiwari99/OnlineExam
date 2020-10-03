@@ -17,6 +17,20 @@ namespace GladiatorBackend.Controllers
     public class UploadController : ApiController
     {
         OnlineExamEntities data = new OnlineExamEntities();
+
+        //Available Set in which upload can be performed 
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("uploadSet")]
+        public List<string> uploadSet([FromBody] filepath subject)
+        {
+            var free = subject.subject + "_Sets";
+            var avail = data.Database.SqlQuery<string>(@"select table_name from " + free + " where availability = 'yes'").ToList();
+
+            return avail;
+        }
+
+
         [HttpPost]
         [AllowAnonymous]
         [Route("removeJava")]

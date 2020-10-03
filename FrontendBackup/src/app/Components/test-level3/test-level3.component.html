@@ -1,155 +1,157 @@
-<section *ngIf="showTest == true">
-    <div class="container" style="width:100%;text-align:center;font-family:'Ubuntu';font-weight:bolder;padding:5px;font-size:25px;">
-        Time Remaining : {{counter | formatTime}}    
-    </div>  
+<div class="main" *ngIf="showTest == true">
+    <mat-toolbar color="primary" class="navbar">
+        <div style="font-family:'Ubuntu';font-weight:bolder;letter-spacing:1px;font-size:25px;padding-left:25px; cursor:pointer"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;LTIeQ</div>
+        <div>
+            <span>
+                Time Remaining : {{counter | formatTime}}    
+            </span>
+        </div>
+    </mat-toolbar>
+
+    
 <br>
 
-
-    <section>
-        <button class="btn btn-light" (click)="pressedQ1()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview1 == false && selectedOptions[0] == null">
-                Q1
-            </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview1 == true">
-                Q1
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview1 == false && selectedOptions[0] != null">
-                Q1
-            </div>
+<div class="btn-group container" style="margin-left:30px;">
+    <div (click)="pressedQ1()">
+        <button  class="btn btn-danger test-Btn" *ngIf="addReview1 == false && selectedOptions[0] == null">
+            Q1
         </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview1 == true">
+            Q1
+        </button>
+        <button  class="btn btn-success test-Btn" *ngIf="addReview1 == false && selectedOptions[0] != null">
+            Q1
+        </button>
+    </div>
+
+    <div (click)="pressedQ2()">
+        <button  class="btn btn-danger test-Btn" *ngIf="addReview2 == false && selectedOptions[1] == null">
+            Q2
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview2 == true">
+            Q2
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview2 == false && selectedOptions[1] != null">
+            Q2
+        </button>
+    </div>
+
+    <div (click)="pressedQ3()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview3 == false && selectedOptions[2] == null">
+            Q3
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview3 == true">
+            Q3
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview3 == false && selectedOptions[2] != null">
+            Q3
+        </button>
+    </div>
+
+    <div (click)="pressedQ4()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview4 == false && selectedOptions[3] == null">
+            Q4
+        </button>
+        <button class="btn btn-info test-Btn" class="test-Btn" *ngIf="addReview4 == true">
+            Q4
+        </button>
+        <button  class="btn btn-success test-Btn" *ngIf="addReview4 == false && selectedOptions[3] != null">
+            Q4
+        </button>
+    </div>
+
+    <div (click)="pressedQ5()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview5 == false && selectedOptions[4] == null">
+            Q5
+        </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview5 == true">
+            Q5
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview5 == false && selectedOptions[4] != null">
+            Q5
+        </button>
+    </div>
     
-        <button class="btn btn-light" (click)="pressedQ2()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview2 == false && selectedOptions[1] == null">
-                Q2
-            </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview2 == true">
-                Q2
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview2 == false && selectedOptions[1] != null">
-                Q2
-            </div>
+    <div (click)="pressedQ6()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview6 == false && selectedOptions[5] == null">
+            Q6
         </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview6 == true">
+            Q6
+        </button>
+        <button class="btn btn-success test-Btn" *ngIf="addReview6 == false && selectedOptions[5] != null">
+            Q6
+        </button>
+    </div>
     
-        <button class="btn btn-light" (click)="pressedQ3()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview3 == false && selectedOptions[2] == null">
-                Q3
-                </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview3 == true">
-                Q3
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview3 == false && selectedOptions[2] != null">
-                Q3
-            </div>
+    <div (click)="pressedQ7()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview7 == false && selectedOptions[6] == null">
+            Q7
         </button>
+        <button class="btn btn-info test-Btn" *ngIf="addReview7 == true">
+            Q7
+        </button>
+        <button class="btn btn-success test-Btn"  *ngIf="addReview7 == false && selectedOptions[6] != null">
+            Q7
+        </button>
+    </div>
     
-        <button class="btn btn-light" (click)="pressedQ4()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview4 == false && selectedOptions[3] == null">
-                Q4
-                </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview4 == true">
-                Q4
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview4 == false && selectedOptions[3] != null">
-                Q4
-            </div>
+    <div (click)="pressedQ8()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview8 == false && selectedOptions[7] == null">
+            Q8
         </button>
-    
-        <button class="btn btn-light" (click)="pressedQ5()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview5 == false && selectedOptions[4] == null">
-                Q5
-                </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview5 == true">
-                Q5
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview5 == false && selectedOptions[4] != null">
-                Q5
-            </div>
+        <button class="btn btn-info test-Btn" *ngIf="addReview8 == true">
+            Q8
         </button>
-        
-        <button class="btn btn-light" (click)="pressedQ6()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview6 == false && selectedOptions[5] == null">
-                Q6
-                </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview6 == true">
-                Q6
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview6 == false && selectedOptions[5] != null">
-                Q6
-            </div>
+        <button class="btn btn-success test-Btn" *ngIf="addReview8 == false && selectedOptions[7] != null">
+            Q8
         </button>
-        
-        <button class="btn btn-light" (click)="pressedQ7()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview7 == false && selectedOptions[6] == null">
-                Q7
-                </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview7 == true">
-                Q7
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview7 == false && selectedOptions[6] != null">
-                Q7
-            </div>
+    </div>
+
+    <div (click)="pressedQ9()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview9 == false && selectedOptions[8] == null">
+            Q9
         </button>
-        
-        <button class="btn btn-light" (click)="pressedQ8()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview8 == false && selectedOptions[7] == null">
-                Q8
-                </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview8 == true">
-                Q8
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview8 == false && selectedOptions[7] != null">
-                Q8
-            </div>
+        <button class="btn btn-info test-Btn" *ngIf="addReview9 == true">
+            Q9
         </button>
-    
-        <button class="btn btn-light" (click)="pressedQ9()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview9 == false && selectedOptions[8] == null">
-                Q9
-                </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview9 == true">
-                Q9
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview9 == false && selectedOptions[8] != null">
-                Q9
-            </div>
+        <button class="btn btn-success test-Btn" *ngIf="addReview9 == false && selectedOptions[8] != null">
+            Q9
         </button>
-    
-        <button class="btn btn-light" (click)="pressedQ10()">
-            <div style="color: red;" class="test-Btn" *ngIf="addReview10 == false && selectedOptions[9] == null">
-                Q10
-                </div>
-            <div style="color: blue;" class="test-Btn" *ngIf="addReview10 == true">
-                Q10
-            </div>
-            <div style="color: green;" class="test-Btn" *ngIf="addReview10 == false && selectedOptions[9] != null">
-                Q10
-            </div>
+    </div>
+
+    <div (click)="pressedQ10()">
+        <button class="btn btn-danger test-Btn" *ngIf="addReview10 == false && selectedOptions[9] == null">
+            Q10
         </button>
-    
+        <button class="btn btn-info test-Btn" *ngIf="addReview10 == true">
+            Q10
+        </button>
+        <button  class="btn btn-success test-Btn" *ngIf="addReview10 == false && selectedOptions[9] != null">
+            Q10
+        </button>
+    </div>  
+</div>
 
 
-</section>
 
 
 
 
-
-
-
-<section *ngIf="showQ1 == true">
+<div *ngIf="showQ1 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th colspan="2">Q. 1 {{level3[0].question}}</th>
+                    <th colspan="2" style="text-align: left;">Q. 1 {{level3[0].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option0" [checked]="checkq1o1" (click)="keepChecked1('1')" (click)="selectedOptions[0] = level3[0].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[0].option1}}
                     </td>
                 </tr>
@@ -157,7 +159,7 @@
                     <td>
                         <input type="radio" name="option0" [checked]="checkq1o2" (click)="keepChecked1('2')" (click)="selectedOptions[0] = level3[0].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[0].option2}}
                     </td>
                 </tr>
@@ -165,7 +167,7 @@
                     <td>
                         <input type="radio" name="option0" [checked]="checkq1o3" (click)="keepChecked1('3')" (click)="selectedOptions[0] = level3[0].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[0].option3}}
                     </td>
                 </tr>
@@ -173,47 +175,35 @@
                     <td>
                         <input type="radio" name="option0" [checked]="checkq1o4" (click)="keepChecked1('4')" (click)="selectedOptions[0] = level3[0].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[0].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview1" name="review1" (change)="addReview1 = !addReview1">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview1" name="review1" (change)="addReview1 = !addReview1">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table>
-
-        <!-- Q. 1 {{level3[0].question}}
-        <input type="radio" name="option0" [checked]="checkq1o1" (click)="keepChecked1('1')" (click)="selectedOptions[0] = level3[0].option1">{{level3[0].option1}}
-        <input type="radio" name="option0" [checked]="checkq1o2" (click)="keepChecked1('2')" (click)="selectedOptions[0] = level3[0].option2">{{level3[0].option2}}
-        <input type="radio" name="option0" [checked]="checkq1o3" (click)="keepChecked1('3')" (click)="selectedOptions[0] = level3[0].option3">{{level3[0].option3}}
-        <input type="radio" name="option0" [checked]="checkq1o4" (click)="keepChecked1('4')" (click)="selectedOptions[0] = level3[0].option4">{{level3[0].option4}}
-        
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review1" (change)="addReview1 = !addReview1">Add to Review -->
-
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ2 == true">
+<div *ngIf="showQ2 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
-                <tr >
-                    <th colspan="2">Q. 2 {{level3[1].question}}</th>
+                <tr>
+                    <th colspan="2" style="text-align:left;">Q. 2 {{level3[1].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option1" [checked]="checkq2o1" (click)="keepChecked2('1')" (click)="selectedOptions[1] = level3[1].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[1].option1}}
                     </td>
                 </tr>
@@ -221,15 +211,15 @@
                     <td>
                         <input type="radio" name="option1" [checked]="checkq2o2" (click)="keepChecked2('2')" (click)="selectedOptions[1] = level3[1].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[1].option2}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td >
                         <input type="radio" name="option1" [checked]="checkq2o3" (click)="keepChecked2('3')" (click)="selectedOptions[1] = level3[1].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[1].option3}}
                     </td>
                 </tr>
@@ -237,53 +227,43 @@
                     <td>
                         <input type="radio" name="option1" [checked]="checkq2o4" (click)="keepChecked2('4')" (click)="selectedOptions[1] = level3[1].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[1].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview2" name="review2" (change)="addReview2 = !addReview2">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview2" name="review2" (change)="addReview2 = !addReview2">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- Q. 2 {{level3[1].question}}
-        <input type="radio" name="option1" [checked]="checkq2o1" (click)="keepChecked2('1')" (click)="selectedOptions[1] = level3[1].option1">{{level3[1].option1}}
-        <input type="radio" name="option1" [checked]="checkq2o2" (click)="keepChecked2('2')" (click)="selectedOptions[1] = level3[1].option2">{{level3[1].option2}}
-        <input type="radio" name="option1" [checked]="checkq2o3" (click)="keepChecked2('3')" (click)="selectedOptions[1] = level3[1].option3">{{level3[1].option3}}
-        <input type="radio" name="option1" [checked]="checkq2o4" (click)="keepChecked2('4')" (click)="selectedOptions[1] = level3[1].option4">{{level3[1].option4}}
-
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review2" (change)="addReview2 = !addReview2">Add to Review -->
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ3 == true">
+<div *ngIf="showQ3 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th colspan="2">Q. 3 {{level3[2].question}}</th>
+                    <th colspan="2" style="text-align:left;">Q. 3 {{level3[2].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option2" [checked]="checkq3o1" (click)="keepChecked3('1')"  (click)="selectedOptions[2] = level3[2].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[2].option1}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td >
                         <input type="radio" name="option2" [checked]="checkq3o2" (click)="keepChecked3('2')"  (click)="selectedOptions[2] = level3[2].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[2].option2}}
                     </td>
                 </tr>
@@ -291,7 +271,7 @@
                     <td>
                         <input type="radio" name="option2" [checked]="checkq3o3" (click)="keepChecked3('3')"  (click)="selectedOptions[2] = level3[2].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[2].option3}}
                     </td>
                 </tr>
@@ -299,45 +279,35 @@
                     <td>
                         <input type="radio" name="option2" [checked]="checkq3o4" (click)="keepChecked3('4')"  (click)="selectedOptions[2] = level3[2].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[2].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview3" name="review3" (change)="addReview3 = !addReview3">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview3" name="review3" (change)="addReview3 = !addReview3">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- Q. 3 {{level3[2].question}}
-        <input type="radio" name="option2" [checked]="checkq3o1" (click)="keepChecked3('1')"  (click)="selectedOptions[2] = level3[2].option1">{{level3[2].option1}}
-        <input type="radio" name="option2" [checked]="checkq3o2" (click)="keepChecked3('2')"  (click)="selectedOptions[2] = level3[2].option2">{{level3[2].option2}}
-        <input type="radio" name="option2" [checked]="checkq3o3" (click)="keepChecked3('3')"  (click)="selectedOptions[2] = level3[2].option3">{{level3[2].option3}}
-        <input type="radio" name="option2" [checked]="checkq3o4" (click)="keepChecked3('4')"  (click)="selectedOptions[2] = level3[2].option4">{{level3[2].option4}}
-        
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review3" (change)="addReview3 = !addReview3">Add to Review -->
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ4 == true">
+<div *ngIf="showQ4 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th colspan="2">Q. 4 {{level3[3].question}}</th>
+                    <th colspan="2" style="text-align:left;">Q. 4 {{level3[3].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option3" [checked]="checkq4o1" (click)="keepChecked4('1')" (click)="selectedOptions[3] = level3[3].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[3].option1}}
                     </td>
                 </tr>
@@ -345,7 +315,7 @@
                     <td>
                         <input type="radio" name="option3" [checked]="checkq4o2" (click)="keepChecked4('2')" (click)="selectedOptions[3] = level3[3].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[3].option2}}
                     </td>
                 </tr>
@@ -353,7 +323,7 @@
                     <td>
                         <input type="radio" name="option3" [checked]="checkq4o3" (click)="keepChecked4('3')" (click)="selectedOptions[3] = level3[3].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[3].option3}}
                     </td>
                 </tr>
@@ -361,44 +331,35 @@
                     <td>
                         <input type="radio" name="option3" [checked]="checkq4o4" (click)="keepChecked4('4')" (click)="selectedOptions[3] = level3[3].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[3].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview4" name="review4" (change)="addReview4 = !addReview4">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview4" name="review4" (change)="addReview4 = !addReview4">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- Q. 4 {{level3[3].question}}
-        <input type="radio" name="option3" [checked]="checkq4o1" (click)="keepChecked4('1')" (click)="selectedOptions[3] = level3[3].option1">{{level3[3].option1}}
-        <input type="radio" name="option3" [checked]="checkq4o2" (click)="keepChecked4('2')" (click)="selectedOptions[3] = level3[3].option2">{{level3[3].option2}}
-        <input type="radio" name="option3" [checked]="checkq4o3" (click)="keepChecked4('3')" (click)="selectedOptions[3] = level3[3].option3">{{level3[3].option3}}
-        <input type="radio" name="option3" [checked]="checkq4o4" (click)="keepChecked4('4')" (click)="selectedOptions[3] = level3[3].option4">{{level3[3].option4}}
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review4" (change)="addReview4 = !addReview4">Add to Review -->
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ5 == true">
+<div *ngIf="showQ5 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th colspan="2">Q. 5 {{level3[4].question}}</th>
+                    <th colspan="2"  style="text-align:left;">Q. 5 {{level3[4].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option4" [checked]="checkq5o1" (click)="keepChecked5('1')" (click)="selectedOptions[4] = level3[4].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[4].option1}}
                     </td>
                 </tr>
@@ -406,7 +367,7 @@
                     <td>
                         <input type="radio" name="option4" [checked]="checkq5o2" (click)="keepChecked5('2')" (click)="selectedOptions[4] = level3[4].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[4].option2}}
                     </td>
                 </tr>
@@ -414,7 +375,7 @@
                     <td>
                         <input type="radio" name="option4" [checked]="checkq5o3" (click)="keepChecked5('3')" (click)="selectedOptions[4] = level3[4].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[4].option3}}
                     </td>
                 </tr>
@@ -422,44 +383,35 @@
                     <td>
                         <input type="radio" name="option4" [checked]="checkq5o4" (click)="keepChecked5('4')" (click)="selectedOptions[4] = level3[4].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[4].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview5" name="review5" (change)="addReview5 = !addReview5">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview5" name="review5" (change)="addReview5 = !addReview5">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table> 
-        <!-- Q. 5 {{level3[4].question}}
-        <input type="radio" name="option4" [checked]="checkq5o1" (click)="keepChecked5('1')" (click)="selectedOptions[4] = level3[4].option1">{{level3[4].option1}}
-        <input type="radio" name="option4" [checked]="checkq5o2" (click)="keepChecked5('2')" (click)="selectedOptions[4] = level3[4].option2">{{level3[4].option2}}
-        <input type="radio" name="option4" [checked]="checkq5o3" (click)="keepChecked5('3')" (click)="selectedOptions[4] = level3[4].option3">{{level3[4].option3}}
-        <input type="radio" name="option4" [checked]="checkq5o4" (click)="keepChecked5('4')" (click)="selectedOptions[4] = level3[4].option4">{{level3[4].option4}}
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review5" (change)="addReview5 = !addReview5">Add to Review -->
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ6 == true">
+<div *ngIf="showQ6 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
-                <tr >
-                    <th colspan="2">Q. 6 {{level3[5].question}}</th>
+                <tr>
+                    <th colspan="2" style="text-align:left;">Q. 6 {{level3[5].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option5" [checked]="checkq6o1" (click)="keepChecked6('1')" (click)="selectedOptions[5] = level3[5].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[5].option1}}
                     </td>
                 </tr>
@@ -467,7 +419,7 @@
                     <td>
                         <input type="radio" name="option5" [checked]="checkq6o2" (click)="keepChecked6('2')" (click)="selectedOptions[5] = level3[5].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[5].option2}}
                     </td>
                 </tr>
@@ -475,7 +427,7 @@
                     <td>
                         <input type="radio" name="option5" [checked]="checkq6o3" (click)="keepChecked6('3')" (click)="selectedOptions[5] = level3[5].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[5].option3}}
                     </td>
                 </tr>
@@ -483,44 +435,35 @@
                     <td>
                         <input type="radio" name="option5" [checked]="checkq6o4" (click)="keepChecked6('4')" (click)="selectedOptions[5] = level3[5].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[5].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview6" name="review6" (change)="addReview6 = !addReview6">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview6" name="review6" (change)="addReview6 = !addReview6">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table> 
-        <!-- Q. 6 {{level3[5].question}}
-        <input type="radio" name="option5" [checked]="checkq6o1" (click)="keepChecked6('1')" (click)="selectedOptions[5] = level3[5].option1">{{level3[5].option1}}
-        <input type="radio" name="option5" [checked]="checkq6o2" (click)="keepChecked6('2')" (click)="selectedOptions[5] = level3[5].option2">{{level3[5].option2}}
-        <input type="radio" name="option5" [checked]="checkq6o3" (click)="keepChecked6('3')" (click)="selectedOptions[5] = level3[5].option3">{{level3[5].option3}}
-        <input type="radio" name="option5" [checked]="checkq6o4" (click)="keepChecked6('4')" (click)="selectedOptions[5] = level3[5].option4">{{level3[5].option4}}
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review6" (change)="addReview6 = !addReview6">Add to Review -->
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ7 == true">
+<div *ngIf="showQ7 == true" class="container"  style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th colspan="2">Q. 7 {{level3[6].question}}</th>
+                    <th colspan="2" style="text-align:left;">Q. 7 {{level3[6].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option6" [checked]="checkq7o1" (click)="keepChecked7('1')" (click)="selectedOptions[6] = level3[6].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[6].option1}}
                     </td>
                 </tr>
@@ -528,7 +471,7 @@
                     <td>
                         <input type="radio" name="option6" [checked]="checkq7o2" (click)="keepChecked7('2')" (click)="selectedOptions[6] = level3[6].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[6].option2}}
                     </td>
                 </tr>
@@ -536,7 +479,7 @@
                     <td>
                         <input type="radio" name="option6" [checked]="checkq7o3" (click)="keepChecked7('3')" (click)="selectedOptions[6] = level3[6].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[6].option3}}
                     </td>
                 </tr>
@@ -544,33 +487,24 @@
                     <td>
                         <input type="radio" name="option6" [checked]="checkq7o4" (click)="keepChecked7('4')" (click)="selectedOptions[6] = level3[6].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[6].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview7" name="review7" (change)="addReview7 = !addReview7">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview7" name="review7" (change)="addReview7 = !addReview7">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- Q. 7 {{level3[6].question}}
-        <input type="radio" name="option6" [checked]="checkq7o1" (click)="keepChecked7('1')" (click)="selectedOptions[6] = level3[6].option1">{{level3[6].option1}}
-        <input type="radio" name="option6" [checked]="checkq7o2" (click)="keepChecked7('2')" (click)="selectedOptions[6] = level3[6].option2">{{level3[6].option2}}
-        <input type="radio" name="option6" [checked]="checkq7o3" (click)="keepChecked7('3')" (click)="selectedOptions[6] = level3[6].option3">{{level3[6].option3}}
-        <input type="radio" name="option6" [checked]="checkq7o4" (click)="keepChecked7('4')" (click)="selectedOptions[6] = level3[6].option4">{{level3[6].option4}}
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review7" (change)="addReview7 = !addReview7">Add to Review -->
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ8 == true">
+<div *ngIf="showQ8 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
                     <th colspan="2">Q. 8 {{level3[7].question}}</th>
@@ -578,10 +512,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option7" [checked]="checkq8o1" (click)="keepChecked8('1')" (click)="selectedOptions[7] = level3[7].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[7].option1}}
                     </td>
                 </tr>
@@ -589,7 +523,7 @@
                     <td>
                         <input type="radio" name="option7" [checked]="checkq8o2" (click)="keepChecked8('2')" (click)="selectedOptions[7] = level3[7].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[7].option2}}
                     </td>
                 </tr>
@@ -597,7 +531,7 @@
                     <td>
                         <input type="radio" name="option7" [checked]="checkq8o3" (click)="keepChecked8('3')" (click)="selectedOptions[7] = level3[7].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[7].option3}}
                     </td>
                 </tr>
@@ -605,44 +539,35 @@
                     <td>
                         <input type="radio" name="option7" [checked]="checkq8o4" (click)="keepChecked8('4')" (click)="selectedOptions[7] = level3[7].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[7].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview8" name="review8" (change)="addReview8 = !addReview8">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview8" name="review8" (change)="addReview8 = !addReview8">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- Q. 8 {{level3[7].question}}
-        <input type="radio" name="option7" [checked]="checkq8o1" (click)="keepChecked8('1')" (click)="selectedOptions[7] = level3[7].option1">{{level3[7].option1}}
-        <input type="radio" name="option7" [checked]="checkq8o2" (click)="keepChecked8('2')" (click)="selectedOptions[7] = level3[7].option2">{{level3[7].option2}}
-        <input type="radio" name="option7" [checked]="checkq8o3" (click)="keepChecked8('3')" (click)="selectedOptions[7] = level3[7].option3">{{level3[7].option3}}
-        <input type="radio" name="option7" [checked]="checkq8o4" (click)="keepChecked8('4')" (click)="selectedOptions[7] = level3[7].option4">{{level3[7].option4}}
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review8" (change)="addReview8 = !addReview8">Add to Review -->
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ9 == true">
+<div *ngIf="showQ9 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th colspan="2">Q. 9 {{level3[8].question}}</th>
+                    <th colspan="2" style="text-align:left;">Q. 9 {{level3[8].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option8" [checked]="checkq9o1" (click)="keepChecked9('1')" (click)="selectedOptions[8] = level3[8].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[8].option1}}
                     </td>
                 </tr>
@@ -650,7 +575,7 @@
                     <td>
                         <input type="radio" name="option8" [checked]="checkq9o2" (click)="keepChecked9('2')" (click)="selectedOptions[8] = level3[8].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[8].option2}}
                     </td>
                 </tr>
@@ -658,7 +583,7 @@
                     <td>
                         <input type="radio" name="option8" [checked]="checkq9o3" (click)="keepChecked9('3')" (click)="selectedOptions[8] = level3[8].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[8].option3}}
                     </td>
                 </tr>
@@ -666,44 +591,35 @@
                     <td>
                         <input type="radio" name="option8" [checked]="checkq9o4" (click)="keepChecked9('4')" (click)="selectedOptions[8] = level3[8].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[8].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview9" name="review9" (change)="addReview9= !addReview9">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview9" name="review9" (change)="addReview9= !addReview9">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- Q. 9 {{level3[8].question}} -->
-        <!-- <input type="radio" name="option8" [checked]="checkq9o1" (click)="keepChecked9('1')" (click)="selectedOptions[8] = level3[8].option1">{{level3[8].option1}}
-        <input type="radio" name="option8" [checked]="checkq9o2" (click)="keepChecked9('2')" (click)="selectedOptions[8] = level3[8].option2">{{level3[8].option2}}
-        <input type="radio" name="option8" [checked]="checkq9o3" (click)="keepChecked9('3')" (click)="selectedOptions[8] = level3[8].option3">{{level3[8].option3}}
-        <input type="radio" name="option8" [checked]="checkq9o4" (click)="keepChecked9('4')" (click)="selectedOptions[8] = level3[8].option4">{{level3[8].option4}}
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review9" (change)="addReview9= !addReview9">Add to Review -->
     </div>
-</section>
+</div>
 
-<section *ngIf="showQ10 == true">
+<div *ngIf="showQ10 == true" class="container" style="margin:25px;padding-left:100px;">
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th colspan="2">Q. 10 {{level3[9].question}}</th>
+                    <th colspan="2" style="text-align:left;">Q. 10 {{level3[9].question}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td style="width:10%;">
                         <input type="radio" name="option9" [checked]="checkq10o1" (click)="keepChecked10('1')" (click)="selectedOptions[9] = level3[9].option1">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[9].option1}}
                     </td>
                 </tr>
@@ -711,7 +627,7 @@
                     <td>
                         <input type="radio" name="option9" [checked]="checkq10o2" (click)="keepChecked10('2')" (click)="selectedOptions[9] = level3[9].option2">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[9].option2}}
                     </td>
                 </tr>
@@ -719,7 +635,7 @@
                     <td>
                         <input type="radio" name="option9" [checked]="checkq10o3" (click)="keepChecked10('3')" (click)="selectedOptions[9] = level3[9].option3">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[9].option3}}
                     </td>
                 </tr>
@@ -727,40 +643,33 @@
                     <td>
                         <input type="radio" name="option9" [checked]="checkq10o4" (click)="keepChecked10('4')" (click)="selectedOptions[9] = level3[9].option4">
                     </td>
-                    <td>
+                    <td style="text-align:left;">
                         {{level3[9].option4}}
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="checkbox" [checked]="addReview10" name="review10" (change)="addReview10 = !addReview10">
-                    </td>
-                    <td>
+                    <td colspan="2">
+                        <input type="checkbox" [checked]="addReview10" name="review10" (change)="addReview10 = !addReview10">&nbsp;
                         Add to Review
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- Q. 10 {{level3[9].question}}
-        <input type="radio" name="option9" [checked]="checkq10o1" (click)="keepChecked10('1')" (click)="selectedOptions[9] = level3[9].option1">{{level3[9].option1}}
-        <input type="radio" name="option9" [checked]="checkq10o2" (click)="keepChecked10('2')" (click)="selectedOptions[9] = level3[9].option2">{{level3[9].option2}}
-        <input type="radio" name="option9" [checked]="checkq10o3" (click)="keepChecked10('3')" (click)="selectedOptions[9] = level3[9].option3">{{level3[9].option3}}
-        <input type="radio" name="option9" [checked]="checkq10o4" (click)="keepChecked10('4')" (click)="selectedOptions[9] = level3[9].option4">{{level3[9].option4}}
-        <br>
-        <input type="checkbox" [checked]="addReview1" name="review10" (change)="addReview10 = !addReview10">Add to Review -->
     </div>
-</section>
+</div>
+
 
 
 
 <div style="width:100%;padding-top:10px;text-align:center">
     <!-- <button (click)="showSelectedOptions()" class="btn btn-style">Show</button>&nbsp; -->
-    <button (click)="submitTest()" class="btn btn-style">Submit</button>
+    <button (click)="submitTest()" class="btn btn-style">Submit Level 2</button>
 </div>
-</section>
+<footer class="footer" style="font-family:'Ubuntu';letter-spacing:1px;">Made with  <i class="fa fa-heart" aria-hidden="true" style="color:red"></i>  by team LTIeQ</footer>
+</div>
 
 <section *ngIf = "showTest==false">
-    <div class="container">
+    <div class="container" style="margin-top:25px;">
         <table class="table table-bordered" >
             <thead>
                 <th colspan="2">
@@ -782,22 +691,22 @@
                 </tr>
                 <tr>
                     <td align="center" colspan="2" style="color: red;" *ngIf="totalMarks <14">
-                        You have not cleared Level 3. Better luck next time.
+                        Sorry, You have not cleared Level 3. Better luck next time.
                     </td>
                     <td align="center" colspan="2" style="color: green;" *ngIf="totalMarks >=14">
-                        You have cleared Level 3. Congratulations
+                        Congratulations! You have cleared Level 3.
                     </td>
                 </tr>
                 <tr>
-                    <td align="center" style="padding-left:35%;"colspan="2">
+                    <td align="center" style="padding-left:30%;"colspan="2">
                         <google-chart #chart
                             [title]="''"
                             [type]="'PieChart'"
                             [data]="[['Correct Anwers',totalMarks/2],['Wrong Anwers',10 - totalMarks/2]]"
                             [columns]="['Average','Percent']"
                             [options] = "{pieHole:0.3}"
-                            [width]="400"
-                            [height]="400">
+                            [width]="600"
+                            [height]="300">
                         </google-chart>
                     </td>
                 </tr>
@@ -809,30 +718,4 @@
             </tbody>
         </table>
     </div>
-    <!-- Your score is : {{totalMarks}}/20<br>
-    Correct answers : {{totalMarks/2}}<br>
-    Wrong answers : {{10 - totalMarks/2}}<br>
-    <b style="color: red;" *ngIf="totalMarks <14">
-You have not cleared Level 3. Better luck next time.
-    </b>
-    <b style="color: green;" *ngIf="totalMarks >=14">
-        You have cleared Level 3. Congratulations!
-    </b>
-    
-        <google-chart #chart
-           [title]="''"
-           [type]="'PieChart'"
-           [data]="[['Correct Anwers',totalMarks/2],['Wrong Anwers',10 - totalMarks/2]]"
-           [columns]="['Average','Percent']"
-           [options] = "{pieHole:0.6}"
-           [width]="550"
-           [height]="400">
-        </google-chart>
- 
-
-        <button (click)="endTest()">
-            End Test
-        </button> -->
-    <!-- Add the link for student dashboard in this button using [routerlink] -->
-
 </section>

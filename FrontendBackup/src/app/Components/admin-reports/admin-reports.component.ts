@@ -44,6 +44,7 @@ export class AdminReportsComponent implements OnInit {
   subjectGraph=[];
   totalUserCount;
   userWithExamCount;
+  showGraph =false;
 
   constructor(private _adminReportService:AdminReportService,private _router:Router,private _toastr:ToastrService,private _formBuilder:FormBuilder) { 
   }
@@ -75,50 +76,33 @@ export class AdminReportsComponent implements OnInit {
     this._adminReportService.getUserWithExams(this.data).subscribe(result=>{
       this.userWithExamCount=result;
       this.graph.push(["Users With Exam",this.userWithExamCount]);
-      // this.getSubjectWiseCount();
+      this.getSubjectWiseCount();
     }); 
+  }
+
+  getSubjectWiseCount(){
     this._adminReportService.getJavaExams(this.data).subscribe(result=>{
-      this.graph.push(["Java",result]);
+      this.subjectGraph.push(["Java",result]);
     });
     this._adminReportService.getSqlExams(this.data).subscribe(result=>{
-      this.graph.push(["SQL",result]);
+      this.subjectGraph.push(["SQL",result]);
     });
     this._adminReportService.getCplusExams(this.data).subscribe(result=>{
-      this.graph.push(["C/C++",result]);
+      this.subjectGraph.push(["C/C++",result]);
     });
     this._adminReportService.getCsharpExams(this.data).subscribe(result=>{
-      this.graph.push(["C#/.Net",result]);
+      this.subjectGraph.push(["C#/.Net",result]);
     });
     this._adminReportService.getPythonExams(this.data).subscribe(result=>{
-      this.graph.push(["Python",result]);
+      this.subjectGraph.push(["Python",result]);
     });
     this._adminReportService.getPhpExams(this.data).subscribe(result=>{
-      this.graph.push(["PHP",result]);
-      console.log(this.graph);
+      this.subjectGraph.push(["PHP",result]);
+      this.showGraph = true;
     });
-    
+    console.log(this.subjectGraph);
   }
-  // getSubjectWiseCount(){
-  //   this._adminReportService.getJavaExams(this.data).subscribe(result=>{
-  //     this.subjectGraph.push(["Java",result]);
-  //   });
-  //   this._adminReportService.getSqlExams(this.data).subscribe(result=>{
-  //     this.subjectGraph.push(["SQL",result]);
-  //   });
-  //   this._adminReportService.getCplusExams(this.data).subscribe(result=>{
-  //     this.subjectGraph.push(["C/C++",result]);
-  //   });
-  //   this._adminReportService.getCsharpExams(this.data).subscribe(result=>{
-  //     this.subjectGraph.push(["C#/.Net",result]);
-  //   });
-  //   this._adminReportService.getPythonExams(this.data).subscribe(result=>{
-  //     this.subjectGraph.push(["Python",result]);
-  //   });
-  //   this._adminReportService.getPhpExams(this.data).subscribe(result=>{
-  //     this.subjectGraph.push(["PHP",result]);
-  //   });
-  //   console.log(this.subjectGraph);
-  // }
+
   filterSearch(){
     let levelsData;
     if(this.selectedLevel=="L1"){

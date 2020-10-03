@@ -7,13 +7,20 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+// This Controller consists of Web APIs to generate different reports data and user details on the basis of module selection.
+
 namespace GladiatorBackend.Controllers
 {
+
+    //This is the route prefix to access methods of this controller/class.
     [RoutePrefix("api/report")]
     public class reportController : ApiController
     {
+        // Creating an object of the Db context class to query the MSSQL database using entity framework.
         OnlineExamEntities data = new OnlineExamEntities();
-       
+
+        // This function is accessed through HTTP POST method.
+        // It is used to return a list of Users who have appeared of exams to admin reports.
         [HttpPost]
         [Route("getAllReport")]
         public List<User> allReport()
@@ -22,6 +29,8 @@ namespace GladiatorBackend.Controllers
             return all;
         }
 
+        // This function is accessed through HTTP POST method which takes user id from the frontend service provided in POST body.
+        // It is used to return all the exam details appeared by a single specific student only.
         [HttpPost]
         [Route("getReport")]
         public List<customReport> studentReport([FromBody] User user)
@@ -31,7 +40,8 @@ namespace GladiatorBackend.Controllers
             return all;
         }
 
-
+        // This function is accessed through HTTP POST method.
+        // It is used to return all the cities available in the Users table.
         [HttpPost]
         [Route("getCity")]
         public List<string> city()
@@ -40,6 +50,8 @@ namespace GladiatorBackend.Controllers
             return all;
         }
 
+        // This function is accessed through HTTP POST method.
+        // It is used to return all the states available in the Users table.
         [HttpPost]
         [Route("getState")]
         public List<string> state()
@@ -48,6 +60,8 @@ namespace GladiatorBackend.Controllers
             return all;
         }
 
+        // This function is accessed through HTTP POST method which take various filters such as exam_name, city, state, levels and marks through POST body.
+        // It is used to return all the available results of users on the basis of provided filter parameters.
         [HttpPost]
         [Route("searchReport")]
         public List<reportOne> searchReport([FromBody] searchReport SR)

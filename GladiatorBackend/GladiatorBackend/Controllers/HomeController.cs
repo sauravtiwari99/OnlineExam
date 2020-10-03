@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace GladiatorBackend.Controllers
 {
-    public class HomeController : Controller
+    public class homeController : Controller
     {
         public ActionResult Index()
         {

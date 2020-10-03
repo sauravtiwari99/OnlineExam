@@ -11,25 +11,47 @@ using System.Web.Http.Results;
 using GladiatorBackend.Models;
 using FileReader;
 
+// This Controller consists of Web APIs to Upload and Remove sets of questions for different subjects by Admin only. 
+
 namespace GladiatorBackend.Controllers
 {
+    //This is the route prefix to access methods of this controller/class.
+
     [RoutePrefix("api/admins/upload")]
-    public class UploadController : ApiController
+    public class uploadController : ApiController
     {
+        // Creating an object of the Db context class to query the MSSQL database using entity framework.
+
         OnlineExamEntities data = new OnlineExamEntities();
 
-        //Available Set in which upload can be performed 
+        // This function is accessed through HTTP POST method it takes subject name. 
+        //it returns Set and its avaliability in which upload can be performed 
+
         [HttpPost]
         [AllowAnonymous]
         [Route("uploadSet")]
-        public List<string> uploadSet([FromBody] filepath subject)
+        public List<setTable> uploadSet([FromBody] filepath subject)
         {
             var free = subject.subject + "_Sets";
-            var avail = data.Database.SqlQuery<string>(@"select table_name from " + free + " where availability = 'yes'").ToList();
+            var avail = data.Database.SqlQuery<setTable>(@"select table_name, availability from " + free).ToList();
+            return avail;
+        }
+
+        // This function is accessed through HTTP POST method which takes subject_name from POST body.
+        // It is used to return available sets for a particular subject and give response accordingly.
+
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("Available")]
+        public List<string> available([FromBody] filepath subject)
+        {
+            var free = subject.subject + "_Sets";
+            var avail = data.Database.SqlQuery<string>(@"select table_name from " + free + " where availability = 'no'").ToList();
 
             return avail;
         }
 
+        // It is used to remove a set of Java questions from the table and give response accordingly.
 
         [HttpPost]
         [AllowAnonymous]
@@ -43,19 +65,8 @@ namespace GladiatorBackend.Controllers
             return "Deleted";
         }
 
-        [HttpPost]
-        [AllowAnonymous]
-        [Route("Available")]
-        public List<string> available([FromBody] filepath subject)
-        {
-            var free = subject.subject + "_Sets";
-            var avail = data.Database.SqlQuery<string>(@"select table_name from " + free + " where availability = 'no'").ToList();
-
-            return avail;
-        }
-
-
-
+        // This function is accessed through HTTP POST method which takes subject_name and csv from POST body.
+        // It is used to upload a java question set and self determine which position to fill in.
 
         [HttpPost]
         [AllowAnonymous]
@@ -84,6 +95,10 @@ namespace GladiatorBackend.Controllers
             else
                 return "No More Set Can be Added";
         }
+
+        // This function is accessed through HTTP POST method which takes set number from POST body.
+        // It is used to remove a set of Cplus questions from the table and give response accordingly.
+
         [HttpPost]
         [AllowAnonymous]
         [Route("removeCplus")]
@@ -95,6 +110,9 @@ namespace GladiatorBackend.Controllers
             data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts - 1 where exam_id =2");
             return "Deleted";
         }
+
+        // This function is accessed through HTTP POST method which takes subject_name and csv from POST body.
+        // It is used to upload a Cplus question set and self determine which position to fill in.
 
         [HttpPost]
         [AllowAnonymous]
@@ -123,6 +141,11 @@ namespace GladiatorBackend.Controllers
             else
                 return "No More Set Can be Added";
         }
+
+
+        // This function is accessed through HTTP POST method which takes set number from POST body.
+        // It is used to remove a set of Csharp questions from the table and give response accordingly.
+
         [HttpPost]
         [AllowAnonymous]
         [Route("removeCsharp")]
@@ -134,6 +157,10 @@ namespace GladiatorBackend.Controllers
             data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts - 1 where exam_id =3");
             return "Deleted";
         }
+
+
+        // This function is accessed through HTTP POST method which takes subject_name and csv from POST body.
+        // It is used to upload a Csharp question set and self determine which position to fill in.
 
         [HttpPost]
         [AllowAnonymous]
@@ -162,6 +189,11 @@ namespace GladiatorBackend.Controllers
             else
                 return "No More Set Can be Added";
         }
+
+        // This function is accessed through HTTP POST method which takes set number from POST body.
+        // It is used to remove a set of Php questions from the table and give response accordingly.
+
+
         [HttpPost]
         [AllowAnonymous]
         [Route("removePhp")]
@@ -173,6 +205,9 @@ namespace GladiatorBackend.Controllers
             data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts - 1 where exam_id =4");
             return "Deleted";
         }
+
+        // This function is accessed through HTTP POST method which takes subject_name and csv from POST body.
+        // It is used to upload a Php question set and self determine which position to fill in.
 
         [HttpPost]
         [AllowAnonymous]
@@ -202,6 +237,8 @@ namespace GladiatorBackend.Controllers
                 return "No More Set Can be Added";
         }
 
+        // This function is accessed through HTTP POST method which takes set number from POST body.
+        // It is used to remove a set of Sql questions from the table and give response accordingly.
 
         [HttpPost]
         [AllowAnonymous]
@@ -214,6 +251,9 @@ namespace GladiatorBackend.Controllers
             data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts - 1 where exam_id =5");
             return "Deleted";
         }
+
+        // This function is accessed through HTTP POST method which takes subject_name and csv from POST body.
+        // It is used to upload a Sql question set and self determine which position to fill in.
 
         [HttpPost]
         [AllowAnonymous]
@@ -243,6 +283,9 @@ namespace GladiatorBackend.Controllers
                 return "No More Set Can be Added";
         }
 
+        // This function is accessed through HTTP POST method which takes subject_name and csv from POST body.
+        // It is used to upload a Python question set and self determine which position to fill in.
+
         [HttpPost]
         [AllowAnonymous]
         [Route("removePython")]
@@ -254,6 +297,9 @@ namespace GladiatorBackend.Controllers
             data.Database.ExecuteSqlCommand(@"update Exam_List set exam_set_counts = exam_set_counts - 1 where exam_id =6");
             return "Deleted";
         }
+
+        // This function is accessed through HTTP POST method which takes subject_name and csv from POST body.
+        // It is used to upload a Python question set and self determine which position to fill in.
 
         [HttpPost]
         [AllowAnonymous]

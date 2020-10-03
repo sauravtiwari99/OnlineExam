@@ -7,12 +7,21 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+// This Controller consists of Web APIs to generate sets of questions of different sets and their difficulty levels. Also, to store user scores for each level.
 namespace GladiatorBackend.Controllers
 {
+    //This is the route prefix to access methods of this controller/class.
+
     [RoutePrefix("api/students/test")]
     public class testController : ApiController
     {
+        // Creating an object of the Db context class to query the MSSQL database using entity framework.
+
         OnlineExamEntities data = new OnlineExamEntities();
+
+        // This function is accessed through HTTP POST method which takes test subject name from POST body.
+        // It is used to return a random set of 20 easy questions.
+
         [HttpPost]
         [Route("easy")]
         public List<questionR> level1([FromBody] filepath filepath)
@@ -26,6 +35,10 @@ namespace GladiatorBackend.Controllers
             var all = data.Database.SqlQuery<questionR>(@"select top 20 sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'easy' order by NEWID()").ToList();
             return all;
         }
+
+        // This function is accessed through HTTP POST method which takes test subject name from POST body.
+        // It is used to return a random set of 20 medium questions.
+
         [HttpPost]
         [Route("medium")]
         public List<questionR> level2([FromBody] filepath filepath)
@@ -39,6 +52,10 @@ namespace GladiatorBackend.Controllers
             var all = data.Database.SqlQuery<questionR>(@"select top 20  sno,question,option1, option2, option3, option4, [correct option] as correct_option, difficulty from " + filepath.subject + "Question" + filepath.set + " where difficulty = 'medium' order by NEWID()").ToList();
             return all;
         }
+
+        // This function is accessed through HTTP POST method which takes test subject name from POST body.
+        // It is used to return a random set of 10 hard questions.
+
         [HttpPost]
         [Route("hard")]
         public List<questionR> level3([FromBody] filepath filepath)
@@ -54,6 +71,9 @@ namespace GladiatorBackend.Controllers
             return all;
         }
 
+        // This function is accessed through HTTP POST method which takes user details and scores for level 1 from POST body.
+        // It is used to store the result of a particular user for a single test in Reports table.
+
         [HttpPost]
         [Route("insert")]
         public List<int> reportInsert([FromBody] reportStudent RS)
@@ -63,6 +83,9 @@ namespace GladiatorBackend.Controllers
             var report_id = data.Database.SqlQuery<int>(@"select top 1 report_id from Reports order by report_id desc").ToList();
             return report_id;
         }
+
+        // This function is accessed through HTTP POST method which takes user details and scores for level 2 or 3 from POST body.
+        // It is used to store the result of a particular user for a single test in Reports table for same test if level 1 or 2 is cleared.
 
         [HttpPost]
         [Route("update")]

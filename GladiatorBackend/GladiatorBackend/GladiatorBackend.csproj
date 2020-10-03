@@ -169,12 +169,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\ExamController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\examController.cs" />
+    <Compile Include="Controllers\homeController.cs" />
     <Compile Include="Controllers\reportController.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Controllers\trafficController.cs" />
-    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Controllers\uploadController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,6 +225,7 @@
     <Compile Include="Models\reportOne.cs" />
     <Compile Include="Models\reportStudent.cs" />
     <Compile Include="Models\searchReport.cs" />
+    <Compile Include="Models\setTable.cs" />
     <Compile Include="Models\Sql_Sets.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

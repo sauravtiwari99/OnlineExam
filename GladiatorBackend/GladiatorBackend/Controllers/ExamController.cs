@@ -9,13 +9,21 @@ using System.Net.Mail;
 using System.Web.Http;
 using System.Web.Http.Results;
 
+// This Controller consists of Web APIs to validate students and admins. Also, it consists of APIs to register new users.
 namespace GladiatorBackend.Controllers
 {
+    //This is the route prefix to access methods of this controller/class.
+
     [RoutePrefix("api/accounts")]
-    public class ExamController : ApiController
+    public class examController : ApiController
     {
+        // Creating an object of the Db context class to query the MSSQL database using entity framework.
 
         OnlineExamEntities data = new OnlineExamEntities();
+
+        // This function is accessed through HTTP POST method by providing email_id and password entered by user in the POST body.
+        // It is used to validate a particular user and send response repectively.
+
         [HttpPost]
         [Route("getUser")]
         public List<User> validateUser([FromBody] User userDetails)
@@ -24,6 +32,9 @@ namespace GladiatorBackend.Controllers
             return name;
         }
 
+        // This function is accessed through HTTP GET method.
+        // It is used get all the Users present in the users table. It is used to check list of users enrolled.
+        
         [HttpGet]
         [Route("showAllUsers")]
         public IEnumerable<User> getAllUsers()
@@ -32,6 +43,9 @@ namespace GladiatorBackend.Controllers
             return all;
         }
 
+        // This function is a accessed through HTTP POST method by providing all the necessary registration details entered by user in the POST body.
+        // It is used to store a new user in Users Table and send response repectively.
+        
         [HttpPost]
         [Route("registerUser")]
         public string registerUser([FromBody] User registerDetails)
@@ -54,6 +68,9 @@ namespace GladiatorBackend.Controllers
             }
         }
 
+        // This function is accessed through HTTP POST method by providing email_id and password entered by Admin in the POST body.
+        // It is used to validate a particular admin and send response repectively.
+        
         [HttpPost]
         [Route("getAdmin")]
         public List<string> validateAdmin([FromBody] User userDetails)
@@ -62,7 +79,9 @@ namespace GladiatorBackend.Controllers
             return name;
         }
 
-
+        // This function is a accessed through HTTP POST method by providing email_id entered by user in the POST body.
+        // It is used generate random OTP, send it to the provided email using smtp server of gmail and send it to angular repectively.
+        
         [HttpPost]
         [AllowAnonymous]
         [Route("sendMail")]
@@ -99,7 +118,9 @@ namespace GladiatorBackend.Controllers
             }
         }
 
-
+        // This function is a accessed through HTTP POST method by providing the new entered password entered by user in the POST body.
+        // It is used to store a new password in Users Table if user chooses the forgot password option and send reponse repectively.
+        
         [HttpPost]
         [AllowAnonymous]
         [Route("resetPassword")]

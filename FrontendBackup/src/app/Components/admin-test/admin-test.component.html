@@ -92,5 +92,65 @@
         </tr>
     </table>
     </div>
+    <div class="container" *ngIf="removeQuestions==false && addQuestions==false">
+        <table class="table table-bordered table-condensed table-hover" style="margin-bottom:10%;">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        Sets Availability Table
+                    </th>
+                </tr>
+                <tr>
+                    <th>Subject Name</th>
+                    <th>Sets</th>
+                    <th>Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="4">Java</td>
+                </tr>
+                <tr *ngFor="let i of javaAvailability">
+                    <td>{{i.table_name}}</td>
+                    <td>{{i.availability}}</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">C#/.Net</td>
+                </tr>
+                <tr *ngFor="let i of cSharpAvailability">
+                    <td>{{i.table_name}}</td>
+                    <td>{{i.availability}}</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">SQL</td>
+                </tr>
+                <tr *ngFor="let i of sqlAvailabilty">
+                    <td>{{i.table_name}}</td>
+                    <td>{{i.availability}}</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">C/C++</td>
+                </tr>
+                <tr *ngFor="let i of cPlusAvailability">
+                    <td>{{i.table_name}}</td>
+                    <td>{{i.availability}}</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">PHP</td>
+                </tr>
+                <tr *ngFor="let i of phpAvailability">
+                    <td>{{i.table_name}}</td>
+                    <td>{{i.availability}}</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">Python</td>
+                </tr>
+                <tr *ngFor="let i of pythonAvailabilty">
+                    <td>{{i.table_name}}</td>
+                    <td>{{i.availability}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <footer class="footer" style="font-family:'Ubuntu';letter-spacing:1px;">Made with  <i class="fa fa-heart" aria-hidden="true" style="color:red"></i>  by team LTIeQ</footer>
 </div>

@@ -19,7 +19,56 @@ export class AdminTestComponent implements OnInit {
   allSets;
   selectedSet;
   splitString;
+  javaAvailability;
+  cSharpAvailability;
+  cPlusAvailability;
+  pythonAvailabilty;
+  sqlAvailabilty;
+  phpAvailability;
+ 
   ngOnInit(): void {
+    let javaCheck={
+      subject:"Java"
+    }
+    this._adminService.getSetsAvailabilty(javaCheck).subscribe(result=>{
+      console.log(result);
+      this.javaAvailability=result;
+    });
+    let cSharpCheck={
+      subject:"Csharp"
+    }
+    this._adminService.getSetsAvailabilty(cSharpCheck).subscribe(result=>{
+      console.log(result);
+      this.cSharpAvailability=result;
+    });
+    let cPlusCheck={
+      subject:"Cplus"
+    }
+    this._adminService.getSetsAvailabilty(cPlusCheck).subscribe(result=>{
+      console.log(result);
+      this.cPlusAvailability=result;
+    });
+    let pythonCheck={
+      subject:"Python"
+    }
+    this._adminService.getSetsAvailabilty(pythonCheck).subscribe(result=>{
+      console.log(result);
+      this.pythonAvailabilty=result;
+    });
+    let sqlCheck={
+      subject:"Sql"
+    }
+    this._adminService.getSetsAvailabilty(sqlCheck).subscribe(result=>{
+      console.log(result);
+      this.sqlAvailabilty=result;
+    });
+    let phpCheck={
+      subject:"Php"
+    }
+    this._adminService.getSetsAvailabilty(phpCheck).subscribe(result=>{
+      console.log(result);
+      this.phpAvailability=result;
+    });
   }
   showSelected(){
     console.log(this.selectedValue)

@@ -32,8 +32,6 @@ export class AdminService {
     return this.http.post(this.baseUrl+"Available",data);
   }
 
-
-
   removeJava(data){
     return this.http.post(this.baseUrl+"removeJava",data);
   }
@@ -51,5 +49,10 @@ export class AdminService {
   }
   removeCSharp(data){
     return this.http.post(this.baseUrl+"removeCsharp",data);
+  }
+
+
+  getSetsAvailabilty(data){
+    return this.http.post(this.baseUrl+"uploadSet",data);
   }
 }

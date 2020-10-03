@@ -35,11 +35,52 @@
     </table>   
     <div style="float:right;" *ngIf="showNullAll == false">
         <pagination-controls id="a" (pageChange)="page = $event"></pagination-controls>
-    </div>  
+    </div> 
     <div *ngIf="showNullAll == true" align="center">
         <span style="font-family:'Ubuntu';font-weight:bolder;font-size:20px;color: red;">No Users Found</span>
     </div> 
+    <div style="padding-top:30px;" *ngIf="userDataReceived==true && showNullAll==false">
+        <!-- <div class="card-deck" >
+            <div class="card text-center">
+                <div align="center" class="card-body">
+                    <google-chart #chart
+                        [title]="'Total Users Registered Vs Users Appeared for Exam'"
+                        [type]="'ColumnChart'"
+                        [data]="graph"
+                        [columns]="['Total Users','Users With Exam']"
+                        [width]="500"
+                        [height]="300">
+                    </google-chart>
+                </div>
+            </div> 
+            <div class="card text-center">
+                <div align="center" class="card-body">
+                    <google-chart #chart
+                        [title]="'Total Users Registered Vs Users Appeared for Exam'"
+                        [type]="'ColumnChart'"
+                        [data]="graph"
+                        [columns]="['Total Users','Users With Exam']"
+                        [width]="350"
+                        [height]="300">
+                    </google-chart>
+                </div>
+            </div>
+        </div> -->
+        <div class="card" style="margin:30px;">
+            <div align="center" class="card-body">
+                <google-chart #chart
+                    [title]="'Total Users Registered Vs Users Appeared for Exam'"
+                    [type]="'ColumnChart'"
+                    [data]="graph"
+                    [columns]="['Total Users','Users With Exam','Java','SQL','C/C++','C#/.Net','Python','PHP']"
+                    [width]="500"
+                    [height]="300">
+                </google-chart>
+            </div>
+        </div>
+    </div>
 </div>
+
 <div class="container userTable" *ngIf="filterBasedTable==true">
     <table class="table" *ngIf="showNull == false">
         <thead>

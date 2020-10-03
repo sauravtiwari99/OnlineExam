@@ -40,6 +40,10 @@ export class AdminReportsComponent implements OnInit {
   page:number=1;
   showNull = false
   showNullAll = false
+  graph=[];
+  subjectGraph=[];
+  totalUserCount;
+  userWithExamCount;
 
   constructor(private _adminReportService:AdminReportService,private _router:Router,private _toastr:ToastrService,private _formBuilder:FormBuilder) { 
   }
@@ -47,6 +51,7 @@ export class AdminReportsComponent implements OnInit {
     this.getAllUser();
     this.getCity();
     this.getStates();
+    
   }
   getAllUser(){
     this._adminReportService.allUserDetails(this.data).subscribe(result=>{
@@ -55,18 +60,66 @@ export class AdminReportsComponent implements OnInit {
       if(this.allUserData.length == 0){
         this.showNullAll = true
       }
-      else{
+      else{  
         this.showNullAll = false
+        this.getCount();
       }
     });
     this.userDataReceived=true;
   }
+  getCount(){
+    this._adminReportService.getAllUserCount(this.data).subscribe(result=>{
+      this.totalUserCount=result;
+      this.graph.push(["Registered Users",this.totalUserCount]);
+    });
+    this._adminReportService.getUserWithExams(this.data).subscribe(result=>{
+      this.userWithExamCount=result;
+      this.graph.push(["Users With Exam",this.userWithExamCount]);
+      // this.getSubjectWiseCount();
+    }); 
+    this._adminReportService.getJavaExams(this.data).subscribe(result=>{
+      this.graph.push(["Java",result]);
+    });
+    this._adminReportService.getSqlExams(this.data).subscribe(result=>{
+      this.graph.push(["SQL",result]);
+    });
+    this._adminReportService.getCplusExams(this.data).subscribe(result=>{
+      this.graph.push(["C/C++",result]);
+    });
+    this._adminReportService.getCsharpExams(this.data).subscribe(result=>{
+      this.graph.push(["C#/.Net",result]);
+    });
+    this._adminReportService.getPythonExams(this.data).subscribe(result=>{
+      this.graph.push(["Python",result]);
+    });
+    this._adminReportService.getPhpExams(this.data).subscribe(result=>{
+      this.graph.push(["PHP",result]);
+      console.log(this.graph);
+    });
+    
+  }
+  // getSubjectWiseCount(){
+  //   this._adminReportService.getJavaExams(this.data).subscribe(result=>{
+  //     this.subjectGraph.push(["Java",result]);
+  //   });
+  //   this._adminReportService.getSqlExams(this.data).subscribe(result=>{
+  //     this.subjectGraph.push(["SQL",result]);
+  //   });
+  //   this._adminReportService.getCplusExams(this.data).subscribe(result=>{
+  //     this.subjectGraph.push(["C/C++",result]);
+  //   });
+  //   this._adminReportService.getCsharpExams(this.data).subscribe(result=>{
+  //     this.subjectGraph.push(["C#/.Net",result]);
+  //   });
+  //   this._adminReportService.getPythonExams(this.data).subscribe(result=>{
+  //     this.subjectGraph.push(["Python",result]);
+  //   });
+  //   this._adminReportService.getPhpExams(this.data).subscribe(result=>{
+  //     this.subjectGraph.push(["PHP",result]);
+  //   });
+  //   console.log(this.subjectGraph);
+  // }
   filterSearch(){
-    // console.log(this.selectedTech);
-    // console.log(this.selectedCity);
-    // console.log(this.selectedState);
-    // console.log(this.selectedLevel);
-    // console.log(this.marksEntered);
     let levelsData;
     if(this.selectedLevel=="L1"){
       levelsData=["1"];

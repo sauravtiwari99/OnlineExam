@@ -27,7 +27,7 @@ namespace GladiatorBackend.Controllers
         [Route("allTraffic")]
         public int allTraffic()
         {
-            var all = data.Database.SqlQuery<User>(@"select * from Users ").ToList();
+            var all = data.Database.SqlQuery<User>(@"select * from Users").ToList();
             return all.Count;
         }
 
@@ -54,25 +54,70 @@ namespace GladiatorBackend.Controllers
             return all.Count;
         }
         // This function is accessed through HTTP POST method
-        //This returns the Total No of times a particular test was attempted
+        //This returns the Total No of times Java test was attempted
 
         [HttpPost]
-        [Route("subjectTraffic")]
-        public int subjectTraffic([FromBody] filepath filepath)
+        [Route("javaTraffic")]
+        public int javaTraffic()
         {
-            var all = data.Database.SqlQuery<User>(@"select Users.* from Users inner join Reports on Reports.user_id = Users.user_id where Reports.exam_name ='" + filepath.subject+"'").ToList();
+            var all = data.Database.SqlQuery<User>(@"select Users.* from Users inner join Reports on Reports.user_id = Users.user_id where Reports.exam_name ='Java'").ToList();
+            return all.Count;
+        }
+        
+        // This function is accessed through HTTP POST method
+        //This returns the Total No of times Cplus test was attempted
+
+        [HttpPost]
+        [Route("cplusTraffic")]
+        public int cplusTraffic()
+        {
+            var all = data.Database.SqlQuery<User>(@"select Users.* from Users inner join Reports on Reports.user_id = Users.user_id where Reports.exam_name ='Cplus'").ToList();
+            return all.Count;
+        }
+        
+        // This function is accessed through HTTP POST method
+        //This returns the Total No of times Csharp test was attempted
+
+        [HttpPost]
+        [Route("csharpTraffic")]
+        public int csharpTraffic()
+        {
+            var all = data.Database.SqlQuery<User>(@"select Users.* from Users inner join Reports on Reports.user_id = Users.user_id where Reports.exam_name ='Csharp'").ToList();
+            return all.Count;
+        }
+        
+        // This function is accessed through HTTP POST method
+        //This returns the Total No of times PHP test was attempted
+
+        [HttpPost]
+        [Route("phpTraffic")]
+        public int phpTraffic()
+        {
+            var all = data.Database.SqlQuery<User>(@"select Users.* from Users inner join Reports on Reports.user_id = Users.user_id where Reports.exam_name ='Php'").ToList();
             return all.Count;
         }
 
         // This function is accessed through HTTP POST method
-        // This returns the count of Distinct Users who attempted particular test
+        //This returns the Total No of times SQL test was attempted
 
         [HttpPost]
-        [Route("subjectDistinctTraffic")]
-        public int subjectDistinctTraffic([FromBody] filepath filepath)
+        [Route("sqlTraffic")]
+        public int sqlTraffic()
         {
-            var all = data.Database.SqlQuery<User>(@"select distinct Users.* from Users inner join Reports on Reports.user_id = Users.user_id where Reports.exam_name ='" + filepath.subject+"'").ToList();
+            var all = data.Database.SqlQuery<User>(@"select Users.* from Users inner join Reports on Reports.user_id = Users.user_id where Reports.exam_name ='Sql'").ToList();
             return all.Count;
         }
+
+        // This function is accessed through HTTP POST method
+        //This returns the Total No of times Python test was attempted
+
+        [HttpPost]
+        [Route("pythonTraffic")]
+        public int pythonTraffic()
+        {
+            var all = data.Database.SqlQuery<User>(@"select Users.* from Users inner join Reports on Reports.user_id = Users.user_id where Reports.exam_name ='Python'").ToList();
+            return all.Count;
+        }
+
     }
 }

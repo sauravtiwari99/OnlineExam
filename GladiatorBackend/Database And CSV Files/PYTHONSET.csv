@@ -1,0 +1,51 @@
+sno,question,option1,option2,option3,option4,correct option,difficulty
+1,What is Python?,C++ library,web browser,IDE (Integrated Developer Environment),Programming Language,IDE (Integrated Developer Environment),easy
+2,Who created Python?,Denis Ritchie,Tom Cruise,Guido Van Rossum,James Gosling,Guido Van Rossum,easy
+3,In python which keyword is used to start function?,import,def,function,try,def,easy
+4,Python was released publicly in which year?,1991,1981,1961,1971,1991,easy
+5,In python which is the correct method to load a module?,include math,#include math.h,using math,import math,import math,easy
+6,Python is said to be easily ____ ,Bug-able Language,Script-able Language,Writable Language,Readable Language,Readable Language,easy
+7,Which function is used to open the file for reading in python?,"  openfile(filename,mode)","open_file(filename,mode)","fopen(filename,mode)","open(filename,mode)","open(filename,mode)",easy
+8,Which of the following function convert a string to a frozen set in python?,frozenset(s),set(x),chr(x),dict(d),frozenset(s),easy
+9,Which of the following data types is not supported in python?,Slice,Numbers,List,Stringwrong,Slice,easy
+10,What is the name of data type for character in python?,chr,Python do not have any data type for characters they are treated as string.,character,char,Python do not have any data type for characters they are treated as string.,easy
+11,Which of the following keyword is a valid placeholder for body of the function?,continue,break,body,pass,pass,easy
+12,Which Keywords mark the beginning of the Class definition?,return,class,def,All of the above,class,easy
+13,Which operator in python evaluates to true if it does not finds a variable in the specified sequence and false otherwise?,is,//,**,not in,not in,easy
+14,"In Python,which of the following function checks in a string that all characters are digits?",shuffle(lst),isalnum(),capitalize(),isdigit(),isdigit(),easy
+15,Which of the following function returns them in alphabetical character from the string str?,max(str),lstrip(),lower(),min(str),min(str),easy
+16,What Relationship Correctly Fits For University And Professor?,association,composition,inheritance,All of the above,composition,easy
+17,Which of the following symbols are used for comments in Python?,/**/,"""",#,//,#,easy
+18,Which keyword is used to define methods in Python?,def,method,function,All of these,def,easy
+19,Which of the following is the use of id() function in python?,Every object doesn't have a unique id,Id returns the identity of the object,All of the mentioned,None of the mentioned,Id returns the identity of the object,easy
+20,Is Python case sensitive when dealing with identifiers?,yes,no,maybe,none of the mentioned,,easy
+21,All keywords in Python are in,UPPER CASE,lower case,Capitalized,None of the mentioned,None of the mentioned,medium
+22,Mathematical operations can be performed on a string. State whether true or false -,FALSE,TRUE,maybe,none of the mentioned,FALSE,medium
+23,Which one of the following has the highest precedence in the expression?,Addition,Multiplication,Exponential,Parentheses,Parentheses,medium
+24,What is the return type of function id?,float,bool,dict,int,int,medium
+25,What is the output of the following? print(""Hello {0!r} and {0!s}"".format('foo','bin'))",Hello 'foo' and foo,Hello foo and foo,Hello foo and 'bin',Error,Hello foo and foo,medium
+26,Which of the following data types is not supported in python ?,String,Numbers,Slice,List,Slice,medium
+27,Which Of The Following Keywords Mark The Beginning Of The Class Definition?,return,class,def,All of the above,class,medium
+28,Select the reserved keyword in python-,else,raise,import,All of the above,All of the above,medium
+29,Python allows string slicing. What is the output of below code: s='cppbuzz chicago' print(s[3:5]),buzzc,pbuzz,bu,None of these,bu,medium
+30,class test: def __init__(self): print ""Hello World"" def __init__(self): print ""Bye World"" obj=test()",Bye World,Hello World,Compilation Error,Ambiguity,Bye World,medium
+31,The format function,when applied on a string returns :",list,bool,int,str,str,medium
+32,Which statement is correct ?,List is mutable & Tuple is immutable,List is immutable & Tuple is mutable,Both are Mutable.,Both are Immutable,List is mutable & Tuple is immutable,medium
+33,What is the maximum possible length of an identifier?,32 characters,63 characters,79 characters,31 Characters,31 Characters,medium
+34,Which one of the following is not a python's predefined data type?,List,Dictionary,Tuple,Class,Class,medium
+35,What will be the output of 7^10 in python?,13,15,2,None of these,13,medium
+36,19 % 2 in python,2,17,None of these,9,None of these,medium
+37,Which of the following has more precedance?,/,+,(),-,(),medium
+38,What happens if the base condition isn't defined in recursive programs?,Program gets into an infinite loop,Program runs once,Program runs n number of times where n is the argument given to the function,An exception is thrown,Program gets into an infinite loop,medium
+39,Which of these is not true about recursion?,Making the code look clean,A complex task can be broken into sub-problems,Recursive calls take up less memory,Sequence generation is easier than a nested iteration,Recursive calls take up less memory,medium
+40,Which of these is not true about recursion?,It's easier to code some real-world problems using recursion than non-recursive equivalent,Recursive functions are easy to debug,Recursive calls take up a lot of memory,Programs using recursion take longer time than their non-recursive equivalent,Recursive functions are easy to debug,medium
+41,Which of the following functions results in case insensitive matching?,re.A,re.U,re.I,re.X,re.I,hard
+42,Which of the following functions clears the regular expression cache?,re.sub(),re.pos(),re.purge(),re.subn(),re.purge(),hard
+43,Choose the function whose output can be: <_sre.SRE_Match object; span=(4,8),match='aaaa'>.",">>> re.search('aaaa',""alohaaaa"",0)",">>> re.match('aaaa',""alohaaaa"",0)",">>> re.match('aaa',""alohaaa"",0)",">>> re.search('aaa',""alohaaa"",0)",">>> re.search('aaaa',""alohaaaa"",0)",hard
+44,If a=(1,2,3,4),a[1:-1] is _________"," Error,tuple slicing doesn't exist","[2,3]","(2,3,4)","(2,3)","(2,3)",hard
+45,Which module in the python standard library parses options received from the command line?,getopt,os,getarg,main,getopt,hard
+46,What is the type of sys.argv?,set,list,tuple,string,list,hard
+47,What is the value stored in sys.argv[0]?,null,you cannot access it,the program's name,the first argument,the program's name,hard
+48,How are default arguments specified in the function heading?,identifier followed by an equal to sign and the default value,identifier followed by the default value within backticks ("),identifier followed by the default value within square brackets ([]),identifier,identifier followed by an equal to sign and the default value,hard
+49,How are variable length arguments specified in the function heading?,one star followed by a valid identifier,one underscore followed by a valid identifier,two stars followed by a valid identifier,two underscores followed by a valid identifier,one star followed by a valid identifier,hard
+50,Let A and B be objects of class Foo. Which functions are called when print(A + B) is executed?,"__add__(),__str__()"," __str__(),__add__()"," __sum__(),__str__()","__str__(),__sum__()","__add__(),__str__()",hard

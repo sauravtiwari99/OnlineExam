@@ -1,0 +1,51 @@
+sno,question,option1,option2,option3,option4,correct option,difficulty
+1,Who is father of C Language?,Bjarne Stroustrup,Dennis Ritchie,James A. Gosling,Dr. E.F. Codd,Dennis Ritchie,easy
+2,What is the correct value to return to the operating system upon the successful completion of a program?,-1,1,0,Programs do not return a value,0,easy
+3,C Language developed at _________ .,AT & T's Bell Laboratories of USA in 1972,AT & T's Bell Laboratories of USA in 1970,Sun Microsystems in 1973,Cambridge University in 1972,AT & T's Bell Laboratories of USA in 1972,easy
+4,For 16-bit compiler allowable range for integer constants is?,-3.4e38 to 3.4e38,-32767 to 32768,-32768 to 32767,-32668 to 32667,-32768 to 32767,easy
+5,What punctuation is used to signal the beginning and end of code blocks?,{ },->and<-,BEGIN and END,(and),{ },easy
+6,C programs are converted into machine language with the help of __________ .,An Editor,A compiler,An operating system,None of the above,A compiler,easy
+7,Which of the following is allowed in a C Arithmetic instruction?,[],{},(),None of the above,(),easy
+8,What punctuation ends most lines of C++ code?,.(dot),;(semi-colon),:(colon),'(single quote),;(semi-colon),easy
+9,Which of the following is not a correct variable type?,float,real,int,double,real,easy
+10,Which of the following shows the correct hierarchy of arithmetic operations in C ?,/+*–,*–/+,+-/*,*/+-,*/+-,easy
+11,Which of the following is the correct operator to compare two variables?, :=, =, equal, ==, ==,easy
+12,What is an array?,An array is a collection of variables that are of the dissimilar data type.,An array is a collection of variables that are of the same data type.,Both A and B,None of the above.,An array is a collection of variables that are of the same data type.,easy
+13,An array elements are always stored in __________ memory locations.,Sequential,Random,Sequential and Random,None of the above,Sequential,easy
+14,Which of the following is the boolean operator for logical-and?,&,&&,|,|&,&&,easy
+15,Evaluate !(1 && !(0 || 1)).,TRUE,FALSE,Unevaluable,None,TRUE,easy
+16,"What is the right way to access value of structure variable book{price, page}?","printf(""d d"", book.price, book.page);","printf(""d d"", price.book, page.book);","printf(""d d"", price::book, page::book);","printf(""d d"",price->book, page->book);","printf(""d d"", book.price, book.page);",easy
+17,perror() function used for ?,Work same as printf(),prints the error message specified by the compiler,prints the garbage value assigned by the compiler,None of the above,prints the error message specified by the compiler,easy
+18,Which of the following statement is true about preprocessor directives?,These are lines read and processed by the preprocessor,They do not produce any code by themselves,These must be written on their own line,They end with a semicolon,They end with a semicolon,easy
+19,A block comment can be written by __________ .,Starting every line with double slashes (//),Starting with /* and ending with */,Starting with //* and ending with *//,Starting with <!- and ending with -!>,Starting with /* and ending with */,easy
+20,When writing comments you can _________ .,Use code and /* comment on the same line,Use code and // comments on the same line,Use code and //* comments on the same line,Use code and <!- comments on the same line, Use code and // comments on the same line,easy
+21,A variable is/are _________ .,String that varies during program execution,A portion of memory to store a determined value,Those numbers that are frequently required in programs,None of these,A portion of memory to store a determined value,medium
+22,Bitwise operators can operate upon?,double and chars,floats and doubles,ints and floats,ints and chars,ints and chars,medium
+23,What is C Tokens?,The smallest individual units of c program,The basic element recognized by the compiler,The largest individual units of program,A & B Both,A & B Both,medium
+24,What is Keywords?,Keywords have some predefine meanings and these meanings can be changed.,Keywords have some unknown meanings and these meanings cannot be changed.,Keywords have some predefine meanings and these meanings cannot be changed.,None of the above,Keywords have some predefine meanings and these meanings cannot be changed.,medium
+25,What is constant?,Constants have fixed values that do not change during the execution of a program,Constants have fixed values that change during the execution of a program,Constants have unknown values that may be change during the execution of a program,None of the above,Constants have fixed values that do not change during the execution of a program,medium
+26,Which operators are known as Ternary Operator?,"::,?","?,:","?,;;",None of the above,"?,:",medium
+27,Which of the following cannot be used as identifiers?,Letters,Digits,Underscores,Spaces,Spaces,medium
+28,Which of the following identifiers is invalid?,papername,writername,typename,printname,typename,medium
+29,Which of the following statement is true?,String Literals can extend to more than a single line of code by putting a backslash sign at the end of each unfinished line.,"You can also concatenate several string constants separating them by one or several blank spaces, tabulators, newline or any other valid blank character","If we want the string literal to explicitly made of wide characters, we can precede the constant with the L prefix",All of above,All of above,medium
+30,The keyword FRIEND does not appear in,the class allowing access to another class,the class desiring access to another class,the private section of a class,the public section of a class,the private section of a class,medium
+31,Which of the following is not a valid escape code?,\t,\v,\f,\w,\w,medium
+32,"In switch statement, each case instance value must be?",Constant,Variable,Special Symbol,None of the above,Constant,medium
+33,What is the work of break keyword?,Halt execution of program,Restart execution of program,Exit from loop or switch statement,None of the above,Exit from loop or switch statement,medium
+34,Which one of the following sentences is true ?,The body of a while loop is executed at least once.,The body of a do while loop is executed at least once.,The body of a do while loop is executed zero or more times.,A for loop can never be used in place of a while loop.,The body of a do while loop is executed at least once.,medium
+35,A binary tree with 27 nodes has ______ null branches.,54,27,26,None of the above,None of the above,medium
+36,Which one of the following is not a linear data structure?,Array,Binary Tree,Queue,Stack,Binary Tree,medium
+37,Recursive functions are executed in a?,First In First Out Order,Load Balancing,Parallel Fashion,Last In First Out Order,Last In First Out Order,medium
+38,Queue is a __________ list.,LIFO,LILO,FILO,FIFO,FIFO,medium
+39,"The statement print f ("d", 10 ? 0 ? 5 : 1 : 12); will print?",10,0,12,1,1,medium
+40,"To represent hierarchical relationship between elements, which data structure is suitable?",Priority,Tree,Dqueue,All of the above,Tree,medium
+41,Which of the following can not be used as valid identifier?,bitand,bittand,biand,band,bitand,hard
+42,"The statement printf("c", 100); will print?",prints 100,print garbage,prints ASCII equivalent of 100,None of the above,prints ASCII equivalent of 100,hard
+43,Which of the following data structure is linear type?,Strings,Queue,Lists,All of the above,All of the above,hard
+44,Runtime Polymorphism is achieved by _______.,friend function,virtual function,operator overloading,function overloading,virtual function,hard
+45,"If a class C is derived from class B, which is derived from class A, all through public inheritance, then a class C member function can access.",Protected and public data only in C and B,Protected and public data only in C,Private data in A and B,Protected data in A and B,Protected data in A and B,hard
+46,Overloading the function operator,requires a class with an overloaded operator,requires a class with an overloaded [ ] operator.,allows you to create objects that act syntactically like functions.,usually make use of a constructor that takes arguments.,requires a class with an overloaded operator,hard
+47,Mechanism of deriving a class from another derived class is known as _______,Polymorphism,Single Inheritance,Multilevel Inheritance,Message Passing,Multilevel Inheritance,hard
+48,In multiple inheritance,the base classes must have only default constructors,cannot have virtual functions,can include virtual classes,None of the above,can include virtual classes,hard
+49,The compilers converts all operands up to to type of the largest operand is called as _______,typeconversion,expression,evaluation,precedence,typeconversion,hard
+50,Which of the following is the proper declaration of a pointer?,int x;,int &x;,ptr x;,int *x;,int *x;,hard

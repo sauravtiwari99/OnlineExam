@@ -1,0 +1,51 @@
+sno,question,option1,option2,option3,option4,correct option,difficulty
+1,PHP Stands for ,Php Hypermarkup Preprocessor,Php Hypertext Processor,Php Hypermarkup Processor,Php Hypertext Preprocessor,Php Hypertext Preprocessor,easy
+2,PHP is which type scripting language?,Out-side,Clint-side,Server-side,Middle-side,Server-side,easy
+3,Which of the following is used to add comments in PHP?,&   &,//,/*   */,Only B & C,Only B & C,easy
+4,PHP scripts are executed on?,Client Computer,It depends on PHP scripts,ISP Computer,Server Computer,Server Computer,easy
+5,PHP Scripts starts with?,<?php ?>,<php> </php>,<p> </p>,?php ?php,<?php ?>,easy
+6,Which of the following statements prints in PHP?,Echo,Display,Out,Write,Echo,easy
+7,In PHP Language variables name starts with?,* (Asterisk),$ (Dollar),! (Exclamation),& (Ampersand),$ (Dollar),easy
+8,"In PHP,each statement must be end with?",/ (slash),; (semicolon),. (dot),: (colon),; (semicolon),easy
+9,In PHP Language variables are case sensitive?,Depends on website,FALSE,TRUE,Depends on server,TRUE,easy
+10,Data for a cookie stored in _____ in PHP?,In ISP Computer,It depends on PHP Coding,In Server Computer,In User's Computer,In User's Computer,easy
+11,What does the PHP Interpreter do?,It creates connection between ISP & Server,It processes the HTML and PHP files,It translates User Language to System Language,All of these,It processes the HTML and PHP files,easy
+12,What does the PHP Interpreter do?,It creates connection between ISP & Server,It processes the HTML and PHP files,It translates User Language to System Language,All of these,It processes the HTML and PHP files,easy
+13,Which of the following is not the scope of Variable in PHP?,Local,Extern,Static,Global,Extern,easy
+14,PHP is which typed language?,Server,Loosely,System,User,Loosely,easy
+15,Which is the Concatenation Operator in PHP?,Dot (.),Plus (+),Ampersand (&),Percentage (%),Dot (.),easy
+16,Where session_start() function must appear in PHP?,With <html> tag,Before <html> tag,After <html>tag,Anywhere,Before <html> tag,easy
+17,How to define a variable in PHP?,$variable_name == value;,$variable_name = value,$variable_name as value;,$variable_name = value;,$variable_name = value;,easy
+18,What does fopen() function do in PHP?,It used to open folders in PHP,It used to open files in PHP,It used to open Remote Computer,It used to open Remote Server,It used to open files in PHP,easy
+19,What does sprintf() function do in PHP?,it sends output to a variable converting into string,it prints the output of program,it prints the output of program converting into string,it sends output to a variable,it sends output to a variable,easy
+20,What does isset() function do in PHP?,It checks whether variable is free or not,There is no such function in PHP,It checks whether variable is string or integer,It checks whether variable is set or not,It checks whether variable is set or not,easy
+21,Which sign is used to access variable of variable in PHP?,$$,$,#@,$|,$$ ,medium
+22,Which of following is not a Superglobals in PHP?,$_SERVER,$_ENV,$_FILES,$_PUT,$_PUT,medium
+23,Which function is used to get ASCII value of a character in PHP ?,asc(),chr( ),ascii(),val( ),chr( ),medium
+24,______ is used to unset a variable in PHP ?,delete(),unset(),unlink(),delete();,unset(),medium
+25,How many error levels are available in PHP ?,20,4,19,16,16,medium
+26,In which version of PHP E_STRICT Error level is introduced ?,PHP 4,PHP 5,PHP 5.2,PHP 7,PHP 5,medium
+27,Which function in PHP is used to get the length of string variable?,count(),strcount,strlen,len,strlen,medium
+28,Which of the below symbols is a newline character?,n,\r,/n,/r,/n,medium
+29,Who is the father of PHP?,Drek Kolkevi,Rasmus Lerdorf,Willam Makepiece,List Barely,Rasmus Lerdorf,medium
+30,Type Hinting was introduced in which version of PHP?,PHP 5,PHP 5.3,PHP 4,PHP 6,PHP 5,medium
+31,A function in PHP which starts with __ (double underscore) is known as __________ .,Inbuilt Function,Default Function,Magic Function,User Defined Function,Magic Function,medium
+32,PHP's numerically indexed array begin with position ___________ .,-1,0,1,2,0,medium
+33,Which of the functions is used to sort an array in descending order?,asort(),sort(),rsort(),dsort(),rsort(),medium
+34,Which one of the following property scopes is not supported by PHP?,public,final,friendly,static,friendly,medium
+35,How many methods are available for the exception class?,5,6,7,8,7,medium
+36,Which version added the method getPrevious()?,PHP 4,PHP 5,PHP 5.1,PHP 5.3,PHP 5.3,medium
+37,Which of the following statements invoke the exception class?,throws new Exception();,throw new Exception();,new Exception();,new throws Exception();,throw new Exception();,medium
+38,Which one of the following is the right description for the method getMessage()?,Returns the message if it is passed to the constructor,Returns the message if it is passed to the class,Returns the message if it is passed to the file,Returns the message if it is passed to the object,Returns the message if it is passed to the constructor,medium
+39,"You can extend the exception base class,but you cannot override any of the preceding methods because the are declared as__________",protected,final,static,private,final,medium
+40,What does SPL stand for?,Standard PHP Library,Source PHP Library,Standard PHP List,Source PHP List,Standard PHP Library,medium
+41,How many predefined exceptions does SPL provide access to?,13,14,15,16,13,hard
+42,Which function is used to verify whether a variable contains a value?,header(),footer(),inset(),isset(),isset(),hard
+43,In which authentication method does changing the username or password can be done only by entering the code and making the manual adjustment.,Hard-coding a login pair directly into the script,File-based authentication,Data-based authentication,PEAR'S HTTP authentication,Hard-coding a login pair directly into the script,hard
+44,"The authenticationFile.txt,the file which stores username and password should be stored ___ the server document root.",Inside,Outside,Within,None of the mentioned,Outside,hard
+45,"Which function is used to split a string into a series of substrings,with each string boundary is determined by a specific separator?",break(),divide(),explode(),md5(),explode(),hard
+46,Which is the most powerful authentication method among the four?,Hard-coding a login pair directly into the script,File-based authentication,Data-based authentication,PEAR'S HTTP authentication,Data-based authentication,hard
+47,Which function is used to erase all session variables stored in the current session?,session_destroy(),session_change(),session_remove(),session_unset(),session_unset(),hard
+48,What will the function session_id() return is no parameter is passed?,Current Session Identification Number,Previous Session Identification Number,Last Session Identification Number,Error,Current Session Identification Number,hard
+49,Which one of the following statements should you use to set the session username to Nachi?,$SESSION['username'] = "Nachi";,$_SESSION['username'] = "Nachi";,session_start("nachi");,$SESSION_START["username"] = "Nachi";,$_SESSION['username'] = "Nachi";,hard
+50,Which function effectively deletes all sessions that have expired?,session_delete(),session_destroy(),session_garbage_collect(),SessionHandler::gc,SessionHandler::gc,hard

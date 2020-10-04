@@ -22,8 +22,8 @@ sno,question,option1,option2,option3,option4,correct option,difficulty
 21,Which of these statement is incorrect?,Every class must contain a main() method.,Applets do not require a main() method at all.,There can be only one main() method in a program.,main() method must be made public.,Every class must contain a main() method.,medium
 22,What method is used to specify a container's layout?,setLayout(),setSize(),area(),resize(),setLayout(),medium
 23,Which of the following is a method having same name as that of it's class?,finalize,constructor,delete,class,constructor,medium
-24,What will be the output of the program?   public class Foo { public static void main(String[] args)  { try{return; } finally { System.out.println( “Finally” ); } } },An exception is thrown at run-time.,The code runs with no output.,Finally,Compilation fails.,Finally,medium
-25,"What will be the value of an after execution of the following statements? int a = 23,b = 34; a = ((a < b) ? (b + a) : (b – a);",11,23,57,34,57,medium
+24,What will be the output of the program?   public class Foo { public static void main(String[] args)  { try{return; } finally { System.out.println( "Finally" ); } } },An exception is thrown at run-time.,The code runs with no output.,Finally,Compilation fails.,Finally,medium
+25,"What will be the value of an after execution of the following statements? int a = 23,b = 34; a = ((a < b) ? (b + a) : (b - a);",11,23,57,34,57,medium
 26,Thread priority in Java is?,integer,float,double,long,integer,medium
 27,Container is a ____________ for component class.,derived,base,interface,package,base,medium
 28,Which of the following represent legal flow control statements?,continue(inner);,break();,break;,exit();,break;,medium

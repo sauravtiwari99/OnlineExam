@@ -47,9 +47,6 @@ export class StudentReportComponent implements OnInit {
         avg = avg/this.details.length;
         this.dataDonutChart.push(['Average',avg]);
         this.dataDonutChart.push(['Remaining',100 - avg]);
-        console.log(this.dataDonutChart)
-        console.log(this.data)
-        console.log(this.dataPieChart)
       }
     });
   }
@@ -68,7 +65,6 @@ export class StudentReportComponent implements OnInit {
     this._router.navigate(["aboutUs"])
   }
   giveTest(){
-    console.log("All the Best");
     this._router.navigate(["selectTest"]);
   }
 }

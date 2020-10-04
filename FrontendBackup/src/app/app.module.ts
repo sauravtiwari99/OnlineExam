@@ -31,6 +31,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 
 
 @NgModule({
+  //Consists of User Generated Components and Pipes
   declarations: [
     AppComponent,
     RegisterComponent,
@@ -50,6 +51,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
     TimeGeneratorPipe,
     AboutUsComponent
   ],
+  //Consists of all Externally Downloaded Modules
   imports: [
     BrowserModule,
     AppRoutingModule,

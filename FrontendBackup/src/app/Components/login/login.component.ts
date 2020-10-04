@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   get formAccess(){return this.loginForm.controls};
+  //This method is used to check whether the User trying to Login is Authorized or not.
   login(){
     console.log(this.loginForm.value['loginAs']);
     this.ls=this.loginForm.value['loginAs'];

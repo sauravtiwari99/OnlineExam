@@ -31,58 +31,58 @@ export class AdminTestComponent implements OnInit {
       subject:"Java"
     }
     this._adminService.getSetsAvailabilty(javaCheck).subscribe(result=>{
-      console.log(result);
+      // console.log(result);
       this.javaAvailability=result;
     });
     let cSharpCheck={
       subject:"Csharp"
     }
     this._adminService.getSetsAvailabilty(cSharpCheck).subscribe(result=>{
-      console.log(result);
+      // console.log(result);
       this.cSharpAvailability=result;
     });
     let cPlusCheck={
       subject:"Cplus"
     }
     this._adminService.getSetsAvailabilty(cPlusCheck).subscribe(result=>{
-      console.log(result);
+      // console.log(result);
       this.cPlusAvailability=result;
     });
     let pythonCheck={
       subject:"Python"
     }
     this._adminService.getSetsAvailabilty(pythonCheck).subscribe(result=>{
-      console.log(result);
+      // console.log(result);
       this.pythonAvailabilty=result;
     });
     let sqlCheck={
       subject:"Sql"
     }
     this._adminService.getSetsAvailabilty(sqlCheck).subscribe(result=>{
-      console.log(result);
+      // console.log(result);
       this.sqlAvailabilty=result;
     });
     let phpCheck={
       subject:"Php"
     }
     this._adminService.getSetsAvailabilty(phpCheck).subscribe(result=>{
-      console.log(result);
+      // console.log(result);
       this.phpAvailability=result;
     });
   }
+  //For Viewing Availability of Selected Subject Question Set
   showSelected(){
     console.log(this.selectedValue)
     console.log(this.selectedFile)
     this.splitString=this.selectedFile.split("\\");
-    console.log(this.splitString);
-
+    // console.log(this.splitString);
   }
-
+  //Adding Excel File of the Question Set
   addExcelFile(){
     let filepath = {
       "csv_file_path" :("c://"+this.splitString[2])
     }
-    console.log(filepath);
+    // console.log(filepath);
 
     if(this.selectedValue == 'Java'){
       this._adminService.addJava(filepath).subscribe(
@@ -204,7 +204,7 @@ export class AdminTestComponent implements OnInit {
 
     this._adminService.getAllSets(jsonobj).subscribe(
       data=>{
-        console.log("all sets are here")
+        // console.log("all sets are here")
         this.allSets = data;
         if(this.allSets.length==0){
           this._toastr.warning('No sets Available', 'Please add Question Set first.');

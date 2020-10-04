@@ -13,11 +13,9 @@ export class StudentDashboardComponent implements OnInit {
   ngOnInit(): void {
   }
   studentReport(){
-    console.log("Viewing Reports");
     this._router.navigate(["studentReport"]);
   }
   giveTest(){
-    console.log("All the Best");
     this._router.navigate(["selectTest"]);
   }
 }

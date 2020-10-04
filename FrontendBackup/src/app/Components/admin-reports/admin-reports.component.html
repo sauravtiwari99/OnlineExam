@@ -10,6 +10,9 @@
     <button class="btn btn-style" data-toggle="modal" data-target="#filterForm">Search Filters</button>
 </div>
 
+<!-- 
+    All User List and Graphs of User Count Vs Users who appeared for exam, Subject Wise Count
+ -->
 <div class="container userTable" *ngIf="userDataReceived==true">
     <table class="table" *ngIf="showNullAll == false">
         <thead>
@@ -70,6 +73,9 @@
     </div>
 </div>
 
+<!-- 
+    Search Based on Filter Inputs given by user.
+ -->
 <div class="container userTable" *ngIf="filterBasedTable==true">
     <table class="table" *ngIf="showNull == false">
         <thead>

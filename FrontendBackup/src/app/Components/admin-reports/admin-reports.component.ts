@@ -54,9 +54,9 @@ export class AdminReportsComponent implements OnInit {
     this.getStates();
     
   }
+  //For Getting All User Details from Backend
   getAllUser(){
     this._adminReportService.allUserDetails(this.data).subscribe(result=>{
-      console.log(result);
       this.allUserData=result;
       if(this.allUserData.length == 0){
         this.showNullAll = true
@@ -68,6 +68,7 @@ export class AdminReportsComponent implements OnInit {
     });
     this.userDataReceived=true;
   }
+  //For Getting Count of Users Registered and Count of Users who have appeared for exams.
   getCount(){
     this._adminReportService.getAllUserCount(this.data).subscribe(result=>{
       this.totalUserCount=result;
@@ -80,6 +81,7 @@ export class AdminReportsComponent implements OnInit {
     }); 
   }
 
+  //For Getting Count of Students appeared for a certain Subject.
   getSubjectWiseCount(){
     this._adminReportService.getJavaExams(this.data).subscribe(result=>{
       this.subjectGraph.push(["Java",result]);
@@ -100,9 +102,9 @@ export class AdminReportsComponent implements OnInit {
       this.subjectGraph.push(["PHP",result]);
       this.showGraph = true;
     });
-    console.log(this.subjectGraph);
   }
 
+  //Search Filter based on Different Input Paramaters Given by User.
   filterSearch(){
     let levelsData;
     if(this.selectedLevel=="L1"){
@@ -314,14 +316,6 @@ export class AdminReportsComponent implements OnInit {
   getParticularReport(id,uname){
     sessionStorage.setItem('userData',uname);
     this._router.navigate(['detailReport',id]);
-    // this.selectedUserCheck=true;
-    // let uID={
-    //   "user_id":id
-    // }
-    // this._adminReportService.userReport(uID).subscribe(result=>{
-    //   console.log(result);
-    //   this.selectedUser=result;
-    // }); 
   }
   getStates(){
     this._adminReportService.allState(this.data).subscribe(result=>{

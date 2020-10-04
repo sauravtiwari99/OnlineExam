@@ -18,8 +18,7 @@ import { TestLevel3Component } from './Components/test-level3/test-level3.compon
 import { AuthenticationAdminGuard } from './Guards/authentication-admin.guard';
 import { AuthenticationGuard } from './Guards/authentication.guard';
 
-
-
+//Consists of All secured Routes. Only Register, Login and Forgot Password is Accessible to anyone. Aprt from that every route to be accessed needs a valid Login.
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"register",component:RegisterComponent},

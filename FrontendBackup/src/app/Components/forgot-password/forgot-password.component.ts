@@ -35,6 +35,8 @@ export class ForgotPasswordComponent implements OnInit {
   }
   get emailFormAccess(){return this.emailVerificationForm.controls};
   get passwordFormAccess(){return this.passwordUpdateForm.controls};
+
+  //Method for Sending the Email ID of the user and send The OTP to the Email Address
   sendOtp(){
     this.emailSubmit=true;
     if(this.emailVerificationForm.invalid){
@@ -57,6 +59,7 @@ export class ForgotPasswordComponent implements OnInit {
         });
     } 
   }
+  //After Sending User will receive an OTP. The checking of OTP is done here.
   checkOtp(){
     if(this.otpCheck.length==4 && this.otp==this.otpCheck){
       this.otpConfirm=true;
@@ -68,6 +71,7 @@ export class ForgotPasswordComponent implements OnInit {
       this.emailCheck=false;
     }
   }
+  //After Confirmation of OTP the password reset is done using this function.
   updatePassword(){
     if(this.passwordUpdateForm.value['confirmPassword'] != this.passwordUpdateForm.value['password']){
       console.log(this.passwordUpdateForm.value['confirmPassword'] )

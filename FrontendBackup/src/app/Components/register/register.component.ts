@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   registerCheck:boolean=false;
 
   constructor(private _registerService:LoginService, private _formBuilder:FormBuilder, private _router:Router,private _toastr:ToastrService) { 
-
+    //Setting Up the FormBuilder with all the fields.
     this.registerForm=this._formBuilder.group({
       full_name: ['', [Validators.required,Validators.pattern('[a-zA-Z ]*')]],
       mobile: ['', [Validators.required,Validators.minLength(10),Validators.maxLength(10),Validators.pattern("^[0-9]*$")]],
@@ -26,7 +26,6 @@ export class RegisterComponent implements OnInit {
       dob: ['', [Validators.required]],
       qualification: ['', [Validators.required]], 
       yoc: ['', [Validators.required]],
-      // For Captcha
       reCaptcha: [null,[Validators.required]]
     });
   }
@@ -35,13 +34,14 @@ export class RegisterComponent implements OnInit {
   }
   get registerFormAccess(){ return this.registerForm.controls};
 
+// Function for Registering User taking all the values and also checking for backend Validatons.
   register(){
     this.registerCheck=true;
     if(this.registerForm.invalid){
       return;
     }
     else{
-      console.log(this.registerForm.value);
+      // console.log(this.registerForm.value);
       if(this.registerForm.value['password']==this.registerForm.value['confirm_password']){
         this._registerService.registerStudent(this.registerForm.value).subscribe(
           result => {

@@ -14,10 +14,8 @@ export class AdminDashboardComponent implements OnInit {
   }
   viewReports(){
     this._route.navigate(['adminReport']);
-    console.log("Viewing Reports");
   }
   addRemoveTest(){
     this._route.navigate(['adminTest']);
-    console.log("Adding or Removing Test");
   }
 }
